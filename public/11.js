@@ -1,255 +1,6 @@
 webpackJsonp([11],{
 
-/***/ 849:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(13)
-/* script */
-var __vue_script__ = __webpack_require__(996)
-/* template */
-var __vue_template__ = __webpack_require__(997)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\Supplies\\supply_request.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4d5f8307", Component.options)
-  } else {
-    hotAPI.reload("data-v-4d5f8307", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 881:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(13)
-/* script */
-var __vue_script__ = __webpack_require__(882)
-/* template */
-var __vue_template__ = __webpack_require__(883)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\Supplies\\edit_supplies.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-06d2c16c", Component.options)
-  } else {
-    hotAPI.reload("data-v-06d2c16c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 882:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    props: ['item', 'max'],
-    data: function data() {
-        return {
-            edit_: false
-        };
-    },
-
-    methods: {
-        onChangeOutQuantity: function onChangeOutQuantity(e, q) {
-            var vm = this;
-            if (e > q) {
-                vm.item.quantity -= e - q;
-            } else {
-                vm.item.quantity += q - e;
-            }
-        },
-        onEdit: function onEdit() {
-            var vm = this;
-            vm.edit_ = !vm.edit_;
-        }
-    }
-};
-
-/***/ }),
-
-/***/ 883:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("tr", [
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input", {
-              attrs: { placeholder: "Product Name" },
-              model: {
-                value: _vm.item.name,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "name", $$v)
-                },
-                expression: "item.name"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.name))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input", {
-              attrs: {
-                disabled: true,
-                type: "number",
-                min: "0",
-                max: "addTable.quantity",
-                placeholder: "Current Quantity"
-              },
-              model: {
-                value: _vm.item.quantity,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "quantity", $$v)
-                },
-                expression: "item.quantity"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.quantity))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input-number", {
-              attrs: { min: 0, max: _vm.max },
-              on: { change: _vm.onChangeOutQuantity },
-              model: {
-                value: _vm.item.out_quantity,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "out_quantity", $$v)
-                },
-                expression: "item.out_quantity"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.out_quantity))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _c(
-          "el-button",
-          { attrs: { type: "primary" }, on: { click: _vm.onEdit } },
-          [_vm._v(_vm._s(_vm.edit_ ? "Done" : "Edit"))]
-        )
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-06d2c16c", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 996:
+/***/ 1002:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -769,7 +520,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 997:
+/***/ 1003:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1464,6 +1215,255 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-4d5f8307", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 849:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(13)
+/* script */
+var __vue_script__ = __webpack_require__(1002)
+/* template */
+var __vue_template__ = __webpack_require__(1003)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Supplies\\supply_request.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4d5f8307", Component.options)
+  } else {
+    hotAPI.reload("data-v-4d5f8307", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 881:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(13)
+/* script */
+var __vue_script__ = __webpack_require__(882)
+/* template */
+var __vue_template__ = __webpack_require__(883)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Supplies\\edit_supplies.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-06d2c16c", Component.options)
+  } else {
+    hotAPI.reload("data-v-06d2c16c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 882:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    props: ['item', 'max'],
+    data: function data() {
+        return {
+            edit_: false
+        };
+    },
+
+    methods: {
+        onChangeOutQuantity: function onChangeOutQuantity(e, q) {
+            var vm = this;
+            if (e > q) {
+                vm.item.quantity -= e - q;
+            } else {
+                vm.item.quantity += q - e;
+            }
+        },
+        onEdit: function onEdit() {
+            var vm = this;
+            vm.edit_ = !vm.edit_;
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 883:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("tr", [
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input", {
+              attrs: { placeholder: "Product Name" },
+              model: {
+                value: _vm.item.name,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "name", $$v)
+                },
+                expression: "item.name"
+              }
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.name))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input", {
+              attrs: {
+                disabled: true,
+                type: "number",
+                min: "0",
+                max: "addTable.quantity",
+                placeholder: "Current Quantity"
+              },
+              model: {
+                value: _vm.item.quantity,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "quantity", $$v)
+                },
+                expression: "item.quantity"
+              }
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.quantity))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input-number", {
+              attrs: { min: 0, max: _vm.max },
+              on: { change: _vm.onChangeOutQuantity },
+              model: {
+                value: _vm.item.out_quantity,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "out_quantity", $$v)
+                },
+                expression: "item.out_quantity"
+              }
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.out_quantity))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _c(
+          "el-button",
+          { attrs: { type: "primary" }, on: { click: _vm.onEdit } },
+          [_vm._v(_vm._s(_vm.edit_ ? "Done" : "Edit"))]
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-06d2c16c", module.exports)
   }
 }
 

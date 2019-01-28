@@ -45,6 +45,16 @@ Route::middleware(['auth:api'])->group(function () {
     });
 
     Route::post('/products/{product}/check-item', function (Request $request, App\Product $product) {
+       if(!$request['quantity']){
+           $request['quantity'] = null;
+       }
+        if(!$request['unit_cost']){
+           $request['unit_cost'] = null;
+       }
+        if(!$request['quantity_per']){
+           $request['quantity_per'] = null;
+       }
+
         $request->validate([
             "po_number" => "required|unique:orders,po_number",
             "date_delivered" => "required",
@@ -225,6 +235,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::get('/supplies/edit/{supply}', 'SupplyController@edit');
     Route::post('/pending/supply', 'PendingController@supply');
     Route::post('/pending/supply/approved/{pending}', 'PendingController@approved_supply_request');
+    Route::post('/pending/supply/rejected/{pending}', 'PendingController@rejected_supply_request');
     Route::post('/pending/request-medicine/approved/{pending}', 'PendingController@approved_medicine_request');
     Route::get('/users/notification/{user}', 'UserController@notification');
     Route::get('/users/mark-as-read/notification', 'UserController@markAsRead');

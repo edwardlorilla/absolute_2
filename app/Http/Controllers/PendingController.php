@@ -46,16 +46,17 @@ class PendingController extends Controller
             "request_year_code" => 'required',
             "products" => 'required',
         ]);
-        dd(123);
         $input['division'] = \App\User::whereId(auth()->id())->with('division')->first()['division']['id'];
 
         $users = \App\User::whereHas('roles', function ($q) {
             $q->where('name', 'superadministrator');
         })->where('id', '!=', auth()->id())->get();
-
+        auth()->user()->notify(new \App\Notifications\ApprovedRequest('Your medicine requests been approved by '. auth()->user()->name, $input['products'], 'medicine-approved'));
+        $id = auth()->user()->unreadNotifications[0]->id;
         foreach ($users as $user) {
-            $user->notify(new \App\Notifications\Pending(auth()->user(), $input));
+            $user->notify(new \App\Notifications\Pending(auth()->user(), $input, $id));
         }
+
         \App\Product::where('disabled', true)
             ->update(['disabled' => false]);
         return response()->json([], 200);
@@ -115,11 +116,30 @@ class PendingController extends Controller
             $supply->disabled = false;
             $supply->save();
             $supply->tracks()->save(new \App\Track(['division_id'=> $input['division'], 'check' => $item['out_quantity'], 'type' => 0]));
+            if($supply->quantity <= $supply->reorder_point){
+                
+            }
         }
         $userNotification = \App\Notification::whereId($pending)->first();
         $userId = $userNotification->data['notification_id'];
         \App\User::whereId($input['user_id'])->first()->notifications()->whereId($userId)->first()->update(['read_at'=> now(), 'data->status' => 'approved', 'data->message' => 'Your supply requests been approved by '. auth()->user()->name]);
         \App\Notification::whereData(json_encode($userNotification->data, false))->delete();
+        //$user->notify(new \App\Notifications\ApprovedRequest('Your supply requests been approved by '. auth()->user()->name, $input['supplies'], request()->type == '0' ? 'office-supply-approved': 'supply-approved'));
+        return response()->json();
+    }
+    public function rejected_supply_request($pending, Request $request){
+        $input = $request->validate([
+            'division' => 'required',
+            'request_date' => '',
+            'request_year_code' => 'required',
+            'year' => 'required',
+            'user_id' => 'required',
+            'supplies' => 'required|array|min:1',
+        ]);
+        $userNotification = \App\Notification::whereId($pending)->first();
+        $userId = $userNotification->data['notification_id'];
+        \App\User::whereId($input['user_id'])->first()->notifications()->whereId($userId)->first()->update(['read_at'=> now(), 'data->status' => 'rejected', 'data->message' => 'Your supply requests been rejected by '. auth()->user()->name]);
+        auth()->user()->notifications()->whereData(json_encode($userNotification->data, false))->delete();
         //$user->notify(new \App\Notifications\ApprovedRequest('Your supply requests been approved by '. auth()->user()->name, $input['supplies'], request()->type == '0' ? 'office-supply-approved': 'supply-approved'));
         return response()->json();
     }
@@ -166,8 +186,12 @@ class PendingController extends Controller
             'request_year_code' => $request->request_year_code
         ]));
         $requests->transactions()->attach($transactions);
-        $user->notify(new \App\Notifications\ApprovedRequest('Your medicine requests been approved by '. auth()->user()->name, $input['products'], 'medicine-approved'));
-        return response()->json(auth()->user()->notifications()->whereId($pending)->first()->markAsRead(), 201);
+        $userNotification = \App\Notification::whereId($pending)->first();
+        $userId = $userNotification->data['notification_id'];
+        $markAsRead = \App\User::whereId($input['user_id'])->first()->notifications()->whereId($userId)->first()->update(['read_at'=> now(), 'data->status' => 'approved', 'data->message' => 'Your medicine requests been approved by '. auth()->user()->name]);
+        \App\Notification::whereData(json_encode($userNotification->data, false))->delete();
+//        $user->notify(new \App\Notifications\ApprovedRequest('Your medicine requests been approved by '. auth()->user()->name, $input['products'], 'medicine-approved'));
+        return response()->json($markAsRead, 201);
     }
 
     /**

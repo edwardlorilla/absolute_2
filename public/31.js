@@ -442,6 +442,30 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var getData = function getData(url, page, callback) {
     axios.get('' + url, { params: page }).then(function (response) {
@@ -1001,6 +1025,7 @@ var render = function() {
                           attrs: {
                             required: "",
                             type: "text",
+                            tabindex: "1",
                             id: "po_number",
                             name: "po_number",
                             placeholder: "po_number"
@@ -1062,6 +1087,7 @@ var render = function() {
                           required: "",
                           type: "number",
                           id: "package",
+                          tabindex: "2",
                           name: "quantity",
                           placeholder:
                             "Quantity per " +
@@ -1125,6 +1151,7 @@ var render = function() {
                                       size: "small",
                                       disabled: _vm.isDisabled,
                                       filterable: "",
+                                      tabindex: "3",
                                       remote: "",
                                       required: "",
                                       placeholder: "Enter Source of Fund Name",
@@ -1284,6 +1311,7 @@ var render = function() {
                                       size: "small",
                                       filterable: "",
                                       remote: "",
+                                      tabindex: "4",
                                       required: "",
                                       placeholder: "Please a Unit Name",
                                       "remote-method": _vm.search_unit,
@@ -1441,6 +1469,7 @@ var render = function() {
                                       filterable: "",
                                       size: "small",
                                       remote: "",
+                                      tabindex: "5",
                                       required: "",
                                       placeholder:
                                         "Please a Dispensing Unit Name",
@@ -1557,147 +1586,249 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "date_delivered" } }, [
-                        _vm._v("Date Delivered")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.date_delivered,
-                            expression: "date_delivered"
-                          }
-                        ],
-                        staticClass: "form-control form-control-sm",
-                        attrs: {
-                          required: "",
-                          type: "date",
-                          id: "date_delivered",
-                          name: "date_delivered",
-                          placeholder: "Date Delivered"
-                        },
-                        domProps: { value: _vm.date_delivered },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c(
+                      "div",
+                      { staticClass: "form-group has-feedback" },
+                      [
+                        _c("label", { attrs: { for: "date_delivered" } }, [
+                          _vm._v("Date Delivered")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.date_delivered,
+                              expression: "date_delivered"
                             }
-                            _vm.date_delivered = $event.target.value
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          class: _vm.errors.date_delivered ? "is-invalid" : "",
+                          attrs: {
+                            required: "",
+                            type: "date",
+                            tabindex: "6",
+                            id: "date_delivered",
+                            name: "date_delivered",
+                            placeholder: "Date Delivered"
+                          },
+                          domProps: { value: _vm.date_delivered },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.date_delivered = $event.target.value
+                            }
                           }
-                        }
-                      })
-                    ])
+                        }),
+                        _vm._v(" "),
+                        _vm._l(_vm.errors.date_delivered, function(error) {
+                          return _vm.errors.date_delivered
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "invalid-feedback",
+                                  attrs: { role: "alert" }
+                                },
+                                [_c("strong", [_vm._v(_vm._s(error))])]
+                              )
+                            : _vm._e()
+                        })
+                      ],
+                      2
+                    )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col" }, [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "quantity" } }, [
-                        _vm._v("Quantity Delivered")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.quantity,
-                            expression: "quantity"
-                          }
-                        ],
-                        staticClass: "form-control form-control-sm",
-                        attrs: {
-                          required: "",
-                          type: "number",
-                          id: "quantity",
-                          name: "quantity",
-                          placeholder: "Quantity"
-                        },
-                        domProps: { value: _vm.quantity },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c(
+                      "div",
+                      { staticClass: "form-group has-feedback" },
+                      [
+                        _c("label", { attrs: { for: "quantity" } }, [
+                          _vm._v("Quantity Delivered")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.quantity,
+                              expression: "quantity"
                             }
-                            _vm.quantity = $event.target.value
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          class: _vm.errors.quantity ? "is-invalid" : "",
+                          attrs: {
+                            required: "",
+                            type: "number",
+                            id: "quantity",
+                            tabindex: "7",
+                            name: "quantity",
+                            placeholder: "Quantity"
+                          },
+                          domProps: { value: _vm.quantity },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.quantity = $event.target.value
+                            }
                           }
-                        }
-                      })
-                    ]),
+                        }),
+                        _vm._v(" "),
+                        _vm._l(_vm.errors.quantity, function(error) {
+                          return _vm.errors.quantity
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "invalid-feedback",
+                                  attrs: { role: "alert" }
+                                },
+                                [_c("strong", [_vm._v(_vm._s(error))])]
+                              )
+                            : _vm._e()
+                        })
+                      ],
+                      2
+                    ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "unit_cost" } }, [
-                        _vm._v("Unit Cost")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.unit_cost,
-                            expression: "unit_cost"
-                          }
-                        ],
-                        staticClass: "form-control form-control-sm",
-                        attrs: {
-                          required: "",
-                          type: "number",
-                          id: "unit_cost",
-                          name: "unit_cost",
-                          placeholder: "Unit Cost"
-                        },
-                        domProps: { value: _vm.unit_cost },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c(
+                      "div",
+                      { staticClass: "form-group has-feedback" },
+                      [
+                        _c("label", { attrs: { for: "unit_cost" } }, [
+                          _vm._v("Unit Cost")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.unit_cost,
+                              expression: "unit_cost"
                             }
-                            _vm.unit_cost = $event.target.value
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          class: _vm.errors.unit_cost ? "is-invalid" : "",
+                          attrs: {
+                            required: "",
+                            type: "number",
+                            id: "unit_cost",
+                            tabindex: "8",
+                            name: "unit_cost",
+                            placeholder: "Unit Cost"
+                          },
+                          domProps: { value: _vm.unit_cost },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.unit_cost = $event.target.value
+                            }
                           }
-                        }
-                      })
-                    ]),
+                        }),
+                        _vm._v(" "),
+                        _vm._l(_vm.errors.unit_cost, function(error) {
+                          return _vm.errors.unit_cost
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "invalid-feedback",
+                                  attrs: { role: "alert" }
+                                },
+                                [_c("strong", [_vm._v(_vm._s(error))])]
+                              )
+                            : _vm._e()
+                        })
+                      ],
+                      2
+                    ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "expiry_date" } }, [
-                        _vm._v("Expiry Date")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.expiry_date,
-                            expression: "expiry_date"
-                          }
-                        ],
-                        staticClass: "form-control form-control-sm",
-                        attrs: {
-                          type: "date",
-                          id: "expiry_date",
-                          name: "expiry_date",
-                          placeholder: "expiry_date"
-                        },
-                        domProps: { value: _vm.expiry_date },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c(
+                      "div",
+                      { staticClass: "form-group has-feedback" },
+                      [
+                        _c("label", { attrs: { for: "expiry_date" } }, [
+                          _vm._v("Expiry Date")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.expiry_date,
+                              expression: "expiry_date"
                             }
-                            _vm.expiry_date = $event.target.value
+                          ],
+                          staticClass: "form-control form-control-sm",
+                          class: _vm.errors.expiry_date ? "is-invalid" : "",
+                          attrs: {
+                            type: "date",
+                            id: "expiry_date",
+                            tabindex: "9",
+                            name: "expiry_date",
+                            placeholder: "expiry_date"
+                          },
+                          domProps: { value: _vm.expiry_date },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.expiry_date = $event.target.value
+                            }
                           }
-                        }
-                      })
-                    ])
+                        }),
+                        _vm._v(" "),
+                        _vm._l(_vm.errors.expiry_date, function(error) {
+                          return _vm.errors.expiry_date
+                            ? _c(
+                                "span",
+                                {
+                                  staticClass: "invalid-feedback",
+                                  attrs: { role: "alert" }
+                                },
+                                [_c("strong", [_vm._v(_vm._s(error))])]
+                              )
+                            : _vm._e()
+                        })
+                      ],
+                      2
+                    )
                   ])
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(3)
+              _c("div", { staticClass: "card-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary mb-2",
+                    attrs: {
+                      type: "submit",
+                      disabled: !(
+                        _vm.date_delivered &&
+                        _vm.dispensing_unit_id &&
+                        _vm.expiry_date &&
+                        _vm.po_number &&
+                        _vm.quantity &&
+                        _vm.quantity_per &&
+                        _vm.source_select &&
+                        _vm.unit_cost &&
+                        _vm.unit_id
+                      )
+                    }
+                  },
+                  [_vm._v("Check in")]
+                )
+              ])
             ])
           ])
         ])
@@ -1952,18 +2083,6 @@ var staticRenderFns = [
           attrs: { for: "dispensing_unit_id" }
         },
         [_vm._v("Dispensing\n                                            Unit")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-footer" }, [
-      _c(
-        "button",
-        { staticClass: "btn btn-primary mb-2", attrs: { type: "submit" } },
-        [_vm._v("Check in")]
       )
     ])
   }

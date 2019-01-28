@@ -121,7 +121,7 @@ class UserController extends Controller
 
     public function notification(User $user)
     {
-        return response()->json($user->unreadNotifications()->paginate());
+        return response()->json($user->notifications()->paginate());
     }
 
     public function markAsRead()

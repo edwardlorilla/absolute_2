@@ -233,6 +233,58 @@ exports.default = {
                 vm.isDisabled = false;
             });
         },
+        onSubmitRejectRequest: function onSubmitRejectRequest() {
+            var vm = this,
+                n = new Date(),
+                y = n.getFullYear(),
+                m = n.getMonth() + 1,
+                d = n.getDate();
+            vm.isDisabled = true;
+            vm.errors = [];
+            vm.form.year = y;
+            vm.form.request_date = m + "/" + d + "/" + y;
+            vm.form.request_year_code = y;
+            vm.$confirm('Are You sure?', 'Warning', {
+                confirmButtonText: 'OK',
+                cancelButtonText: 'Cancel',
+                type: 'warning'
+            }).then(function () {
+                axios({
+                    method: 'POST',
+                    url: '/api/pending/supply/rejected/' + vm.$route.params.id + '?type=' + vm.$route.meta.onSubmitType,
+                    data: vm.form
+                }).then(function (response) {
+                    vm.$message({ message: response.statusText, type: 'success' });
+                    vm.isDisabled = false;
+                    vm.form = {
+                        supplies: [],
+                        name: '',
+                        year: '',
+                        request_date: '',
+                        request_year_code: ''
+                    };
+                    vm.dialogVisible = true;
+                    vm.request_id = response.data.id;
+
+                    var notifications = vm.$root.store.state.notifications.data,
+                        index = _.findIndex(notifications, ['id', vm.$route.params.id]);
+                    notifications.splice(index, 1);
+                    vm.$router.push({ name: 'pending-request.view' });
+                }).catch(function (error) {
+                    console.log(error);
+                    if (error) {
+                        vm.errors = error.response.data.errors;
+                        vm.$message({ message: error.response.data.message, type: 'error' });
+                    }
+                    vm.isDisabled = false;
+                });
+            }).catch(function (error) {
+                this.$message({
+                    type: 'info',
+                    message: 'Delete canceled'
+                });
+            });
+        },
         onChangeOutQuantity: function onChangeOutQuantity(e, q) {
             var vm = this;
             if (e > q) {
@@ -335,6 +387,12 @@ exports.default = {
         }
     }
 }; //
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1025,6 +1083,21 @@ var render = function() {
                   _c(
                     "el-button",
                     {
+                      attrs: {
+                        type: "danger",
+                        disabled: !(
+                          _vm.form.supplies.length && _vm.form.division
+                        ),
+                        loading: _vm.isDisabled
+                      },
+                      on: { click: _vm.onSubmitRejectRequest }
+                    },
+                    [_vm._v("Rejected\n                    ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-button",
+                    {
                       attrs: { loading: _vm.isDisabled },
                       on: {
                         click: function($event) {
@@ -1032,7 +1105,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Back")]
+                    [_vm._v("Back\n                    ")]
                   )
                 ],
                 1

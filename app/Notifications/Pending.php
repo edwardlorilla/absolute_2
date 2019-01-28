@@ -18,11 +18,13 @@ class Pending extends Notification
      */
     protected $user;
     protected $transaction;
+    protected $notification_id;
 
-    public function __construct($user,  $transaction)
+    public function __construct($user,  $transaction, $notification_id)
     {
         $this->user= $user;
         $this->transaction= $transaction;
+        $this->notification_id= $notification_id;
     }
 
     /**
@@ -48,7 +50,9 @@ class Pending extends Notification
             'message' =>  $this->user->name . '\'s requested a medicine',
             'data' =>  $this->transaction,
             'user_id' => $this->user->id,
-            'type' => 'medical-request'
+            'type' => 'medical-request',
+            'status' => 'pending',
+            'notification_id' => $this->notification_id
         ];
     }
 }

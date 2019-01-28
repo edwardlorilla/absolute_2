@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 842:
+/***/ 838:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(976)
+var __vue_script__ = __webpack_require__(966)
 /* template */
-var __vue_template__ = __webpack_require__(977)
+var __vue_template__ = __webpack_require__(967)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\UserRequestView\\view.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\view.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3a95fe48", Component.options)
+    hotAPI.createRecord("data-v-6ae28cb5", Component.options)
   } else {
-    hotAPI.reload("data-v-3a95fe48", Component.options)
+    hotAPI.reload("data-v-6ae28cb5", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -230,6 +230,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 exports.default = {
@@ -252,6 +260,14 @@ var render = function() {
       _c("el-table-column", { attrs: { prop: "name", label: "Product Name" } }),
       _vm._v(" "),
       _c("el-table-column", {
+        attrs: { prop: "description", label: "Description" }
+      }),
+      _vm._v(" "),
+      _c("el-table-column", {
+        attrs: { prop: "out_quantity", label: "Quantity" }
+      }),
+      _vm._v(" "),
+      _c("el-table-column", {
         attrs: { prop: "out_quantity", label: "Quantity" }
       })
     ],
@@ -270,7 +286,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 976:
+/***/ 966:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -290,6 +306,7 @@ var _medicalSupply2 = _interopRequireDefault(_medicalSupply);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
 //
 //
 //
@@ -603,7 +620,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 977:
+/***/ 967:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -779,6 +796,7 @@ var render = function() {
                     data: _vm.filteredData,
                     total: _vm.meta.total,
                     filters: _vm.filters,
+                    "action-col": _vm.actionCol,
                     "pagination-props": {
                       background: true,
                       pageSize: _vm.query.per_page,
@@ -830,7 +848,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3a95fe48", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6ae28cb5", module.exports)
   }
 }
 

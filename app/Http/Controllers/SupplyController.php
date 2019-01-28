@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Supply;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class SupplyController extends Controller
 {
     /**
@@ -90,6 +90,9 @@ class SupplyController extends Controller
             'data' => 'required|array|min:1',
         ]);
         $supplies = '';
+        $users = \App\User::whereHas('roles', function ($q) {
+            $q->where('name', 'superadministrator');
+        })->get();
         foreach ($input['data'] as $item) {
             $supply = Supply::whereId(request()->supply_id ? request()->supply_id : $item['supply_id']['id'])->first();
             $supplies = $supply->tracks()->save(new \App\Track(['check' => $item['quantity'], 'type' => 1]));
@@ -101,6 +104,16 @@ class SupplyController extends Controller
                 'pr_number' => $input['pr_number'],
                 'date_delivered' => $input['date_delivered']
             ]);
+            if($supply->quantity <= $supply->reorder_point){
+                if(\App\Notification::where('data', 'like', '%"supply_id":'. $supply->id.'%')->exists()){
+                    \App\Notification::where('data', 'like', '%"supply_id":'. $supply->id.'%')->delete();
+                }
+                foreach ($users as $user) {
+                    $user->notify(new \App\Notifications\Reorder('The supply "' . $supply->name . '" quantity has reached the reorder level.', $supply->reorder_point, $supply->quantity, $supply->id));
+                }
+            }else if(\App\Notification::where('data', 'like', '%"supply_id":'. $supply->id.'%')->exists()){
+                \App\Notification::where('data', 'like', '%"supply_id":'. $supply->id.'%')->delete();
+            }
         }
         //
         return response()->json($supplies, 200);

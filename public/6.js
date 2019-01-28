@@ -1,14 +1,14 @@
-webpackJsonp([6],{
+webpackJsonp([6,9],{
 
-/***/ 838:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(966)
+var __vue_script__ = __webpack_require__(865)
 /* template */
-var __vue_template__ = __webpack_require__(967)
+var __vue_template__ = __webpack_require__(868)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\view.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Requests\\edit.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6ae28cb5", Component.options)
+    hotAPI.createRecord("data-v-d1ad1c72", Component.options)
   } else {
-    hotAPI.reload("data-v-6ae28cb5", Component.options)
+    hotAPI.reload("data-v-d1ad1c72", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,15 +48,15 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 869:
+/***/ 833:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(870)
+var __vue_script__ = __webpack_require__(911)
 /* template */
-var __vue_template__ = __webpack_require__(871)
+var __vue_template__ = __webpack_require__(912)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -73,7 +73,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\medical-request.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Requests\\create.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -82,9 +82,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3d3ebb73", Component.options)
+    hotAPI.createRecord("data-v-e0f0330e", Component.options)
   } else {
-    hotAPI.reload("data-v-3d3ebb73", Component.options)
+    hotAPI.reload("data-v-e0f0330e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -96,7 +96,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 870:
+/***/ 858:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -105,69 +105,87 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
+/**
+ * Created by Edward Lance Lorilla on 7/28/2018.
+ */
 exports.default = {
-    props: ['data']
+    data: function data() {
+        return {
+            isDisabled: false,
+            labelPosition: 'left',
+            errors: []
+        };
+    },
+    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+
+        if (to.params.id) {
+            axios.get('/api/' + to.meta.url + '/' + to.params.id).then(function (response) {
+                next(function (vm) {
+                    return vm.setData(response.data);
+                });
+            });
+        } else {
+            next();
+        }
+    },
+    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
+        var vm = this;
+
+        if (to.params.id) {
+            axios.get('/api/' + to.meta.url + '/' + to.params.id).then(function (response) {
+                vm.setData(response.data);
+                next();
+            });
+        } else {
+            next();
+        }
+    },
+
+    methods: {
+        setData: function setData(row) {
+            var vm = this;
+            vm.optionCustomer.push({ value: row.customer.id, label: row.customer.name });
+            vm.optionDoctor.push({ value: row.doctor.id, label: row.doctor.name });
+            vm.form = {
+                id: row.id,
+                request_date: row.request_date,
+                request_year_code: row.request_year_code,
+                remark: row.remark,
+                doctor: row.doctor.id,
+                customer: row.customer.id,
+                products: []
+
+                //{id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: ''}
+            };_.map(row.transactions, function (q) {
+                var product = q.product;
+                axios.get('/api/products/disabled/' + product.id);
+                return vm.form.products.unshift({
+
+                    id: product.id,
+                    transaction_id: q.id,
+                    name: product.name,
+                    category_id: product.category.name,
+                    package_id: product.package.name,
+                    quantity: product.quantity,
+                    cloneQuantity: product.quantity,
+                    out_quantity: q.out_quantity
+                });
+            });
+        }
+    }
 };
 
 /***/ }),
 
-/***/ 871:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "el-table",
-    { staticStyle: { width: "100%" }, attrs: { data: _vm.data.products } },
-    [
-      _c("el-table-column", { attrs: { prop: "name", label: "Product Name" } }),
-      _vm._v(" "),
-      _c("el-table-column", {
-        attrs: { prop: "out_quantity", label: "Quantity" }
-      })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3d3ebb73", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 872:
+/***/ 859:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(873)
+var __vue_script__ = __webpack_require__(866)
 /* template */
-var __vue_template__ = __webpack_require__(874)
+var __vue_template__ = __webpack_require__(867)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -184,7 +202,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\medical-supply.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Requests\\editProduct.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -193,9 +211,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-49ee6cbb", Component.options)
+    hotAPI.createRecord("data-v-64209450", Component.options)
   } else {
-    hotAPI.reload("data-v-49ee6cbb", Component.options)
+    hotAPI.reload("data-v-64209450", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -207,70 +225,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 873:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-exports.default = {
-    props: ['data']
-};
-
-/***/ }),
-
-/***/ 874:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "el-table",
-    { staticStyle: { width: "100%" }, attrs: { data: _vm.data.supplies } },
-    [
-      _c("el-table-column", { attrs: { prop: "name", label: "Product Name" } }),
-      _vm._v(" "),
-      _c("el-table-column", {
-        attrs: { prop: "out_quantity", label: "Quantity" }
-      })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-49ee6cbb", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 966:
+/***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -280,13 +235,13 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _medicalRequest = __webpack_require__(869);
+var _OperationRequest = __webpack_require__(858);
 
-var _medicalRequest2 = _interopRequireDefault(_medicalRequest);
+var _OperationRequest2 = _interopRequireDefault(_OperationRequest);
 
-var _medicalSupply = __webpack_require__(872);
+var _editProduct = __webpack_require__(859);
 
-var _medicalSupply2 = _interopRequireDefault(_medicalSupply);
+var _editProduct2 = _interopRequireDefault(_editProduct);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -360,243 +315,283 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-var getData = function getData(url, page, callback) {
-    axios.get('/api/' + url, { params: page }).then(function (response) {
-        callback(null, { data: response.data, page: page });
-    }).catch(function (error) {
-        callback(error, error.response.data);
-    });
-};
 exports.default = {
-    components: {
-        'medical-request': _medicalRequest2.default,
-        'medical-supply': _medicalSupply2.default
+    beforeCreate: function beforeCreate() {
+        axios.get('/api/products/mass-update');
     },
+
+    components: {
+        EditProduct: _editProduct2.default
+    },
+    mixins: [_OperationRequest2.default],
     data: function data() {
-        var _this = this;
-
-        var sortOrders = {};
         return {
-            filters: [{
-                value: '',
-                'search_prop': 'id' // define search_prop for backend usage.
-            }],
-            dialogMessage: { title: '', message: '' },
+            option: {
+                penColor: "rgb(0, 0, 0)",
+                backgroundColor: "rgb(255,255,255)"
+            },
+            request_id: 1,
             dialogVisible: false,
-            actionCol: {
-                label: 'Action',
-                props: {
-                    align: 'center'
-                },
-                buttons: [{
-                    props: {
-                        type: 'success',
-                        icon: 'el-icon-edit',
-                        size: 'small'
-                    },
-                    handler: function handler(row) {
+            optionDivision: [],
+            loadingDivision: false,
+            selectDivision: false,
+            isAddDivision: false,
+            division_name: '',
+            division_supply: '',
+            select: false,
+            cloneQuantity: 0,
+            addTable: { id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: '' },
+            columns: [{
+                id: 'name',
+                label: 'Transactions Name'
+            }, {
+                id: 'category_id',
+                label: 'Category Name'
+            }, {
+                id: 'package_id',
+                label: 'Unit'
+            }, {
+                id: 'quantity',
+                label: 'Current Stock'
+            }, {
+                id: 'out_quantity',
+                label: 'Quantity'
+            }],
+            form: {
+                products: [],
+                division: '',
+                request_date: '',
+                request_year_code: ''
 
-                        var vm = _this;
-                        vm.$router.push({
-                            name: row.type === 'App\\Notifications\\Pending' ? 'pending.show' : 'App\\Notifications\\PendingSupply' ? 'pending.supply' : 'error.not-found',
-                            params: { id: row.id }
-                        });
-                    },
-                    label: 'Show'
-                }]
             },
-            query: {
-                page: 1,
-                column: 'id',
-                direction: 'desc',
-                per_page: 15,
-                search_column: 'all',
-                search_operator: 'like',
-                search_input: ''
-            },
-            operators: {
-                equal: '=',
-                not_equal: '<>',
-                less_than: '<',
-                greater_than: '>',
-                less_than_or_equal_to: '<=',
-                greater_than_or_equal_to: '>=',
-                in: 'IN',
-                like: 'LIKE'
-            },
-            columns: [{}],
-            sortKey: '',
-            sortOrders: sortOrders,
-            data: [],
-            meta: {},
-            links: {
-                first: null,
-                last: null,
-                next: null,
-                prev: null
-            },
-            error: null,
-            filterKey: '',
             loading: false,
-            _numberLoad: 0
+            options: []
         };
     },
 
-    computed: {
-        filteredData: function filteredData() {
-            var sortKey = this.sortKey;
-            var filterKey = this.filterKey && this.filterKey.toLowerCase();
-            var order = this.sortOrders[sortKey] || 1;
-            var data = this.data;
-            if (filterKey) {
-                data = data.filter(function (row) {
-                    return Object.keys(row).some(function (key) {
-                        return String(row[key]).toLowerCase().indexOf(filterKey) > -1;
-                    });
-                });
-            }
-            if (sortKey) {
-                data = data.slice().sort(function (a, b) {
-                    a = a[sortKey];
-                    b = b[sortKey];
-                    return (a === b ? 0 : a > b ? 1 : -1) * order;
-                });
-            }
-            return data;
-        },
-        nextPage: function nextPage() {
-            if (!this.meta || this.meta.current_page === this.meta.last_page) {
-                return;
-            }
-            var vm = this;
-            return this.meta.current_page + 1;
-        },
-        prevPage: function prevPage() {
-            if (!this.meta || this.meta.current_page === 1) {
-                return;
-            }
-            var vm = this;
-            return this.meta.current_page - 1;
-        },
-        paginatonCount: function paginatonCount() {
-            if (!this.meta) {
-                return;
-            }
-            var _meta = this.meta,
-                current_page = _meta.current_page,
-                last_page = _meta.last_page;
-
-            return 'Displaying ' + current_page + ' of ' + last_page + ' rows';
-        }
-    },
-    filters: {
-        capitalize: function capitalize(str) {
-            return str.charAt(0).toUpperCase() + str.slice(1);
-        }
-    },
-    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-        getData(to.meta.url, to.query, function (err, data) {
-            next(function (vm) {
-                return vm.setData(err, data);
-            });
-        });
-    },
-    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
-        var _this2 = this;
-
-        getData(to.meta.url, to.query, function (err, data) {
-            _this2.setData(err, data);
-            next();
-        });
-    },
-
     methods: {
-        _delete: function _delete(row) {
+        addDivision: function addDivision() {
             var vm = this;
-            if (row) {
-                vm.loading = true;
-                axios.delete('/api/' + vm.$route.meta.title.toLowerCase() + '/' + row.id).then(function (response) {
-                    vm.data.splice(vm.data.indexOf(row), 1);
-                    vm.loading = false;
-                    vm.dialogVisible = false;
-                    vm.dialogMessage = { title: '', message: '', row: {} };
-                    vm.$message({ message: response.statusText, type: 'success' });
-                }).catch(function (error) {
-                    vm.$message({ message: error.statusText, type: 'warning' });
-                    vm.loading = false;
-                });
-            }
-        },
-        handleClose: function handleClose(done) {
-            this.$confirm('Are you sure to close this dialog?').then(function (_) {
-                done();
-            }).catch(function (_) {});
-        },
-        _create: function _create() {
-            var vm = this;
-            vm.$router.push({ name: vm.$route.meta.title.toLowerCase() + '.create' });
-        },
-
-        sortBy: function sortBy(key) {
-            this.sortKey = key;
-            this.sortOrders[key] = this.sortOrders[key] * -1;
-        },
-        loadData: _.debounce(function (event) {
-            var vm = this;
-
-            vm.loading = true;
-            var option = _.clone(vm.$route.query);
-            if (event.type === 'sort') {
-                option.column = event.sort.prop;
-                option.direction = event.sort.order == 'ascending' ? 'asc' : 'desc';
-            }
-            if (event.type === 'page') {
-                option.page = event.page;
-                option.per_page = event.pageSize;
-            }
-            if (event.type != "init") {
-                if (event.type === 'filter' && vm.filters[0].value.length != 0) {
-                    option.search_column = vm.query.search_column;
-                    option.search_operator = vm.query.search_operator;
-                    option.search_input = vm.filters[0].value;
-                } else {
-                    delete option.search_input;
+            vm.isDisabled = true;
+            axios.post('/api/divisions', {
+                name: vm.division_name,
+                supply_division: vm.division_supply,
+                station: ''
+            }).then(function (response) {
+                vm.$message({ message: response.statusText, type: 'success' });
+                vm.isAddDivision = false;
+                vm.isDisabled = false;
+                vm.optionDivision.push({ value: response.data.id, label: response.data.name });
+                vm.form.division = response.data.id;
+            }).catch(function (error) {
+                if (error.response.data.errors && error.response.data.message) {
+                    vm.$message({ message: error.response.data.message, type: 'error' });
+                    vm.isAddDivision = false;
                 }
-                vm.$router.push({
-                    path: '' + vm.$route.path,
-                    query: option
-                }, function () {
-                    vm.loading = false;
-                }, function () {
-                    vm.loading = false;
+                vm.isDisabled = false;
+            });
+        },
+        onSubmitRequest: function onSubmitRequest() {
+            var vm = this,
+                n = new Date(),
+                y = n.getFullYear(),
+                m = n.getMonth() + 1,
+                d = n.getDate();
+            vm.isDisabled = true;
+            vm.errors = [];
+            vm.form.year = y;
+            vm.form.request_date = m + "/" + d + "/" + y;
+            vm.form.request_year_code = y;
+            axios({
+                method: vm.$route.params.id ? 'PUT' : 'POST',
+                url: '/api/' + (vm.$route.params.id ? vm.$route.meta.url + '/' + vm.$route.params.id : '' + vm.$route.meta.url),
+                data: vm.form
+            }).then(function (response) {
+                vm.$message({ message: response.statusText, type: 'success' });
+                vm.isDisabled = false;
+                vm.form = {
+                    products: [],
+                    name: '',
+                    year: '',
+                    request_date: '',
+                    request_year_code: ''
+                };
+                vm.dialogVisible = true;
+                vm.request_id = response.data.id;
+                vm.$router.push({ name: "requests.print", params: { id: vm.request_id } });
+            }).catch(function (error) {
+                if (error.response.data.errors && error.response.data.message) {
+                    vm.errors = error.response.data.errors;
+                    vm.$message({ message: error.response.data.message, type: 'error' });
+                }
+                vm.isDisabled = false;
+            });
+        },
+        onChangeOutQuantity: function onChangeOutQuantity(e, q) {
+            var vm = this;
+            if (e > q) {
+                vm.addTable.quantity -= e - q;
+            } else {
+                vm.addTable.quantity += q - e;
+            }
+        },
+        onChange: function onChange(e) {
+            var vm = this;
+            vm.select = true;
+            if (e) {
+                vm.addTable = {
+                    id: e.id,
+                    name: e.medicine.name,
+                    category_id: e.category.name,
+                    package_id: e.package.name,
+                    quantity: e.quantity,
+                    out_quantity: 0
+                };
+
+                vm.cloneQuantity = e.quantity;
+                vm.select = false;
+            } else {
+                vm.addTable = { id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: '' };
+                vm.cloneQuantity = 0;
+                vm.select = false;
+            }
+        },
+        addColumn: function addColumn() {
+
+            var message = 'Please input the';
+            var vm = this;
+            if (vm.addTable.id && vm.addTable.name && vm.addTable.category_id && vm.addTable.package_id && vm.addTable.out_quantity) {
+                axios.get('/api/products/disabled/' + vm.addTable.id).then(function (q) {
+                    vm.form.products.unshift(_.clone(vm.addTable));
+                    vm.options = [];
+                    vm.addTable = {
+                        id: '',
+                        name: '',
+                        category_id: '',
+                        package_id: '',
+                        quantity: '',
+                        out_quantity: ''
+                    };
                 });
+            } else {
+
+                if (!!vm.addTable.id) {
+                    message += ' ID |';
+                }
+                if (!!vm.addTable.name) {
+                    message += ' Name |';
+                }
+                if (!!vm.addTable.category_id) {
+                    message += ' Category |';
+                }
+                if (!!vm.addTable.package_id) {
+                    message += ' Package |';
+                }
+                vm.$message({
+                    message: message,
+                    type: 'warning'
+                });
+            }
+        },
+
+        onSearchDivision: _.debounce(function (query, vm) {
+            axios.get('/api/search/divisions?search=' + query).then(function (q) {
+                vm.loadingDivision = false;
+                vm.optionDivision = q.data.map(function (item) {
+                    return { value: item.id, label: item.name };
+                });
+            }).catch(function () {
+                vm.loadingDivision = false;
+            });
+        }, 350),
+        onSearch: _.debounce(function (query, vm) {
+            vm.loading = true;
+            axios.get('/api/search/request-medicine?search=' + query).then(function (q) {
+                vm.loading = false;
+                vm.options = q.data.map(function (item) {
+                    return { value: item, label: item.medicine.name };
+                });
+            }).catch(function () {
+                vm.loading = false;
+            });
+        }, 350),
+        searchDivision: function searchDivision(query) {
+            var vm = this;
+
+            if (query !== '') {
+                vm.loadingDivision = true;
+                vm.onSearchDivision(query, vm);
+            } else {
+                vm.loadingDivision = false;
+                vm.optionDivision = [];
+            }
+        },
+        search_: function search_(query) {
+            var vm = this;
+
+            if (query !== '') {
+                vm.loading = true;
+                vm.onSearch(query, vm);
             } else {
                 vm.loading = false;
-            }
-        }, 500),
-        setData: function setData(err, data) {
-            var vm = this;
-            var notification = vm.$root.store.state.notifications;
-            if (err) {
-                if (err.response.status === 404) {
-                    vm.$router.push({ name: 'error.not-found', params: { '0': '/' } });
-                }
-                vm.error = err.toString();
-            } else {
-                vm.data = notification.data;
-                vm.links.first_page_url = notification.first_page_url;
-                vm.links.last_page_url = notification.last_page_url;
-                vm.links.prev_page_url = notification.prev_page_url;
-                vm.links.next_page_url = notification.next_page_url;
-
-                vm.meta.current_page = notification.current_page;
-                vm.meta.from = notification.from;
-                vm.meta.last_page = notification.last_page;
-                vm.query.per_page = _.parseInt(notification.per_page);
-                vm.meta.to = notification.to;
-                vm.meta.total = notification.total;
-                vm.columns = data.data.columns;
+                vm.option = [];
             }
         }
     }
@@ -604,227 +599,192 @@ exports.default = {
 
 /***/ }),
 
-/***/ 967:
+/***/ 866:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    props: ['item', 'max'],
+    data: function data() {
+        return {
+            edit_: false
+        };
+    },
+
+    methods: {
+        onChangeOutQuantity: function onChangeOutQuantity(e, q) {
+            var vm = this;
+            if (e > q) {
+                vm.item.quantity -= e - q;
+            } else {
+                vm.item.quantity += q - e;
+            }
+        },
+        onEdit: function onEdit() {
+            var vm = this;
+            vm.edit_ = !vm.edit_;
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.data
-    ? _c(
-        "div",
-        { staticClass: "dv" },
-        [
-          _c("div", { staticClass: "dv-header" }, [
-            _c(
-              "div",
-              { staticClass: "dv-header-columns" },
-              [
-                _c("span", { staticClass: "dv-header-pre" }, [
-                  _vm._v("Search: ")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "el-select",
-                  {
-                    attrs: { placeholder: "Select" },
-                    model: {
-                      value: _vm.query.search_column,
-                      callback: function($$v) {
-                        _vm.$set(_vm.query, "search_column", $$v)
-                      },
-                      expression: "query.search_column"
-                    }
-                  },
-                  [
-                    _c("el-option", { attrs: { label: "All", value: "all" } }),
-                    _vm._v(" "),
-                    _vm._l(_vm.columns, function(value, key) {
-                      return _c("el-option", {
-                        key: key,
-                        attrs: { label: value.name, value: value.id }
-                      })
-                    })
-                  ],
-                  2
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "dv-header-operators" },
-              [
-                _c(
-                  "el-select",
-                  {
-                    attrs: { placeholder: "Select" },
-                    model: {
-                      value: _vm.query.search_operator,
-                      callback: function($$v) {
-                        _vm.$set(_vm.query, "search_operator", $$v)
-                      },
-                      expression: "query.search_operator"
-                    }
-                  },
-                  _vm._l(_vm.operators, function(value, key) {
-                    return _c("el-option", {
-                      key: key,
-                      attrs: { label: value, value: key }
-                    })
-                  })
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "dv-header-search" },
-              [
-                _c("el-input", {
-                  attrs: { placeholder: "Search" },
-                  on: {
-                    keyup: function($event) {
-                      if (
-                        !("button" in $event) &&
-                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                      ) {
-                        return null
-                      }
-                      return _vm.loadData($event)
-                    }
-                  },
-                  model: {
-                    value: _vm.filters[0].value,
-                    callback: function($$v) {
-                      _vm.$set(_vm.filters[0], "value", $$v)
-                    },
-                    expression: "filters[0].value"
-                  }
-                })
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "el-dialog",
-            {
-              attrs: {
-                "show-close": false,
-                title: _vm.dialogMessage.title,
-                visible: _vm.dialogVisible,
-                width: "30%",
-                "before-close": _vm.handleClose
-              },
-              on: {
-                "update:visible": function($event) {
-                  _vm.dialogVisible = $event
-                }
+  return _c("tr", [
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input", {
+              attrs: { placeholder: "Product Name" },
+              model: {
+                value: _vm.item.name,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "name", $$v)
+                },
+                expression: "item.name"
               }
-            },
-            [
-              _c("span", [_vm._v(_vm._s(_vm.dialogMessage.message))]),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass: "dialog-footer",
-                  attrs: { slot: "footer" },
-                  slot: "footer"
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.name))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input", {
+              attrs: { placeholder: "Category Name" },
+              model: {
+                value: _vm.item.category_id,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "category_id", $$v)
                 },
-                [
-                  _c(
-                    "el-button",
-                    {
-                      attrs: { disabled: _vm.loading },
-                      on: {
-                        click: function($event) {
-                          _vm.dialogVisible = false
-                        }
-                      }
-                    },
-                    [_vm._v("Cancel")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "el-button",
-                    {
-                      attrs: { loading: _vm.loading, type: "primary" },
-                      on: {
-                        click: function($event) {
-                          _vm._delete(_vm.dialogMessage.row)
-                        }
-                      }
-                    },
-                    [_vm._v("Confirm")]
-                  )
-                ],
-                1
-              )
-            ]
-          ),
-          _vm._v(" "),
-          _vm.nextPage ||
-          _vm.prevPage ||
-          !_vm.nextPage ||
-          !_vm.prevPage ||
-          _vm.meta
-            ? _c(
-                "data-tables-server",
-                {
-                  attrs: {
-                    data: _vm.filteredData,
-                    total: _vm.meta.total,
-                    filters: _vm.filters,
-                    "action-col": _vm.actionCol,
-                    "pagination-props": {
-                      background: true,
-                      pageSize: _vm.query.per_page,
-                      pageSizes: [_vm.query.per_page, 10, 20, 30]
-                    },
-                    "page-size": _vm.query.per_page,
-                    "current-page": _vm.meta.current_page,
-                    loading: _vm.loading
-                  },
-                  on: { "query-change": _vm.loadData }
+                expression: "item.category_id"
+              }
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.category_id))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input", {
+              attrs: { placeholder: "Unit" },
+              model: {
+                value: _vm.item.package_id,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "package_id", $$v)
                 },
-                [
-                  _c("el-table-column", {
-                    attrs: { type: "expand" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function(props) {
-                          return [
-                            _c(props.row.data.type, {
-                              tag: "component",
-                              attrs: { data: props.row.data.data }
-                            })
-                          ]
-                        }
-                      }
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _c("el-table-column", {
-                    attrs: { label: "ID", prop: "notifiable_id" }
-                  }),
-                  _vm._v(" "),
-                  _c("el-table-column", {
-                    attrs: { label: "Message", prop: "data.message" }
-                  })
-                ],
-                1
-              )
-            : _vm._e()
-        ],
-        1
-      )
-    : _vm._e()
+                expression: "item.package_id"
+              }
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.package_id))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input", {
+              attrs: {
+                disabled: true,
+                type: "number",
+                min: "0",
+                max: "addTable.quantity",
+                placeholder: "Current Quantity"
+              },
+              model: {
+                value: _vm.item.quantity,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "quantity", $$v)
+                },
+                expression: "item.quantity"
+              }
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.quantity))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _vm.edit_
+          ? _c("el-input-number", {
+              attrs: { min: 0, max: _vm.max },
+              on: { change: _vm.onChangeOutQuantity },
+              model: {
+                value: _vm.item.out_quantity,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "out_quantity", $$v)
+                },
+                expression: "item.out_quantity"
+              }
+            })
+          : _c("label", [_vm._v(_vm._s(_vm.item.out_quantity))])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      [
+        _c(
+          "el-button",
+          { attrs: { type: "primary" }, on: { click: _vm.onEdit } },
+          [_vm._v(_vm._s(_vm.edit_ ? "Done" : "Edit"))]
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -832,7 +792,1210 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6ae28cb5", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-64209450", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 868:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "el-form",
+        {
+          ref: "form",
+          attrs: {
+            "label-position": _vm.labelPosition,
+            size: "mini",
+            model: _vm.form
+          },
+          nativeOn: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.onSubmit($event)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-5" }, [
+              _c("div", { staticClass: "form-group" }, [
+                !_vm.isAddDivision
+                  ? _c(
+                      "div",
+                      [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-sm" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "el-form-item__label",
+                                attrs: { for: "division" }
+                              },
+                              [_vm._v("Division")]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm text-right" }, [
+                            !_vm.isAddDivision
+                              ? _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-sm btn-link",
+                                    attrs: { type: "button" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.isAddDivision = !_vm.isAddDivision
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "Add Division\n                                "
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "el-select",
+                          {
+                            staticStyle: { width: "100%" },
+                            attrs: {
+                              disabled: _vm.selectDivision,
+                              remote: "",
+                              clearable: "",
+                              filterable: "",
+                              placeholder: "Please enter a keyword",
+                              "remote-method": _vm.searchDivision,
+                              "default-first-option": "",
+                              loading: _vm.loadingDivision
+                            },
+                            model: {
+                              value: _vm.form.division,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "division", $$v)
+                              },
+                              expression: "form.division"
+                            }
+                          },
+                          _vm._l(_vm.optionDivision, function(item, index) {
+                            return _c("el-option", {
+                              key: index,
+                              attrs: { label: item.label, value: item.value }
+                            })
+                          })
+                        )
+                      ],
+                      1
+                    )
+                  : _c("div", [
+                      _c("div", { staticClass: "input-group input-group-sm" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.division_name,
+                              expression: "division_name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { placeholder: "Division Name", type: "text" },
+                          domProps: { value: _vm.division_name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.division_name = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.division_supply,
+                              expression: "division_supply"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            placeholder: "Supply Division Name",
+                            type: "text"
+                          },
+                          domProps: { value: _vm.division_supply },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.division_supply = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "input-group-append" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-success",
+                              attrs: { type: "button" },
+                              on: { click: _vm.addDivision }
+                            },
+                            [_vm._v("Create Division")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-default",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.isAddDivision = false
+                                }
+                              }
+                            },
+                            [_vm._v("Cancel")]
+                          )
+                        ])
+                      ])
+                    ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-12" }, [
+              _c("h3", [_vm._v("Add Items")]),
+              _vm._v(" "),
+              _c("table", { staticClass: "table table-bordered" }, [
+                _c("thead", [
+                  _c("tr", [
+                    _c("th", [_vm._v("Product Name")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Category Name")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Unit")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Current Stock")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Quantity")]),
+                    _vm._v(" "),
+                    _c("th", [_vm._v("Action")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "el-select",
+                            {
+                              attrs: {
+                                disabled: _vm.select,
+                                remote: "",
+                                clearable: "",
+                                filterable: "",
+                                placeholder: "Please enter a keyword",
+                                "remote-method": _vm.search_,
+                                loading: _vm.loading
+                              },
+                              on: { change: _vm.onChange },
+                              model: {
+                                value: _vm.addTable.name,
+                                callback: function($$v) {
+                                  _vm.$set(_vm.addTable, "name", $$v)
+                                },
+                                expression: "addTable.name"
+                              }
+                            },
+                            _vm._l(_vm.options, function(item, index) {
+                              return _c("el-option", {
+                                key: index,
+                                attrs: {
+                                  "value-key": item.value.id,
+                                  label: item.label,
+                                  value: item.value
+                                }
+                              })
+                            })
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c("el-input", {
+                            attrs: {
+                              type: "text",
+                              placeholder: "Category Name"
+                            },
+                            model: {
+                              value: _vm.addTable.category_id,
+                              callback: function($$v) {
+                                _vm.$set(_vm.addTable, "category_id", $$v)
+                              },
+                              expression: "addTable.category_id"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c("el-input", {
+                            attrs: { type: "text", placeholder: "Unit" },
+                            model: {
+                              value: _vm.addTable.package_id,
+                              callback: function($$v) {
+                                _vm.$set(_vm.addTable, "package_id", $$v)
+                              },
+                              expression: "addTable.package_id"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c("el-input", {
+                            attrs: {
+                              disabled: true,
+                              type: "number",
+                              min: "0",
+                              max: "addTable.quantity",
+                              placeholder: "Current Quantity"
+                            },
+                            model: {
+                              value: _vm.addTable.quantity,
+                              callback: function($$v) {
+                                _vm.$set(_vm.addTable, "quantity", $$v)
+                              },
+                              expression: "addTable.quantity"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c("el-input-number", {
+                            attrs: { min: 0, max: _vm.cloneQuantity },
+                            on: { change: _vm.onChangeOutQuantity },
+                            model: {
+                              value: _vm.addTable.out_quantity,
+                              callback: function($$v) {
+                                _vm.$set(_vm.addTable, "out_quantity", $$v)
+                              },
+                              expression: "addTable.out_quantity"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "el-button",
+                            {
+                              attrs: {
+                                type: "primary",
+                                disabled: _vm.addTable.out_quantity === 0
+                              },
+                              on: { click: _vm.addColumn }
+                            },
+                            [_vm._v("Add\n                            ")]
+                          )
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.form.products, function(item, index) {
+                      return _c("edit-product", {
+                        key: index,
+                        attrs: { max: item.cloneQuantity, item: item }
+                      })
+                    })
+                  ],
+                  2
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "el-form-item",
+            [
+              _c(
+                "el-button",
+                {
+                  attrs: {
+                    type: "primary",
+                    disabled: _vm.form.products.length === 0,
+                    loading: _vm.isDisabled
+                  },
+                  on: { click: _vm.onSubmitRequest }
+                },
+                [_vm._v(_vm._s(_vm.$route.meta.type) + "\n            ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                {
+                  attrs: { loading: _vm.isDisabled },
+                  on: {
+                    click: function($event) {
+                      _vm.$router.push("/" + _vm.$route.meta.url)
+                    }
+                  }
+                },
+                [_vm._v("Back")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d1ad1c72", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 911:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _OperationRequest = __webpack_require__(858);
+
+var _OperationRequest2 = _interopRequireDefault(_OperationRequest);
+
+var _editProduct = __webpack_require__(859);
+
+var _editProduct2 = _interopRequireDefault(_editProduct);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    beforeCreate: function beforeCreate() {
+        axios.get('/api/products/mass-update');
+    },
+
+    components: {
+        EditProduct: _editProduct2.default
+    },
+    computed: {
+        isDisabled_c: function isDisabled_c() {
+            var vm = this;
+            console.log(vm.form.products.length === 0);
+            return vm.form.products.length === 0;
+        }
+    },
+    mixins: [_OperationRequest2.default],
+    data: function data() {
+        return {
+            optionCustomer: [],
+            loadingCustomer: false,
+            select: false,
+            selectCustomer: false,
+            cloneQuantity: 0,
+            addTable: { id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: '' },
+            columns: [{
+                id: 'name',
+                label: 'Transactions Name'
+            }, {
+                id: 'category_id',
+                label: 'Category Name'
+            }, {
+                id: 'package_id',
+                label: 'Unit'
+            }, {
+                id: 'quantity',
+                label: 'Current Stock'
+            }, {
+                id: 'out_quantity',
+                label: 'Quantity'
+            }],
+            form: {
+                customer: '',
+                products: [],
+                name: '',
+                year: '',
+                request_date: '',
+                request_year_code: '',
+                remark: ''
+
+            },
+            loading: false,
+            options: []
+        };
+    },
+
+    methods: {
+        onSubmitRequest: function onSubmitRequest() {
+            var vm = this;
+            vm.isDisabled = true;
+            vm.errors = [];
+
+            axios.post('/api/' + vm.$route.meta.url, vm.form).then(function (response) {
+                vm.$message({ message: response.statusText, type: 'success' });
+                vm.isDisabled = false;
+                vm.$refs.form.resetFields();
+                vm.form = { products: [], name: '', year: '', request_date: '', request_year_code: '', remark: '' };
+                vm.$router.push({ name: "requests.print", params: { id: response.data.id } });
+            }).catch(function (error) {
+                if (error.response.data.errors && error.response.data.message) {
+                    vm.errors = error.response.data.errors;
+                    vm.$message({ message: error.response.data.message, type: 'error' });
+                }
+                vm.isDisabled = false;
+            });
+        },
+        onChangeOutQuantity: function onChangeOutQuantity(e, q) {
+            var vm = this;
+            if (e > q) {
+                vm.addTable.quantity -= e - q;
+            } else {
+                vm.addTable.quantity += q - e;
+            }
+        },
+        onChange: function onChange(e) {
+            var vm = this;
+            vm.select = true;
+            if (e) {
+                vm.addTable = {
+                    id: e.id,
+                    name: e.name,
+                    category_id: e.category.name,
+                    package_id: e.package.name,
+                    quantity: e.quantity,
+                    out_quantity: 0
+                };
+
+                vm.cloneQuantity = e.quantity;
+                vm.select = false;
+            } else {
+                vm.addTable = { id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: '' };
+                vm.cloneQuantity = 0;
+                vm.select = false;
+            }
+        },
+        addColumn: function addColumn() {
+
+            var message = 'Please input the';
+            var vm = this;
+            if (vm.addTable.id && vm.addTable.name && vm.addTable.category_id && vm.addTable.package_id && vm.addTable.out_quantity) {
+                axios.get('/api/products/disabled/' + vm.addTable.id).then(function (q) {
+                    vm.form.products.unshift(_.clone(vm.addTable));
+                    vm.options = [];
+                    vm.addTable = { id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: '' };
+                });
+            } else {
+
+                if (!!vm.addTable.id) {
+                    message += ' ID |';
+                }
+                if (!!vm.addTable.name) {
+                    message += ' Name |';
+                }
+                if (!!vm.addTable.category_id) {
+                    message += ' Category |';
+                }
+                if (!!vm.addTable.package_id) {
+                    message += ' Package |';
+                }
+                vm.$message({
+                    message: message,
+                    type: 'warning'
+                });
+            }
+        },
+
+        onSearchCustomer: _.debounce(function (query, vm) {
+            axios.get('/api/search/customers?search=' + query).then(function (q) {
+                vm.loadingCustomer = false;
+                vm.optionCustomer = q.data.map(function (item) {
+                    return { value: item.id, label: item.name };
+                });
+            }).catch(function () {
+                vm.loadingCustomer = false;
+            });
+        }, 350),
+        onSearch: _.debounce(function (query, vm) {
+            axios.get('/api/search/request-medicine?search=' + query).then(function (q) {
+                vm.loading = false;
+                vm.options = q.data.map(function (item) {
+                    return { value: item, label: item.name };
+                });
+            }).catch(function () {
+                vm.loading = false;
+            });
+        }, 350),
+        search_: function search_(query) {
+            var vm = this;
+
+            if (query !== '') {
+                vm.loading = true;
+                vm.onSearch(query, vm);
+            } else {
+                vm.loading = false;
+                vm.option = [];
+            }
+        },
+        searchCustomer: function searchCustomer(query) {
+            var vm = this;
+
+            if (query !== '') {
+                vm.loadingCustomer = true;
+                vm.onSearch(query, vm);
+            } else {
+                vm.loadingCustomer = false;
+                vm.optionCustomer = [];
+            }
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 912:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "el-form",
+    {
+      ref: "form",
+      attrs: {
+        "label-position": _vm.labelPosition,
+        size: "mini",
+        model: _vm.form
+      },
+      nativeOn: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.onSubmit($event)
+        }
+      }
+    },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-3" }, [
+          _c(
+            "div",
+            {
+              staticClass: "el-form-item",
+              class: _vm.errors.remark ? "el-form-item--feedback is-error" : ""
+            },
+            [
+              _c(
+                "label",
+                {
+                  staticClass: "el-form-item__label",
+                  attrs: { for: "remark" }
+                },
+                [_vm._v("Remark")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "el-form-item__content",
+                  staticStyle: { "margin-left": "63px" }
+                },
+                [
+                  _c("div", { staticClass: "el-input el-input--mini" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.remark,
+                          expression: "form.remark"
+                        }
+                      ],
+                      staticClass: "el-input__inner",
+                      attrs: { type: "text", autocomplete: "off" },
+                      domProps: { value: _vm.form.remark },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "remark", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.remark
+                      ? _c("span", { staticClass: "el-input__suffix" }, [
+                          _c("span", { staticClass: "el-input__suffix-inner" }),
+                          _vm._v(" "),
+                          _c("i", {
+                            staticClass:
+                              "el-input__icon el-input__validateIcon el-icon-circle-close"
+                          })
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _vm.errors.remark
+                    ? _c("div", { staticClass: "el-form-item__error" }, [
+                        _vm._v(
+                          "\n                        Please input the remark\n                    "
+                        )
+                      ])
+                    : _vm._e()
+                ]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3" }, [
+          _c(
+            "div",
+            {
+              staticClass: "el-form-item",
+              class: _vm.errors.request_date
+                ? "el-form-item--feedback is-error"
+                : ""
+            },
+            [
+              _c(
+                "label",
+                {
+                  staticClass: "el-form-item__label",
+                  attrs: { for: "request_date" }
+                },
+                [_vm._v("Date")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "el-form-item__content",
+                  staticStyle: { "margin-left": "50px" }
+                },
+                [
+                  _c("div", { staticClass: "el-input el-input--mini" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.request_date,
+                          expression: "form.request_date"
+                        }
+                      ],
+                      staticClass: "el-input__inner",
+                      attrs: { type: "text", autocomplete: "off" },
+                      domProps: { value: _vm.form.request_date },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form,
+                            "request_date",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.request_date
+                      ? _c("span", { staticClass: "el-input__suffix" }, [
+                          _c("span", { staticClass: "el-input__suffix-inner" }),
+                          _vm._v(" "),
+                          _c("i", {
+                            staticClass:
+                              "el-input__icon el-input__validateIcon el-icon-circle-close"
+                          })
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _vm.errors.request_date
+                    ? _c("div", { staticClass: "el-form-item__error" }, [
+                        _vm._v(
+                          "\n                        Please input the Request Data\n                    "
+                        )
+                      ])
+                    : _vm._e()
+                ]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3" }, [
+          _c(
+            "div",
+            {
+              staticClass: "el-form-item",
+              class: _vm.errors.request_year_code
+                ? "el-form-item--feedback is-error"
+                : ""
+            },
+            [
+              _c(
+                "label",
+                {
+                  staticClass: "el-form-item__label",
+                  attrs: { for: "request_year_code" }
+                },
+                [_vm._v("Year Code")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "el-form-item__content",
+                  staticStyle: { "margin-left": "73px" }
+                },
+                [
+                  _c("div", { staticClass: "el-input el-input--mini" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.request_year_code,
+                          expression: "form.request_year_code"
+                        }
+                      ],
+                      staticClass: "el-input__inner",
+                      attrs: { type: "text", autocomplete: "off" },
+                      domProps: { value: _vm.form.request_year_code },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form,
+                            "request_year_code",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.errors.request_year_code
+                      ? _c("span", { staticClass: "el-input__suffix" }, [
+                          _c("span", { staticClass: "el-input__suffix-inner" }),
+                          _vm._v(" "),
+                          _c("i", {
+                            staticClass:
+                              "el-input__icon el-input__validateIcon el-icon-circle-close"
+                          })
+                        ])
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _vm.errors.request_year_code
+                    ? _c("div", { staticClass: "el-form-item__error" }, [
+                        _vm._v(
+                          "\n                        Please input the Request Year Code\n                    "
+                        )
+                      ])
+                    : _vm._e()
+                ]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12" }, [
+          _c("h3", [_vm._v("Add Items")]),
+          _vm._v(" "),
+          _c("table", { staticClass: "table table-bordered" }, [
+            _c("thead", [
+              _c("tr", [
+                _c("th", [_vm._v("Product Name")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Category Name")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Unit")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Current Stock")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Quantity")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Action")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              [
+                _c("tr", [
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "el-select",
+                        {
+                          attrs: {
+                            disabled: _vm.select,
+                            remote: "",
+                            clearable: "",
+                            filterable: "",
+                            placeholder: "Please enter a keyword",
+                            "remote-method": _vm.search_,
+                            loading: _vm.loading
+                          },
+                          model: {
+                            value: _vm.addTable.name,
+                            callback: function($$v) {
+                              _vm.$set(_vm.addTable, "name", $$v)
+                            },
+                            expression: "addTable.name"
+                          }
+                        },
+                        _vm._l(_vm.options, function(item, index) {
+                          return _c("el-option", {
+                            key: index,
+                            attrs: {
+                              "value-key": item.value.id,
+                              label: item.label,
+                              value: item.value
+                            }
+                          })
+                        })
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c("el-input", {
+                        attrs: { type: "text", placeholder: "Category Name" },
+                        model: {
+                          value: _vm.addTable.category_id,
+                          callback: function($$v) {
+                            _vm.$set(_vm.addTable, "category_id", $$v)
+                          },
+                          expression: "addTable.category_id"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c("el-input", {
+                        attrs: { type: "text", placeholder: "Unit" },
+                        model: {
+                          value: _vm.addTable.package_id,
+                          callback: function($$v) {
+                            _vm.$set(_vm.addTable, "package_id", $$v)
+                          },
+                          expression: "addTable.package_id"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          disabled: true,
+                          type: "number",
+                          min: "0",
+                          max: "addTable.quantity",
+                          placeholder: "Current Quantity"
+                        },
+                        model: {
+                          value: _vm.addTable.quantity,
+                          callback: function($$v) {
+                            _vm.$set(_vm.addTable, "quantity", $$v)
+                          },
+                          expression: "addTable.quantity"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c("el-input-number", {
+                        attrs: { min: 0, max: _vm.cloneQuantity },
+                        on: { change: _vm.onChangeOutQuantity },
+                        model: {
+                          value: _vm.addTable.out_quantity,
+                          callback: function($$v) {
+                            _vm.$set(_vm.addTable, "out_quantity", $$v)
+                          },
+                          expression: "addTable.out_quantity"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "el-button",
+                        {
+                          attrs: {
+                            type: "primary",
+                            disabled: _vm.addTable.out_quantity === 0
+                          },
+                          on: { click: _vm.addColumn }
+                        },
+                        [_vm._v("Add\n                        ")]
+                      )
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.form.products, function(item, index) {
+                  return _c("edit-product", {
+                    key: index,
+                    attrs: { max: _vm.cloneQuantity, item: item }
+                  })
+                })
+              ],
+              2
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "el-form-item",
+        [
+          _c(
+            "el-button",
+            {
+              attrs: {
+                type: "primary",
+                disabled: _vm.isDisabled_c,
+                loading: _vm.isDisabled
+              },
+              on: { click: _vm.onSubmitRequest }
+            },
+            [_vm._v(_vm._s(_vm.$route.meta.type))]
+          ),
+          _vm._v(" "),
+          _c(
+            "el-button",
+            {
+              attrs: { disabled: _vm.isDisabled },
+              on: {
+                click: function($event) {
+                  _vm.$router.push("/" + _vm.$route.meta.url)
+                }
+              }
+            },
+            [_vm._v("Cancel")]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e0f0330e", module.exports)
   }
 }
 
