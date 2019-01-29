@@ -25,16 +25,17 @@ class OrderController extends Controller
 
     public function validateCheckin(Request $request)
     {
-        dd($request->all());
         $input = $request->validate([
             'po_number' => 'required|unique:orders,po_number',
             'quantity_per' => 'required',
             'product_id' => 'required',
             'quantity' => 'required',
+            "expiry_date" => "required|after:date_delivered",
             'unit_cost' => 'required',
             'unit' => 'required',
             'dispensing_unit' => 'required'
         ]);
+
         return response()->json(200);
     }
     /**
@@ -58,6 +59,7 @@ class OrderController extends Controller
         $orders = $request->validate([
             'source_id' => 'required',
             'date_delivered' => 'required',
+            "expiry_date" => "required|after:date_delivered",
             'data' => 'required|array|min:1',
             'data.*.po_number' => 'distinct',
         ]);
@@ -78,6 +80,20 @@ class OrderController extends Controller
                 'po_number' => $medicine['po_number'],
                 'date_delivered' => $orders['date_delivered']
             ]);
+            $product = \App\Product::whereId($medicine['product_id']['id'])->with('medicine')->first();
+            if ($product->quantity <= $product->reorder_point) {
+                $users = \App\User::whereHas('roles', function ($q) {
+                    $q->where('name', 'superadministrator');
+                })->get();
+                if (\App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->exists()) {
+                    \App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->delete();
+                }
+                foreach ($users as $user) {
+                    $user->notify(new \App\Notifications\ReorderMedicine('The product "' . $product->name . '" quantity has reached the reorder level.', $product->reorder_point, $product->quantity, $product->id));
+                }
+            } else if (\App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->exists()) {
+                \App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->delete();
+            }
         }
 
         return response()->json();

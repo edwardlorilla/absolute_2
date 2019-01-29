@@ -1,48 +1,54 @@
 webpackJsonp([19],{
 
-/***/ 1008:
+/***/ 476:
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+var disposed = false
+var normalizeComponent = __webpack_require__(13)
+/* script */
+var __vue_script__ = __webpack_require__(937)
+/* template */
+var __vue_template__ = __webpack_require__(941)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Order\\view.vue"
 
-// load the styles
-var content = __webpack_require__(1009);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(98)("20697783", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5ff37e1c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./print_requisition.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5ff37e1c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./print_requisition.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-095574c4", Component.options)
+  } else {
+    hotAPI.reload("data-v-095574c4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 
-/***/ 1009:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(33)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\np {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    font: inherit;\n    vertical-align: baseline\n}\ntable.report-container {\n    page-break-after: always;\n}\nthead.report-header {\n    display: table-header-group;\n}\ntfoot.report-footer {\n    display: table-footer-group;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 1010:
+/***/ 937:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51,523 +57,13 @@ exports.push([module.i, "\np {\n    margin: 0;\n    padding: 0;\n    border: 0;\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _SubjectType = __webpack_require__(938);
+
+var _SubjectType2 = _interopRequireDefault(_SubjectType);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -642,39 +138,230 @@ var getData = function getData(url, page, callback) {
     });
 };
 exports.default = {
+    components: {
+        SubjectType: _SubjectType2.default
+    },
     data: function data() {
+        var _this = this;
+
+        var sortOrders = {};
         return {
-            data: {
-                supplies: []
+            filters: [{
+                value: '',
+                'search_prop': 'id' // define search_prop for backend usage.
+            }],
+            dialogMessage: { title: '', message: '' },
+            dialogVisible: false,
+            actionCol: {
+                label: 'Action',
+                props: {
+                    align: 'center'
+                },
+                buttons: [{
+                    props: {
+                        type: 'primary',
+                        icon: 'el-icon-edit'
+                    },
+                    handler: function handler(row) {
+                        var vm = _this;
+                        vm.$router.push({
+                            name: vm.$route.meta.title.toLowerCase() + '.edit',
+                            params: { id: row.id, row: row }
+                        });
+                    },
+                    label: 'Edit'
+                }, {
+                    handler: function handler(row) {
+                        var vm = _this;
+                        vm.dialogMessage = {
+                            title: 'Delete',
+                            message: 'Are you sure to delete ' + row.id + '?',
+                            row: row
+                        };
+                        vm.dialogVisible = true;
+                    },
+                    label: 'Delete'
+                }]
             },
-            iterateRow: 32,
-            balanceQuantity: 0
+            query: {
+                page: 1,
+                column: 'id',
+                direction: 'desc',
+                per_page: 15,
+                search_column: 'all',
+                search_operator: 'like',
+                search_input: ''
+            },
+            operators: {
+                equal: '=',
+                not_equal: '<>',
+                less_than: '<',
+                greater_than: '>',
+                less_than_or_equal_to: '<=',
+                greater_than_or_equal_to: '>=',
+                in: 'IN',
+                like: 'LIKE'
+            },
+            columns: [{}],
+            sortKey: '',
+            sortOrders: sortOrders,
+            data: [],
+            meta: {},
+            links: {
+                first: null,
+                last: null,
+                next: null,
+                prev: null
+            },
+            error: null,
+            filterKey: '',
+            loading: false,
+            _numberLoad: 0
         };
     },
+
+    computed: {
+        filteredData: function filteredData() {
+            var sortKey = this.sortKey;
+            var filterKey = this.filterKey && this.filterKey.toLowerCase();
+            var order = this.sortOrders[sortKey] || 1;
+            var data = this.data;
+            if (filterKey) {
+                data = data.filter(function (row) {
+                    return Object.keys(row).some(function (key) {
+                        return String(row[key]).toLowerCase().indexOf(filterKey) > -1;
+                    });
+                });
+            }
+            if (sortKey) {
+                data = data.slice().sort(function (a, b) {
+                    a = a[sortKey];
+                    b = b[sortKey];
+                    return (a === b ? 0 : a > b ? 1 : -1) * order;
+                });
+            }
+            return data;
+        },
+        nextPage: function nextPage() {
+            if (!this.meta || this.meta.current_page === this.meta.last_page) {
+                return;
+            }
+            var vm = this;
+            return this.meta.current_page + 1;
+        },
+        prevPage: function prevPage() {
+            if (!this.meta || this.meta.current_page === 1) {
+                return;
+            }
+            var vm = this;
+            return this.meta.current_page - 1;
+        },
+        paginatonCount: function paginatonCount() {
+            if (!this.meta) {
+                return;
+            }
+            var _meta = this.meta,
+                current_page = _meta.current_page,
+                last_page = _meta.last_page;
+
+            return 'Displaying ' + current_page + ' of ' + last_page + ' rows';
+        }
+    },
+    filters: {
+        capitalize: function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-        getData('requisitions/print/' + to.params.id, to.query, function (err, data) {
+        getData(to.meta.url, to.query, function (err, data) {
             next(function (vm) {
                 return vm.setData(err, data);
             });
         });
     },
-    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
-        var _this = this;
 
-        getData('requisitions/print/' + to.params.id, to.query, function (err, data) {
-            _this.setData(err, data);
+    // when route changes and this component is already rendered,
+    // the logic will be slightly different.
+    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
+        var _this2 = this;
+
+        //this.users = this.links = this.meta = null
+        getData(to.meta.url, to.query, function (err, data) {
+            _this2.setData(err, data);
             next();
         });
     },
 
-    computed: {
-        differenceResult: function differenceResult() {
-            var vm = this;
-            return vm.data ? vm.iterateRow - vm.data.supplies.length > 0 ? vm.iterateRow - vm.data.supplies.length : 0 : null;
-        }
-    },
     methods: {
+        _delete: function _delete(row) {
+            var vm = this;
+            if (row) {
+                vm.loading = true;
+                axios.delete('/api/' + vm.$route.meta.title.toLowerCase() + '/' + row.id).then(function (response) {
+                    vm.data.splice(vm.data.indexOf(row), 1);
+                    vm.loading = false;
+                    vm.dialogVisible = false;
+                    vm.dialogMessage = { title: '', message: '', row: {} };
+                    vm.$message({ message: response.statusText, type: 'success' });
+                }).catch(function (error) {
+                    vm.$message({ message: error.statusText, type: 'warning' });
+                    vm.loading = false;
+                });
+            }
+        },
+        handleClose: function handleClose(done) {
+            this.$confirm('Are you sure to close this dialog?').then(function (_) {
+                done();
+            }).catch(function (_) {});
+        },
+        _create: function _create() {
+            var vm = this;
+            vm.$router.push({ name: vm.$route.meta.title.toLowerCase() + '.create' });
+        },
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrders[key] = this.sortOrders[key] * -1;
+        },
+        loadData: _.debounce(function (event) {
+            var vm = this;
+
+            vm.loading = true;
+            var option = _.clone(vm.$route.query);
+
+            if (event.type === 'sort') {
+                option.column = event.sort.prop;
+                option.direction = event.sort.order == 'ascending' ? 'asc' : 'desc';
+            }
+
+            if (event.type === 'page') {
+                option.page = event.page;
+                option.per_page = event.pageSize;
+            }
+            if (event.type != "init") {
+
+                if (event.type === 'filter' && vm.filters[0].value.length != 0) {
+
+                    option.search_column = vm.query.search_column;
+                    option.search_operator = vm.query.search_operator;
+                    option.search_input = vm.filters[0].value;
+                } else {
+                    delete option.search_input;
+                }
+                vm.$router.push({
+                    path: '' + vm.$route.path,
+                    query: option
+                }, function () {
+                    vm.loading = false;
+                }, function () {
+                    vm.loading = false;
+                });
+            } else {
+                vm.loading = false;
+            }
+        }, 500),
         setData: function setData(err, data) {
+            console.log(data);
             var vm = this;
             if (err) {
 
@@ -684,11 +371,23 @@ exports.default = {
 
                 vm.error = err.toString();
             } else {
+                vm.data = data.data.model.data;
+                vm.links.first_page_url = data.data.model.first_page_url;
+                vm.links.last_page_url = data.data.model.last_page_url;
+                vm.links.prev_page_url = data.data.model.prev_page_url;
+                vm.links.next_page_url = data.data.model.next_page_url;
 
-                vm.data = data.data;
-                vm.balanceQuantity = _.reduce(vm.data.supplies, function (sum, item) {
-                    return sum + item.tracks[0].check * (item.unit_cost ? item.unit_cost : 0);
-                }, 0);
+                vm.meta.current_page = data.data.model.current_page;
+                vm.meta.from = data.data.model.from;
+                vm.meta.last_page = data.data.model.last_page;
+                vm.query.per_page = _.parseInt(data.data.model.per_page);
+                vm.meta.to = data.data.model.to;
+                vm.meta.total = data.data.model.total;
+                vm.columns = data.data.columns;
+                if (data.page.search_input) {
+                    vm.filters[0].value = data.page.search_input;
+                }
+                vm.filters[0].search_prop = vm.search_column; // define search_prop for backend usage.
             }
         }
     }
@@ -696,3957 +395,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 1011:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "dv" }, [
-    _c("div", { staticClass: "dv-header" }, [
-      _c(
-        "div",
-        { staticClass: "dv-header-title" },
-        [
-          _c(
-            "el-button",
-            {
-              directives: [
-                {
-                  name: "print",
-                  rawName: "v-print",
-                  value: "#y_request",
-                  expression: "'#y_request'"
-                }
-              ],
-              attrs: { size: "mini", type: "info" }
-            },
-            [_vm._v("Print Requisition And Issue Slip")]
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "WordSection1", attrs: { id: "y_request" } }, [
-      _c("div", { attrs: { align: "center" } }, [
-        _c(
-          "table",
-          {
-            staticClass: "MsoTableGrid report-container",
-            staticStyle: {
-              "border-collapse": "collapse",
-              border: "none",
-              "mso-border-alt": "solid windowtext .5pt",
-              "mso-yfti-tbllook": "1184",
-              "mso-padding-alt": "0in 5.4pt 0in 5.4pt"
-            },
-            attrs: { border: "1", cellspacing: "0", cellpadding: "0" }
-          },
-          [
-            _c("thead", { staticClass: "report-header " }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("tr", { staticStyle: { "mso-yfti-irow": "1" } }, [
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "148.25pt",
-                      border: "solid windowtext 1.0pt",
-                      "border-top": "none",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "198", colspan: "4", valign: "top" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "line-height": "normal"
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Division: " +
-                            _vm._s(
-                              _vm.data.division_id ? _vm.data.division.name : ""
-                            )
-                        )
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "2.25in",
-                      "border-top": "none",
-                      "border-left": "none",
-                      "border-bottom": "solid windowtext 1.0pt",
-                      "border-right": "solid windowtext 1.0pt",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-left-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "216", colspan: "3", valign: "top" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "line-height": "normal"
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "SpellE" }, [
-                          _vm._v(
-                            "Responsibility: " +
-                              _vm._s(_vm.data.responsibilities) +
-                              " "
-                          )
-                        ]),
-                        _vm._v(":")
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "133.5pt",
-                      "border-top": "none",
-                      "border-left": "none",
-                      "border-bottom": "solid windowtext 1.0pt",
-                      "border-right": "solid windowtext 1.0pt",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-left-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "178", colspan: "4", valign: "top" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "line-height": "normal"
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Date: " +
-                            _vm._s(
-                              _vm
-                                .$moment(_vm.data.updated_at)
-                                .format("MM-DD-YY")
-                            )
-                        )
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("tr", { staticStyle: { "mso-yfti-irow": "2" } }, [
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "148.25pt",
-                      border: "solid windowtext 1.0pt",
-                      "border-top": "none",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "198", colspan: "4", valign: "top" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "line-height": "normal"
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Office: " +
-                            _vm._s(_vm.data.office)
-                        )
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(2),
-                _vm._v(" "),
-                _vm._m(3),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "133.5pt",
-                      "border-top": "none",
-                      "border-left": "none",
-                      "border-bottom": "solid windowtext 1.0pt",
-                      "border-right": "solid windowtext 1.0pt",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-left-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "178", colspan: "4", valign: "top" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "line-height": "normal"
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Date: " +
-                            _vm._s(
-                              _vm
-                                .$moment(_vm.data.updated_at)
-                                .format("MM-DD-YY")
-                            )
-                        )
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("tr", { staticStyle: { "mso-yfti-irow": "3" } }, [
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "539.5pt",
-                      border: "solid windowtext 1.0pt",
-                      "border-top": "none",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "719", colspan: "14", valign: "top" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "line-height": "normal"
-                        },
-                        attrs: { align: "center" }
-                      },
-                      [
-                        _vm._v(
-                          "\n                            Source: " +
-                            _vm._s(
-                              _vm.data.source_id ? _vm.data.source.name : ""
-                            )
-                        )
-                      ]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _c("tr", { staticStyle: { "mso-yfti-irow": "5" } }, [
-                _vm._m(5),
-                _vm._v(" "),
-                _vm._m(6),
-                _vm._v(" "),
-                _vm._m(7),
-                _vm._v(" "),
-                _vm._m(8),
-                _vm._v(" "),
-                _vm._m(9),
-                _vm._v(" "),
-                _vm._m(10),
-                _vm._v(" "),
-                _vm._m(11),
-                _vm._v(" "),
-                _vm._m(12),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "60.7pt",
-                      "border-top": "none",
-                      "border-left": "none",
-                      "border-bottom": "solid windowtext 1.0pt",
-                      "border-right": "solid windowtext 1.0pt",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-left-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "81", colspan: "2" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "text-align": "center",
-                          "line-height": "normal"
-                        },
-                        attrs: { align: "center" }
-                      },
-                      [
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "9.0pt",
-                              "font-family": '"Arial",sans-serif'
-                            }
-                          },
-                          [
-                            _vm._v("Total Cost\n                        "),
-                            _c("p", [_vm._v(_vm._s(_vm.balanceQuantity))])
-                          ]
-                        )
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(13)
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tfoot", { staticClass: "report-footer" }, [
-              _c("tr", { staticStyle: { "mso-yfti-irow": "7" } }, [
-                _vm._m(14),
-                _vm._v(" "),
-                _vm._m(15),
-                _vm._v(" "),
-                _vm._m(16),
-                _vm._v(" "),
-                _vm._m(17),
-                _vm._v(" "),
-                _vm._m(18),
-                _vm._v(" "),
-                _vm._m(19),
-                _vm._v(" "),
-                _vm._m(20),
-                _vm._v(" "),
-                _vm._m(21),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  {
-                    staticStyle: {
-                      width: "60.7pt",
-                      "border-top": "none",
-                      "border-left": "none",
-                      "border-bottom": "solid windowtext 1.0pt",
-                      "border-right": "solid windowtext 1.0pt",
-                      "mso-border-top-alt": "solid windowtext .5pt",
-                      "mso-border-left-alt": "solid windowtext .5pt",
-                      "mso-border-alt": "solid windowtext .5pt",
-                      padding: "0in 5.4pt 0in 5.4pt"
-                    },
-                    attrs: { width: "81", colspan: "2" }
-                  },
-                  [
-                    _c(
-                      "p",
-                      {
-                        staticClass: "MsoNormal",
-                        staticStyle: {
-                          "margin-bottom": ".0001pt",
-                          "text-align": "center",
-                          "line-height": "normal"
-                        },
-                        attrs: { align: "center" }
-                      },
-                      [
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "9.0pt",
-                              "font-family": '"Arial",sans-serif'
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(_vm.balanceQuantity) +
-                                "\n                        "
-                            ),
-                            _c("p")
-                          ]
-                        )
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(22)
-              ]),
-              _vm._v(" "),
-              _vm._m(23),
-              _vm._v(" "),
-              _vm._m(24),
-              _vm._v(" "),
-              _vm._m(25),
-              _vm._v(" "),
-              _vm._m(26),
-              _vm._v(" "),
-              _c(
-                "tr",
-                { staticStyle: { "mso-yfti-irow": "12", height: "8.5pt" } },
-                [
-                  _vm._m(27),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        width: "140.7pt",
-                        "border-top": "none",
-                        "border-left": "none",
-                        "border-bottom": "solid windowtext 1.0pt",
-                        "border-right": "solid windowtext 1.0pt",
-                        "mso-border-top-alt": "solid windowtext .5pt",
-                        "mso-border-left-alt": "solid windowtext .5pt",
-                        "mso-border-alt": "solid windowtext .5pt",
-                        padding: "0in 5.4pt 0in 5.4pt",
-                        height: "8.5pt"
-                      },
-                      attrs: { width: "188", colspan: "3" }
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "MsoNormal",
-                          staticStyle: {
-                            "margin-bottom": ".0001pt",
-                            "text-align": "center",
-                            "line-height": "normal"
-                          },
-                          attrs: { align: "center" }
-                        },
-                        [
-                          _c(
-                            "b",
-                            {
-                              staticStyle: { "mso-bidi-font-weight": "normal" }
-                            },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  staticStyle: {
-                                    "font-size": "9.0pt",
-                                    "font-family": '"Arial",sans-serif'
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.$root.store.state.user
-                                        ? _vm.$root.store.state.user.name
-                                        : ""
-                                    ) + "\n                        "
-                                  ),
-                                  _c("p")
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        width: "107.9pt",
-                        "border-top": "none",
-                        "border-left": "none",
-                        "border-bottom": "solid windowtext 1.0pt",
-                        "border-right": "solid windowtext 1.0pt",
-                        "mso-border-top-alt": "solid windowtext .5pt",
-                        "mso-border-left-alt": "solid windowtext .5pt",
-                        "mso-border-alt": "solid windowtext .5pt",
-                        padding: "0in 5.4pt 0in 5.4pt",
-                        height: "8.5pt"
-                      },
-                      attrs: { width: "144", colspan: "4" }
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "MsoNormal",
-                          staticStyle: {
-                            "margin-bottom": ".0001pt",
-                            "text-align": "center",
-                            "line-height": "normal"
-                          },
-                          attrs: { align: "center" }
-                        },
-                        [
-                          _c(
-                            "b",
-                            {
-                              staticStyle: { "mso-bidi-font-weight": "normal" }
-                            },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  staticStyle: {
-                                    "font-size": "9.0pt",
-                                    "font-family": '"Arial",sans-serif'
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.data.division_id
-                                        ? _vm.data.division.supply_division
-                                        : ""
-                                    ) + "\n                        "
-                                  ),
-                                  _c("p")
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    {
-                      staticStyle: {
-                        width: "107.9pt",
-                        "border-top": "none",
-                        "border-left": "none",
-                        "border-bottom": "solid windowtext 1.0pt",
-                        "border-right": "solid windowtext 1.0pt",
-                        "mso-border-top-alt": "solid windowtext .5pt",
-                        "mso-border-left-alt": "solid windowtext .5pt",
-                        "mso-border-alt": "solid windowtext .5pt",
-                        padding: "0in 5.4pt 0in 5.4pt",
-                        height: "8.5pt"
-                      },
-                      attrs: { width: "144", colspan: "2" }
-                    },
-                    [
-                      _c(
-                        "p",
-                        {
-                          staticClass: "MsoNormal",
-                          staticStyle: {
-                            "margin-bottom": ".0001pt",
-                            "text-align": "center",
-                            "line-height": "normal"
-                          },
-                          attrs: { align: "center" }
-                        },
-                        [
-                          _c(
-                            "b",
-                            {
-                              staticStyle: { "mso-bidi-font-weight": "normal" }
-                            },
-                            [
-                              _c(
-                                "span",
-                                {
-                                  staticStyle: {
-                                    "font-size": "9.0pt",
-                                    "font-family": '"Arial",sans-serif'
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.data.location_id
-                                        ? _vm.data.location.name
-                                        : ""
-                                    ) + "\n                        "
-                                  ),
-                                  _c("p")
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm._m(28),
-              _vm._v(" "),
-              _vm._m(29),
-              _vm._v(" "),
-              _vm._m(30),
-              _vm._v(" "),
-              _vm._m(31),
-              _vm._v(" "),
-              _vm._m(32),
-              _vm._v(" "),
-              _vm._m(33)
-            ]),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              { staticClass: "report-content" },
-              [
-                _vm._l(_vm.data.supplies, function(item) {
-                  return _c("tr", { staticStyle: { "mso-yfti-irow": "6" } }, [
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "58.25pt",
-                          border: "solid windowtext 1.0pt",
-                          "border-top": "none",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "78", colspan: "2" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(item.supply_id) +
-                                    "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "31.2pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "42" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(item.unit_id ? item.unit.name : "") +
-                                    "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "58.8pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "78" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(item.description) +
-                                    "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "34.75pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "46" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(item.quantity) +
-                                    "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "59.75pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "80" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(item.unit_cost) +
-                                    "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "67.5pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "90" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    item.unit_cost
-                                      ? item.unit_cost * item.quantity
-                                      : ""
-                                  ) + "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "47.15pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "63", colspan: "2" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    item.tracks ? item.tracks[0].check : ""
-                                  ) + "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "60.7pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "81", colspan: "2" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(item.tracks ? item.unit_cost : "") +
-                                    "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "60.7pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "81", colspan: "2" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    item.tracks
-                                      ? item.tracks[0].check * item.unit_cost
-                                      : ""
-                                  ) + "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "td",
-                      {
-                        staticStyle: {
-                          width: "60.7pt",
-                          "border-top": "none",
-                          "border-left": "none",
-                          "border-bottom": "solid windowtext 1.0pt",
-                          "border-right": "solid windowtext 1.0pt",
-                          "mso-border-top-alt": "solid windowtext .5pt",
-                          "mso-border-left-alt": "solid windowtext .5pt",
-                          "mso-border-alt": "solid windowtext .5pt",
-                          padding: "0in 5.4pt 0in 5.4pt"
-                        },
-                        attrs: { width: "81" }
-                      },
-                      [
-                        _c(
-                          "p",
-                          {
-                            staticClass: "MsoNormal",
-                            staticStyle: {
-                              "margin-bottom": ".0001pt",
-                              "text-align": "center",
-                              "line-height": "normal"
-                            },
-                            attrs: { align: "center" }
-                          },
-                          [
-                            _c(
-                              "span",
-                              {
-                                staticStyle: {
-                                  "font-size": "9.0pt",
-                                  "font-family": '"Arial",sans-serif'
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  _vm._s(
-                                    item.tracks ? item.tracks[0].remarks : ""
-                                  ) + "\n                        "
-                                ),
-                                _c("p")
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                }),
-                _vm._v(" "),
-                _vm._l(_vm.differenceResult, function(item) {
-                  return _vm.differenceResult
-                    ? _c("tr", { staticStyle: { "mso-yfti-irow": "7" } }, [
-                        _vm._m(34, true),
-                        _vm._v(" "),
-                        _vm._m(35, true),
-                        _vm._v(" "),
-                        _vm._m(36, true),
-                        _vm._v(" "),
-                        _vm._m(37, true),
-                        _vm._v(" "),
-                        _vm._m(38, true),
-                        _vm._v(" "),
-                        _vm._m(39, true),
-                        _vm._v(" "),
-                        _vm._m(40, true),
-                        _vm._v(" "),
-                        _vm._m(41, true),
-                        _vm._v(" "),
-                        _vm._m(42, true),
-                        _vm._v(" "),
-                        _vm._m(43, true)
-                      ])
-                    : _vm._e()
-                })
-              ],
-              2
-            )
-          ]
-        )
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "tr",
-      { staticStyle: { "mso-yfti-irow": "0", "mso-yfti-firstrow": "yes" } },
-      [
-        _c(
-          "td",
-          {
-            staticStyle: {
-              width: "539.5pt",
-              border: "solid windowtext 1.0pt",
-              "mso-border-alt": "solid windowtext .5pt",
-              padding: "0in 5.4pt 0in 5.4pt"
-            },
-            attrs: { width: "719", colspan: "14" }
-          },
-          [
-            _c(
-              "p",
-              {
-                staticClass: "MsoNormal",
-                staticStyle: {
-                  "margin-bottom": ".0001pt",
-                  "text-align": "center",
-                  "line-height": "normal"
-                },
-                attrs: { align: "center" }
-              },
-              [
-                _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                  _vm._v(
-                    "REQUISITION AND ISSUE SLIP\n                        "
-                  ),
-                  _c("p")
-                ])
-              ]
-            ),
-            _c(
-              "p",
-              {
-                staticClass: "MsoNormal",
-                staticStyle: {
-                  "margin-bottom": ".0001pt",
-                  "text-align": "center",
-                  "line-height": "normal"
-                },
-                attrs: { align: "center" }
-              },
-              [
-                _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                  _vm._v("City Government of Davao\n                        "),
-                  _c("p")
-                ])
-              ]
-            ),
-            _c(
-              "p",
-              {
-                staticClass: "MsoNormal",
-                staticStyle: {
-                  "margin-bottom": ".0001pt",
-                  "text-align": "center",
-                  "line-height": "normal"
-                },
-                attrs: { align: "center" }
-              },
-              [
-                _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                  _vm._v("LGU ")
-                ])
-              ]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "95.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "128", colspan: "3", valign: "top" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: { "margin-bottom": ".0001pt", "line-height": "normal" }
-          },
-          [_vm._v("\n                            RIS No. ")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "2.25in",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "216", colspan: "3", valign: "top" }
-      },
-      [
-        _c("p", {
-          staticClass: "MsoNormal",
-          staticStyle: { "margin-bottom": ".0001pt", "line-height": "normal" }
-        }),
-        _c("p", [_vm._v(" ")]),
-        _c("p")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "95.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "128", colspan: "3", valign: "top" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: { "margin-bottom": ".0001pt", "line-height": "normal" }
-          },
-          [_vm._v("\n                            SAI No ")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticStyle: { "mso-yfti-irow": "4" } }, [
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "310.25pt",
-            border: "solid windowtext 1.0pt",
-            "border-top": "none",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "414", colspan: "7" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _vm._v("Requisitions ")
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "229.25pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "306", colspan: "7" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _vm._v("Issuance ")
-              ])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "58.25pt",
-          border: "solid windowtext 1.0pt",
-          "border-top": "none",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "78", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("Stock No.\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "31.2pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "42" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("Unit\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "58.8pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "78" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("Description\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "34.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "46" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("QTY\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "59.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "80" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("Unit Cost\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "67.5pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "90" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("Total Cost\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "47.15pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "63", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("QTY\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "60.7pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "81", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("Unit Cost\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "60.7pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "81" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_vm._v("Remarks\n                        "), _c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "58.25pt",
-          border: "solid windowtext 1.0pt",
-          "border-top": "none",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "78", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "31.2pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "42" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "58.8pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "78" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "34.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "46" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "59.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "80" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "67.5pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "90" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "47.15pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "63", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "60.7pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "81", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "9.0pt",
-                    "font-family": '"Arial",sans-serif'
-                  }
-                },
-                [_vm._v("Total:\n                        "), _c("p")]
-              )
-            ])
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "60.7pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "81" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticStyle: { "mso-yfti-irow": "8" } }, [
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "539.5pt",
-            border: "solid windowtext 1.0pt",
-            "border-top": "none",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "719", colspan: "14" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "9.0pt",
-                    "font-family": '"Arial",sans-serif'
-                  }
-                },
-                [_c("p", [_vm._v(" ")])]
-              )
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticStyle: { "mso-yfti-irow": "9" } }, [
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "539.5pt",
-            border: "solid windowtext 1.0pt",
-            "border-top": "none",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "719", colspan: "14" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "9.0pt",
-                    "font-family": '"Arial",sans-serif'
-                  }
-                },
-                [_c("p", [_vm._v(" ")])]
-              )
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticStyle: { "mso-yfti-irow": "10" } }, [
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "40.25pt",
-            border: "solid windowtext 1.0pt",
-            "border-top": "none",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "54" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "9.0pt",
-                    "font-family": '"Arial",sans-serif'
-                  }
-                },
-                [_c("p", [_vm._v(" ")])]
-              )
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "142.75pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "190", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_vm._v("Requested By:\n                        "), _c("p")]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "140.7pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "188", colspan: "3" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_vm._v("Approved By:\n                        "), _c("p")]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_vm._v("Issued By:\n                        "), _c("p")]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "2" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_vm._v("Received By:\n                        "), _c("p")]
-                )
-              ])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticStyle: { "mso-yfti-irow": "11" } }, [
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "40.25pt",
-            border: "solid windowtext 1.0pt",
-            "border-top": "none",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "54", rowspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "9.0pt",
-                    "font-family": '"Arial",sans-serif'
-                  }
-                },
-                [_c("p", [_vm._v(" ")])]
-              )
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "142.75pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "190", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "140.7pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "188", colspan: "3" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "2" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "142.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt",
-          height: "8.5pt"
-        },
-        attrs: { width: "190", colspan: "4" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "9.0pt",
-                    "font-family": '"Arial",sans-serif'
-                  }
-                },
-                [_vm._v("request\n                        "), _c("p")]
-              )
-            ])
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticStyle: { "mso-yfti-irow": "13" } }, [
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "142.75pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "190", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "140.7pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "188", colspan: "3" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "8.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "City Health Office/PSO-Designate\n                        "
-                    ),
-                    _c("p")
-                  ]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_vm._v("Supply Division\n                        "), _c("p")]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "2" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_vm._v("title\n                        "), _c("p")]
-                )
-              ])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { staticStyle: { "mso-yfti-irow": "14" } }, [
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "142.75pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "190", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "140.7pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "188", colspan: "3" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "4" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "td",
-        {
-          staticStyle: {
-            width: "107.9pt",
-            "border-top": "none",
-            "border-left": "none",
-            "border-bottom": "solid windowtext 1.0pt",
-            "border-right": "solid windowtext 1.0pt",
-            "mso-border-top-alt": "solid windowtext .5pt",
-            "mso-border-left-alt": "solid windowtext .5pt",
-            "mso-border-alt": "solid windowtext .5pt",
-            padding: "0in 5.4pt 0in 5.4pt"
-          },
-          attrs: { width: "144", colspan: "2" }
-        },
-        [
-          _c(
-            "p",
-            {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            },
-            [
-              _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-                _c(
-                  "span",
-                  {
-                    staticStyle: {
-                      "font-size": "9.0pt",
-                      "font-family": '"Arial",sans-serif'
-                    }
-                  },
-                  [_c("p", [_vm._v(" ")])]
-                )
-              ])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "tr",
-      { staticStyle: { "mso-yfti-irow": "15", height: "5.0pt" } },
-      [
-        _c(
-          "td",
-          {
-            staticStyle: {
-              width: "539.5pt",
-              border: "none",
-              padding: "0in 5.4pt 0in 5.4pt",
-              height: "5.0pt"
-            },
-            attrs: { width: "719", colspan: "14", valign: "top" }
-          },
-          [
-            _c("p", {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            }),
-            _c("p", [_vm._v(" ")]),
-            _c("p")
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "tr",
-      { staticStyle: { "mso-yfti-irow": "16", height: "5.0pt" } },
-      [
-        _c(
-          "td",
-          {
-            staticStyle: {
-              width: "539.5pt",
-              border: "none",
-              padding: "0in 5.4pt 0in 5.4pt",
-              height: "5.0pt"
-            },
-            attrs: { width: "719", colspan: "14", valign: "top" }
-          },
-          [
-            _c("p", {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            }),
-            _c("p", [_vm._v(" ")]),
-            _c("p")
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "tr",
-      {
-        staticStyle: {
-          "mso-yfti-irow": "17",
-          "mso-yfti-lastrow": "yes",
-          height: "5.0pt"
-        }
-      },
-      [
-        _c(
-          "td",
-          {
-            staticStyle: {
-              width: "539.5pt",
-              border: "none",
-              padding: "0in 5.4pt 0in 5.4pt",
-              height: "5.0pt"
-            },
-            attrs: { width: "719", colspan: "14", valign: "top" }
-          },
-          [
-            _c("p", {
-              staticClass: "MsoNormal",
-              staticStyle: {
-                "margin-bottom": ".0001pt",
-                "text-align": "center",
-                "line-height": "normal"
-              },
-              attrs: { align: "center" }
-            }),
-            _c("p", [_vm._v(" ")]),
-            _c("p")
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", { attrs: { height: "0" } }, [
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "61" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "27" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "48" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "90" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "53" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "90" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "101" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "21" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "51" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "74" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "18" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "21" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "71" } }),
-      _vm._v(" "),
-      _c("td", { staticStyle: { border: "none" }, attrs: { width: "93" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "58.25pt",
-          border: "solid windowtext 1.0pt",
-          "border-top": "none",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "78", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "31.2pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "42" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "58.8pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "78" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "34.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "46" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "59.75pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "80" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "67.5pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "90" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "47.15pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "63", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "60.7pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "81", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c("b", { staticStyle: { "mso-bidi-font-weight": "normal" } }, [
-              _c(
-                "span",
-                {
-                  staticStyle: {
-                    "font-size": "9.0pt",
-                    "font-family": '"Arial",sans-serif'
-                  }
-                },
-                [_c("p")]
-              )
-            ])
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "60.7pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "81", colspan: "2" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "td",
-      {
-        staticStyle: {
-          width: "60.7pt",
-          "border-top": "none",
-          "border-left": "none",
-          "border-bottom": "solid windowtext 1.0pt",
-          "border-right": "solid windowtext 1.0pt",
-          "mso-border-top-alt": "solid windowtext .5pt",
-          "mso-border-left-alt": "solid windowtext .5pt",
-          "mso-border-alt": "solid windowtext .5pt",
-          padding: "0in 5.4pt 0in 5.4pt"
-        },
-        attrs: { width: "81" }
-      },
-      [
-        _c(
-          "p",
-          {
-            staticClass: "MsoNormal",
-            staticStyle: {
-              "margin-bottom": ".0001pt",
-              "text-align": "center",
-              "line-height": "normal"
-            },
-            attrs: { align: "center" }
-          },
-          [
-            _c(
-              "span",
-              {
-                staticStyle: {
-                  "font-size": "9.0pt",
-                  "font-family": '"Arial",sans-serif'
-                }
-              },
-              [_c("p", [_vm._v(" ")])]
-            )
-          ]
-        )
-      ]
-    )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5ff37e1c", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 851:
+/***/ 938:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(1008)
-}
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(1010)
+var __vue_script__ = __webpack_require__(939)
 /* template */
-var __vue_template__ = __webpack_require__(1011)
+var __vue_template__ = __webpack_require__(940)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -4659,7 +420,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Supplies\\print_requisition.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Order\\SubjectType.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -4668,9 +429,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5ff37e1c", Component.options)
+    hotAPI.createRecord("data-v-c3fcd006", Component.options)
   } else {
-    hotAPI.reload("data-v-5ff37e1c", Component.options)
+    hotAPI.reload("data-v-c3fcd006", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -4679,6 +440,301 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ 939:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {
+    props: {
+        subject: String,
+        subjectRow: Object
+    },
+    computed: {
+        subjectLabel: function subjectLabel() {
+            var vm = this,
+                label = "";
+            if (vm.subject == 'App\\Transaction') {
+                label = 'Add a new transaction';
+            } else if (vm.subject == 'App\\Supply' && vm.subjectRow) {
+                label = 'Add a new ' + (vm.subjectRow.type ? 'medicine ' : 'office ') + 'supply to ' + vm.subjectRow.name;
+            }
+            return label;
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 940:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_c("span", [_vm._v(_vm._s(_vm.subjectLabel))])])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-c3fcd006", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 941:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.data
+    ? _c(
+        "div",
+        { staticClass: "dv" },
+        [
+          _c("div", { staticClass: "dv-header" }, [
+            _c(
+              "div",
+              { staticClass: "dv-header-columns" },
+              [
+                _c("span", { staticClass: "dv-header-pre" }, [
+                  _vm._v("Search: ")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "el-select",
+                  {
+                    attrs: { placeholder: "Select" },
+                    model: {
+                      value: _vm.query.search_column,
+                      callback: function($$v) {
+                        _vm.$set(_vm.query, "search_column", $$v)
+                      },
+                      expression: "query.search_column"
+                    }
+                  },
+                  [
+                    _c("el-option", { attrs: { label: "All", value: "all" } }),
+                    _vm._v(" "),
+                    _vm._l(_vm.columns, function(value, key) {
+                      return _c("el-option", {
+                        key: key,
+                        attrs: { label: value.name, value: value.id }
+                      })
+                    })
+                  ],
+                  2
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "dv-header-operators" },
+              [
+                _c(
+                  "el-select",
+                  {
+                    attrs: { placeholder: "Select" },
+                    model: {
+                      value: _vm.query.search_operator,
+                      callback: function($$v) {
+                        _vm.$set(_vm.query, "search_operator", $$v)
+                      },
+                      expression: "query.search_operator"
+                    }
+                  },
+                  _vm._l(_vm.operators, function(value, key) {
+                    return _c("el-option", {
+                      key: key,
+                      attrs: { label: value, value: key }
+                    })
+                  })
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "dv-header-search" },
+              [
+                _c("el-input", {
+                  attrs: { placeholder: "Search" },
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !("button" in $event) &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.loadData($event)
+                    }
+                  },
+                  model: {
+                    value: _vm.filters[0].value,
+                    callback: function($$v) {
+                      _vm.$set(_vm.filters[0], "value", $$v)
+                    },
+                    expression: "filters[0].value"
+                  }
+                })
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "el-dialog",
+            {
+              attrs: {
+                "show-close": false,
+                title: _vm.dialogMessage.title,
+                visible: _vm.dialogVisible,
+                width: "30%",
+                "before-close": _vm.handleClose
+              },
+              on: {
+                "update:visible": function($event) {
+                  _vm.dialogVisible = $event
+                }
+              }
+            },
+            [
+              _c("span", [_vm._v(_vm._s(_vm.dialogMessage.message))]),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass: "dialog-footer",
+                  attrs: { slot: "footer" },
+                  slot: "footer"
+                },
+                [
+                  _c(
+                    "el-button",
+                    {
+                      attrs: { disabled: _vm.loading },
+                      on: {
+                        click: function($event) {
+                          _vm.dialogVisible = false
+                        }
+                      }
+                    },
+                    [_vm._v("Cancel")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-button",
+                    {
+                      attrs: { loading: _vm.loading, type: "primary" },
+                      on: {
+                        click: function($event) {
+                          _vm._delete(_vm.dialogMessage.row)
+                        }
+                      }
+                    },
+                    [_vm._v("Confirm")]
+                  )
+                ],
+                1
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _vm.nextPage ||
+          _vm.prevPage ||
+          !_vm.nextPage ||
+          !_vm.prevPage ||
+          _vm.meta
+            ? _c(
+                "data-tables-server",
+                {
+                  attrs: {
+                    data: _vm.filteredData,
+                    total: _vm.meta.total,
+                    filters: _vm.filters,
+                    "pagination-props": {
+                      background: true,
+                      pageSize: _vm.query.per_page,
+                      pageSizes: [_vm.query.per_page, 10, 20, 30]
+                    },
+                    "page-size": _vm.query.per_page,
+                    "current-page": _vm.meta.current_page,
+                    loading: _vm.loading
+                  },
+                  on: { "query-change": _vm.loadData }
+                },
+                [
+                  _vm._l(_vm.columns, function(title) {
+                    return _c("el-table-column", {
+                      key: title.id,
+                      attrs: {
+                        prop: title.id,
+                        label: title.name,
+                        sortable: "custom"
+                      }
+                    })
+                  }),
+                  _vm._v(" "),
+                  _c("el-table-column", {
+                    attrs: { prop: "subject_type", label: "TYPE" },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(scope) {
+                          return [
+                            _c("subject-type", {
+                              attrs: {
+                                subject: scope.row.subject_type,
+                                "subject-row": scope.row.subject
+                              }
+                            })
+                          ]
+                        }
+                      }
+                    ])
+                  })
+                ],
+                2
+              )
+            : _vm._e()
+        ],
+        1
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-095574c4", module.exports)
+  }
+}
 
 /***/ })
 

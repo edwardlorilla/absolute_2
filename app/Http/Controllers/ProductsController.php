@@ -79,6 +79,7 @@ class ProductsController extends Controller
             'manufacture_date' => 'required',
             'expiry_date' => 'required',*/
             'category_id' => 'required',
+            'reorder_point' => 'required',
             'package_id' => 'required',
            /* 'rack.weight' => 'required',
             'rack.rack_id' => 'required',*/

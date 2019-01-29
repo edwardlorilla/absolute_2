@@ -1,18 +1,22 @@
 webpackJsonp([10],{
 
-/***/ 843:
+/***/ 836:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(922)
+}
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(984)
+var __vue_script__ = __webpack_require__(924)
 /* template */
-var __vue_template__ = __webpack_require__(986)
+var __vue_template__ = __webpack_require__(928)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -25,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\UserRequestView\\Medicine.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Medicine\\view.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0e61ddfd", Component.options)
+    hotAPI.createRecord("data-v-7c7d31a8", Component.options)
   } else {
-    hotAPI.reload("data-v-0e61ddfd", Component.options)
+    hotAPI.reload("data-v-7c7d31a8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,254 +52,49 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 875:
+/***/ 922:
 /***/ (function(module, exports, __webpack_require__) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(13)
-/* script */
-var __vue_script__ = __webpack_require__(876)
-/* template */
-var __vue_template__ = __webpack_require__(877)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\UserRequestView\\editProduct.vue"
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-781571b2", Component.options)
-  } else {
-    hotAPI.reload("data-v-781571b2", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 876:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    props: ['item', 'max'],
-    data: function data() {
-        return {
-            edit_: false
-        };
-    },
-
-    methods: {
-        onChangeOutQuantity: function onChangeOutQuantity(e, q) {
-            var vm = this;
-            if (e > q) {
-                vm.item.quantity -= e - q;
-            } else {
-                vm.item.quantity += q - e;
-            }
-        },
-        onEdit: function onEdit() {
-            var vm = this;
-            vm.edit_ = !vm.edit_;
-        }
-    }
-};
-
-/***/ }),
-
-/***/ 877:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("tr", [
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input", {
-              attrs: { placeholder: "Product Name" },
-              model: {
-                value: _vm.item.name,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "name", $$v)
-                },
-                expression: "item.name"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.name))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input", {
-              attrs: { placeholder: "Category Name" },
-              model: {
-                value: _vm.item.category_id,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "category_id", $$v)
-                },
-                expression: "item.category_id"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.category_id))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input", {
-              attrs: { placeholder: "Unit" },
-              model: {
-                value: _vm.item.package_id,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "package_id", $$v)
-                },
-                expression: "item.package_id"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.package_id))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input", {
-              attrs: {
-                disabled: true,
-                type: "number",
-                min: "0",
-                max: "addTable.quantity",
-                placeholder: "Current Quantity"
-              },
-              model: {
-                value: _vm.item.quantity,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "quantity", $$v)
-                },
-                expression: "item.quantity"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.quantity))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _vm.edit_
-          ? _c("el-input-number", {
-              attrs: { min: 0, max: _vm.max },
-              on: { change: _vm.onChangeOutQuantity },
-              model: {
-                value: _vm.item.out_quantity,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "out_quantity", $$v)
-                },
-                expression: "item.out_quantity"
-              }
-            })
-          : _c("label", [_vm._v(_vm._s(_vm.item.out_quantity))])
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "td",
-      [
-        _c(
-          "el-button",
-          { attrs: { type: "primary" }, on: { click: _vm.onEdit } },
-          [_vm._v(_vm._s(_vm.edit_ ? "Done" : "Edit"))]
-        )
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-781571b2", module.exports)
-  }
+// load the styles
+var content = __webpack_require__(923);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(98)("4d68c1b5", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7c7d31a8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./view.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7c7d31a8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./view.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
 }
 
 /***/ }),
 
-/***/ 984:
+/***/ 923:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(33)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 924:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -305,370 +104,113 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _OperationRequest = __webpack_require__(985);
+var _Grid = __webpack_require__(925);
 
-var _OperationRequest2 = _interopRequireDefault(_OperationRequest);
-
-var _editProduct = __webpack_require__(875);
-
-var _editProduct2 = _interopRequireDefault(_editProduct);
+var _Grid2 = _interopRequireDefault(_Grid);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 exports.default = {
-    beforeCreate: function beforeCreate() {
-        axios.get('/api/products/mass-update');
+    data: function data() {
+        return {
+            columns: [{
+                label: 'Name',
+                prop: 'name',
+                sort: true
+            }],
+            data: []
+        };
     },
 
     components: {
-        EditProduct: _editProduct2.default
+        GridView: _Grid2.default
     },
-    mixins: [_OperationRequest2.default],
-    data: function data() {
-        return {
-            option: {
-                penColor: "rgb(0, 0, 0)",
-                backgroundColor: "rgb(255,255,255)"
-            },
-            request_id: 1,
-            dialogVisible: false,
-            optionDivision: [],
-            loadingDivision: false,
-            selectDivision: false,
-            isAddDivision: false,
-            division_name: '',
-            division_supply: '',
-            select: false,
-            cloneQuantity: 0,
-            addTable: { id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: '' },
-            columns: [{
-                id: 'name',
-                label: 'Transactions Name'
-            }, {
-                id: 'category_id',
-                label: 'Category Name'
-            }, {
-                id: 'package_id',
-                label: 'Unit'
-            }, {
-                id: 'quantity',
-                label: 'Current Stock'
-            }, {
-                id: 'out_quantity',
-                label: 'Quantity'
-            }],
-            form: {
-                products: [],
-                division: '',
-                request_date: '',
-                request_year_code: ''
-
-            },
-            loading: false,
-            options: []
-        };
+    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
+        axios.get('/api/medicines', { params: to.query }).then(function (response) {
+            next(function (vm) {
+                return vm.setData(response.data);
+            });
+        });
     },
-    mounted: function mounted() {},
+    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
+        var vm = this;
+        axios.get('/api/medicines', { params: to.query }).then(function (response) {
+            vm.setData(response.data);
+            next();
+        });
+    },
 
     methods: {
-        addDivision: function addDivision() {
-            var vm = this;
-            vm.isDisabled = true;
-            axios.post('/api/divisions', {
-                name: vm.division_name,
-                supply_division: vm.division_supply,
-                station: ''
-            }).then(function (response) {
-                vm.$message({ message: response.statusText, type: 'success' });
-                vm.isAddDivision = false;
-                vm.isDisabled = false;
-                vm.optionDivision.push({ value: response.data.id, label: response.data.name });
-                vm.form.division = response.data.id;
-            }).catch(function (error) {
-                if (error.response.data.errors && error.response.data.message) {
-                    vm.$message({ message: error.response.data.message, type: 'error' });
-                    vm.isAddDivision = false;
-                }
-                vm.isDisabled = false;
-            });
-        },
-        onSubmitRequest: function onSubmitRequest() {
-            var vm = this,
-                n = new Date(),
-                y = n.getFullYear(),
-                m = n.getMonth() + 1,
-                d = n.getDate();
-            vm.isDisabled = true;
-            vm.errors = [];
-            vm.form.year = y;
-            vm.form.request_date = m + "/" + d + "/" + y;
-            vm.form.request_year_code = y;
-            axios({
-                method: vm.$route.params.id ? 'PUT' : 'POST',
-                url: '/api/' + (vm.$route.params.id ? vm.$route.meta.url + '/' + vm.$route.params.id : '' + vm.$route.meta.url),
-                data: vm.form
-            }).then(function (response) {
-                vm.$message({ message: 'Your request currently under review.', type: 'success' });
-                vm.isDisabled = false;
-                vm.form = {
-                    products: [],
-                    division: '',
-                    name: '',
-                    year: '',
-                    request_date: '',
-                    request_year_code: ''
-                };
-                vm.dialogVisible = true;
-                vm.request_id = response.data.id;
-                //vm.$router.push({name: "requests.print", params: {id: vm.request_id}})
-            }).catch(function (error) {
-                if (error.response.data.errors && error.response.data.message) {
-                    vm.errors = error.response.data.errors;
-                    vm.$message({ message: error.response.data.message, type: 'error' });
-                }
-                vm.isDisabled = false;
-            });
-        },
-        onChangeOutQuantity: function onChangeOutQuantity(e, q) {
-            var vm = this;
-            if (e > q) {
-                vm.addTable.quantity -= e - q;
-            } else {
-                vm.addTable.quantity += q - e;
-            }
-        },
-        onChange: function onChange(e) {
-            var vm = this;
-            vm.select = true;
-            if (e) {
-                vm.addTable = {
-                    id: e.id,
-                    name: e.medicine.name,
-                    category_id: e.category.name,
-                    package_id: e.package.name,
-                    quantity: e.quantity,
-                    out_quantity: 0
-                };
-
-                vm.cloneQuantity = e.quantity;
-                vm.select = false;
-            } else {
-                vm.addTable = { id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: '' };
-                vm.cloneQuantity = 0;
-                vm.select = false;
-            }
-        },
-        addColumn: function addColumn() {
-
-            var message = 'Please input the';
-            var vm = this;
-            if (vm.addTable.id && vm.addTable.name && vm.addTable.category_id && vm.addTable.package_id && vm.addTable.out_quantity) {
-                axios.get('/api/products/disabled/' + vm.addTable.id).then(function (q) {
-                    vm.form.products.unshift(_.clone(vm.addTable));
-                    vm.options = [];
-                    vm.addTable = {
-                        id: '',
-                        name: '',
-                        category_id: '',
-                        package_id: '',
-                        quantity: '',
-                        out_quantity: ''
-                    };
-                });
-            } else {
-
-                if (!!vm.addTable.id) {
-                    message += ' ID |';
-                }
-                if (!!vm.addTable.name) {
-                    message += ' Name |';
-                }
-                if (!!vm.addTable.category_id) {
-                    message += ' Category |';
-                }
-                if (!!vm.addTable.package_id) {
-                    message += ' Package |';
-                }
-                vm.$message({
-                    message: message,
-                    type: 'warning'
-                });
-            }
-        },
-
-        onSearchDivision: _.debounce(function (query, vm) {
-            axios.get('/api/search/divisions?search=' + query).then(function (q) {
-                vm.loadingDivision = false;
-                vm.optionDivision = q.data.map(function (item) {
-                    return { value: item.id, label: item.name };
-                });
-            }).catch(function () {
-                vm.loadingDivision = false;
-            });
-        }, 350),
-        onSearch: _.debounce(function (query, vm) {
-            vm.loading = true;
-            axios.get('/api/search/request-medicine?search=' + query).then(function (q) {
-                vm.loading = false;
-                vm.options = q.data.map(function (item) {
-                    return { value: item, label: item.medicine.name };
-                });
-            }).catch(function () {
-                vm.loading = false;
-            });
-        }, 350),
-        searchDivision: function searchDivision(query) {
-            var vm = this;
-
-            if (query !== '') {
-                vm.loadingDivision = true;
-                vm.onSearchDivision(query, vm);
-            } else {
-                vm.loadingDivision = false;
-                vm.optionDivision = [];
-            }
-        },
-        search_: function search_(query) {
-            var vm = this;
-
-            if (query !== '') {
-                vm.loading = true;
-                vm.onSearch(query, vm);
-            } else {
-                vm.loading = false;
-                vm.option = [];
-            }
+        setData: function setData(response) {
+            this.data = response;
         }
     }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 
-/***/ 985:
+/***/ 925:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(13)
+/* script */
+var __vue_script__ = __webpack_require__(926)
+/* template */
+var __vue_template__ = __webpack_require__(927)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Medicine\\Grid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-dd6c3926", Component.options)
+  } else {
+    hotAPI.reload("data-v-dd6c3926", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 926:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -677,71 +219,167 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-/**
- * Created by Edward Lance Lorilla on 7/28/2018.
- */
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 exports.default = {
+    props: {
+        createName: String,
+        onCreateName: String,
+        onEditName: {
+            type: String,
+            required: true
+        },
+        onDelete: {
+            type: String,
+            required: true
+        },
+        data: {},
+        columns: Array,
+        showEdit: {
+            default: true,
+            type: Boolean
+        },
+        showCreate: {
+            default: true,
+            type: Boolean
+        },
+        showDelete: {
+            default: true,
+            type: Boolean
+        }
+    },
     data: function data() {
-        return {
-            isDisabled: false,
-            labelPosition: 'left',
-            errors: []
-        };
-    },
-    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-
-        if (to.params.id) {
-            axios.get('/api/' + to.meta.url + '/' + to.params.id).then(function (response) {
-                next(function (vm) {
-                    return vm.setData(response.data);
-                });
-            });
-        } else {
-            next();
-        }
-    },
-    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
         var vm = this;
-
-        if (to.params.id) {
-            axios.get('/api/' + to.meta.url + '/' + to.params.id).then(function (response) {
-                vm.setData(response.data);
-                next();
-            });
-        } else {
-            next();
-        }
+        return {
+            search: vm.$route.query.search ? vm.$route.query.search : '',
+            loading: false
+        };
     },
 
     methods: {
-        setData: function setData(row) {
+        handleSortChange: function handleSortChange(val) {
             var vm = this;
-            vm.optionCustomer.push({ value: row.customer.id, label: row.customer.name });
-            vm.optionDoctor.push({ value: row.doctor.id, label: row.doctor.name });
-            vm.form = {
-                id: row.id,
-                request_date: row.request_date,
-                request_year_code: row.request_year_code,
-                remark: row.remark,
-                doctor: row.doctor.id,
-                customer: row.customer.id,
-                products: []
+            var option = _.clone(vm.$route.query);
+            option.column = val.prop;
+            option.direction = val.order == 'ascending' ? 'asc' : 'desc';
+            vm.onRouteChange(option);
+        },
+        handleCurrentChange: function handleCurrentChange(val) {
+            var vm = this;
+            var option = _.clone(vm.$route.query);
+            option.page = val;
+            vm.onRouteChange(option);
+        },
+        onRouteChange: function onRouteChange(option) {
+            var vm = this;
+            vm.loading = true;
+            vm.$router.push({
+                path: '' + vm.$route.path,
+                query: option
+            }, function () {
+                vm.loading = false;
+            }, function () {
+                vm.loading = false;
+            });
+        },
+        search_: function search_() {
+            var vm = this;
+            vm.onSearch(vm.search, vm);
+        },
 
-                //{id: '', name: '', category_id: '', package_id: '', quantity: '', out_quantity: ''}
-            };_.map(row.transactions, function (q) {
-                var product = q.product;
-                axios.get('/api/products/disabled/' + product.id);
-                return vm.form.products.unshift({
+        onSearch: _.debounce(function (query, vm) {
+            var vm = this;
+            vm.loading = true;
+            vm.$router.push({
+                path: '' + vm.$route.path,
+                query: { search: query }
+            }, function () {
+                vm.loading = false;
+            }, function () {
+                vm.loading = false;
+            });
+        }, 500),
+        handleEdit: function handleEdit(index, row) {
+            var vm = this;
+            vm.$router.push({ name: vm.onEditName, params: { id: row.id } });
+        },
+        handleDelete: function handleDelete(index, row) {
+            var _this = this;
 
-                    id: product.id,
-                    transaction_id: q.id,
-                    name: product.name,
-                    category_id: product.category.name,
-                    package_id: product.package.name,
-                    quantity: product.quantity,
-                    cloneQuantity: product.quantity,
-                    out_quantity: q.out_quantity
+            var vm = this;
+            vm.loading = true;
+            vm.$confirm('This will permanently delete the file. Continue?', 'Warning', {
+                confirmButtonText: 'OK',
+                cancelButtonText: 'Cancel',
+                type: 'warning'
+            }).then(function () {
+                axios.delete((vm.onDelete ? vm.onDelete : '/api/agencies') + '/' + row.id);
+                vm.$emit('delete', index);
+                _this.$message({
+                    type: 'success',
+                    message: 'Delete completed'
                 });
+                vm.loading = false;
+            }).catch(function () {
+                _this.$message({
+                    type: 'info',
+                    message: 'Delete canceled'
+                });
+                vm.loading = false;
             });
         }
     }
@@ -749,7 +387,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 986:
+/***/ 927:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -757,224 +395,145 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "el-form",
-    {
-      ref: "form",
-      attrs: {
-        "label-position": _vm.labelPosition,
-        size: "mini",
-        model: _vm.form
-      },
-      nativeOn: {
-        submit: function($event) {
-          $event.preventDefault()
-          return _vm.onSubmit($event)
-        }
-      }
-    },
+    "div",
     [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-12" }, [
-          _c("h3", [_vm._v("Add Items")]),
-          _vm._v(" "),
-          _c("table", { staticClass: "table table-bordered" }, [
-            _c("thead", [
-              _c("tr", [
-                _c("th", [_vm._v("Product Name")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Category Name")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Unit")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Current Stock")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Quantity")]),
-                _vm._v(" "),
-                _c("th", [_vm._v("Action")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              [
-                _c("tr", [
-                  _c(
-                    "td",
-                    [
-                      _c(
-                        "el-select",
-                        {
-                          attrs: {
-                            disabled: _vm.select,
-                            remote: "",
-                            clearable: "",
-                            filterable: "",
-                            placeholder: "Please enter a keyword",
-                            "remote-method": _vm.search_,
-                            loading: _vm.loading
-                          },
-                          on: { change: _vm.onChange },
-                          model: {
-                            value: _vm.addTable.name,
-                            callback: function($$v) {
-                              _vm.$set(_vm.addTable, "name", $$v)
-                            },
-                            expression: "addTable.name"
-                          }
-                        },
-                        _vm._l(_vm.options, function(item, index) {
-                          return _c("el-option", {
-                            key: index,
-                            attrs: {
-                              "value-key": item.value.id,
-                              label: item.label,
-                              value: item.value
-                            }
-                          })
-                        })
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    [
-                      _c("el-input", {
-                        attrs: { type: "text", placeholder: "Category Name" },
-                        model: {
-                          value: _vm.addTable.category_id,
-                          callback: function($$v) {
-                            _vm.$set(_vm.addTable, "category_id", $$v)
-                          },
-                          expression: "addTable.category_id"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    [
-                      _c("el-input", {
-                        attrs: { type: "text", placeholder: "Unit" },
-                        model: {
-                          value: _vm.addTable.package_id,
-                          callback: function($$v) {
-                            _vm.$set(_vm.addTable, "package_id", $$v)
-                          },
-                          expression: "addTable.package_id"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    [
-                      _c("el-input", {
-                        attrs: {
-                          disabled: true,
-                          type: "number",
-                          min: "0",
-                          max: "addTable.quantity",
-                          placeholder: "Current Quantity"
-                        },
-                        model: {
-                          value: _vm.addTable.quantity,
-                          callback: function($$v) {
-                            _vm.$set(_vm.addTable, "quantity", $$v)
-                          },
-                          expression: "addTable.quantity"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    [
-                      _c("el-input-number", {
-                        attrs: { min: 0, max: _vm.cloneQuantity },
-                        on: { change: _vm.onChangeOutQuantity },
-                        model: {
-                          value: _vm.addTable.out_quantity,
-                          callback: function($$v) {
-                            _vm.$set(_vm.addTable, "out_quantity", $$v)
-                          },
-                          expression: "addTable.out_quantity"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "td",
-                    [
-                      _c(
-                        "el-button",
-                        {
-                          attrs: {
-                            type: "primary",
-                            disabled: _vm.addTable.out_quantity === 0
-                          },
-                          on: { click: _vm.addColumn }
-                        },
-                        [_vm._v("Add\n                        ")]
-                      )
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.form.products, function(item, index) {
-                  return _c("edit-product", {
-                    key: index,
-                    attrs: { max: item.cloneQuantity, item: item }
-                  })
-                })
-              ],
-              2
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
       _c(
-        "el-form-item",
+        "el-row",
         [
-          _c(
-            "el-button",
-            {
-              attrs: {
-                type: "primary",
-                disabled: !_vm.form.products.length,
-                loading: _vm.isDisabled
-              },
-              on: { click: _vm.onSubmitRequest }
-            },
-            [_vm._v("Submit\n        ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "el-button",
-            {
-              attrs: { loading: _vm.isDisabled },
-              on: {
-                click: function($event) {
-                  _vm.$router.push("/" + _vm.$route.meta.url)
-                }
-              }
-            },
-            [_vm._v("Back")]
-          )
+          _vm.onCreateName && _vm.showCreate
+            ? _c(
+                "el-col",
+                { attrs: { span: 6 } },
+                [
+                  _c(
+                    "el-button",
+                    {
+                      attrs: { type: "primary" },
+                      on: {
+                        click: function($event) {
+                          _vm.$router.push({ name: _vm.onCreateName })
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.createName))]
+                  )
+                ],
+                1
+              )
+            : _vm._e()
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _vm.data
+        ? _c(
+            "el-table",
+            {
+              directives: [
+                {
+                  name: "loading",
+                  rawName: "v-loading",
+                  value: _vm.loading,
+                  expression: "loading"
+                }
+              ],
+              staticStyle: { width: "100%" },
+              attrs: { data: _vm.data.data },
+              on: { "sort-change": _vm.handleSortChange }
+            },
+            [
+              _vm._t("default"),
+              _vm._v(" "),
+              _vm._l(_vm.columns, function(column, index, key) {
+                return _c("el-table-column", {
+                  key:
+                    index + "-" + key + "-" + column.prop + "-" + column.label,
+                  attrs: {
+                    sortable: column.sort ? true : false,
+                    label: column.label,
+                    prop: column.prop
+                  }
+                })
+              }),
+              _vm._v(" "),
+              _c("el-table-column", {
+                attrs: { align: "right" },
+                scopedSlots: _vm._u([
+                  {
+                    key: "header",
+                    fn: function(scope) {
+                      return [
+                        _c("el-input", {
+                          attrs: {
+                            size: "mini",
+                            placeholder: "Type to search"
+                          },
+                          on: { input: _vm.search_ },
+                          model: {
+                            value: _vm.search,
+                            callback: function($$v) {
+                              _vm.search = $$v
+                            },
+                            expression: "search"
+                          }
+                        })
+                      ]
+                    }
+                  },
+                  {
+                    key: "default",
+                    fn: function(scope) {
+                      return [
+                        _vm.showEdit
+                          ? _c(
+                              "el-button",
+                              {
+                                attrs: { size: "mini" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.handleEdit(scope.$index, scope.row)
+                                  }
+                                }
+                              },
+                              [_vm._v("Edit\n                ")]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.showDelete
+                          ? _c(
+                              "el-button",
+                              {
+                                attrs: { size: "mini", type: "danger" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.handleDelete(scope.$index, scope.row)
+                                  }
+                                }
+                              },
+                              [_vm._v("Delete\n                ")]
+                            )
+                          : _vm._e()
+                      ]
+                    }
+                  }
+                ])
+              })
+            ],
+            2
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.data
+        ? _c("el-pagination", {
+            attrs: {
+              "current-page": _vm.data.current_page,
+              "page-size": _vm.data.per_page,
+              layout: "total, prev, pager, next, jumper",
+              total: _vm.data.total
+            },
+            on: { "current-change": _vm.handleCurrentChange }
+          })
+        : _vm._e()
     ],
     1
   )
@@ -985,7 +544,48 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0e61ddfd", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-dd6c3926", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 928:
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("grid-view", {
+        attrs: {
+          columns: _vm.columns,
+          data: _vm.data.model,
+          "create-name": "Add Medicine",
+          "on-delete": "/api/medicines",
+          "on-edit-name": "edit-medicine",
+          "on-create-name": "create-medicine"
+        },
+        on: {
+          delete: function($event) {
+            _vm.data.model.data.splice($event, 1)
+          }
+        }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7c7d31a8", module.exports)
   }
 }
 

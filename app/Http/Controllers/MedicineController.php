@@ -14,17 +14,13 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $model = Medicine::searchPaginateAndOrder();
+        $columns = Medicine::$columns;
+        return response()
+            ->json([
+                'model' => $model,
+                'columns' => $columns
+            ], 200);
     }
 
     /**
@@ -35,7 +31,14 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $this->validate($request, [
+            'name' => 'required'
+        ]);
+        $model = Medicine::updateOrCreate(
+            ['id' => $request->id],
+            $input
+        );
+        return response()->json($model, 201);
     }
 
     /**
@@ -46,18 +49,7 @@ class MedicineController extends Controller
      */
     public function show(Medicine $medicine)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Medicine  $medicine
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Medicine $medicine)
-    {
-        //
+        return response()->json($medicine, 200);
     }
 
     /**
@@ -80,6 +72,7 @@ class MedicineController extends Controller
      */
     public function destroy(Medicine $medicine)
     {
-        //
+        $medicine->delete();
+        return response()->json(null, 204);
     }
 }

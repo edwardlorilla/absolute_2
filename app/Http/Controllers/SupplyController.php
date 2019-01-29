@@ -109,7 +109,7 @@ class SupplyController extends Controller
                     \App\Notification::where('data', 'like', '%"supply_id":'. $supply->id.'%')->delete();
                 }
                 foreach ($users as $user) {
-                    $user->notify(new \App\Notifications\Reorder('The supply "' . $supply->name . '" quantity has reached the reorder level.', $supply->reorder_point, $supply->quantity, $supply->id));
+                    $user->notify(new \App\Notifications\Reorder('The supply "' . $supply->name . '" quantity has reached the reorder level.', $supply->reorder_point, $supply->quantity, $supply->id, $supply->type));
                 }
             }else if(\App\Notification::where('data', 'like', '%"supply_id":'. $supply->id.'%')->exists()){
                 \App\Notification::where('data', 'like', '%"supply_id":'. $supply->id.'%')->delete();

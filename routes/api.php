@@ -27,9 +27,11 @@ Route::middleware(['auth:api'])->group(function () {
     Route::get('/products/edit/{product}', 'ProductsController@edit');
     Route::get('/dashboard', function () {
         $products = \App\Transaction::with(['product' => function ($q) {
-            $q->select('id', 'medication');
+            $q->select('id', 'medication', 'medicine_id')->with('medicine');
         }])->get();
-        return response()->json($products);
+
+        $notifications = \App\Notification::whereNotNull('read_at')->with('notifiable')->paginate();
+        return response()->json(['transactions'=>$products, 'notifications' => $notifications]);
     });
     Route::get('/search/doctors', function () {
         $roles = \App\Role::whereId('3')->with(['users' => function ($q) {
@@ -45,15 +47,15 @@ Route::middleware(['auth:api'])->group(function () {
     });
 
     Route::post('/products/{product}/check-item', function (Request $request, App\Product $product) {
-       if(!$request['quantity']){
-           $request['quantity'] = null;
-       }
-        if(!$request['unit_cost']){
-           $request['unit_cost'] = null;
-       }
-        if(!$request['quantity_per']){
-           $request['quantity_per'] = null;
-       }
+        if (!$request['quantity']) {
+            $request['quantity'] = null;
+        }
+        if (!$request['unit_cost']) {
+            $request['unit_cost'] = null;
+        }
+        if (!$request['quantity_per']) {
+            $request['quantity_per'] = null;
+        }
 
         $request->validate([
             "po_number" => "required|unique:orders,po_number",
@@ -81,6 +83,22 @@ Route::middleware(['auth:api'])->group(function () {
             'po_number' => $request->po_number,
             'date_delivered' => $request->date_delivered
         ]);
+
+        if ($product->quantity <= $product->reorder_point) {
+            $users = \App\User::whereHas('roles', function ($q) {
+                $q->where('name', 'superadministrator');
+            })->get();
+            $product_ = \App\Product::whereId($product->id)->with('medicine')->first();
+            if (\App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->exists()) {
+                \App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->delete();
+            }
+            foreach ($users as $user) {
+                $user->notify(new \App\Notifications\ReorderMedicine('The product "' . $product_->name . '" quantity has reached the reorder level.', $product->reorder_point, $product->quantity, $product->id));
+            }
+        } else if (\App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->exists()) {
+            \App\Notification::where('data', 'like', '%"product_id":' . $product->id . '%')->delete();
+        }
+
         return response()->json($product->transactions()->whereId($transaction->id)->with('user', 'product')->first());
     });
     Route::get('/products/mass-update', function () {
@@ -121,7 +139,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::get('/search/products', function () {
         $select = new App\Product;
         if (request()->has('search')) {
-            $select = App\Product::with(['package', 'category', 'medicine' => function($q){
+            $select = App\Product::with(['package', 'category', 'medicine' => function ($q) {
                 $q->where('name', 'LIKE', '%' . request('search') . "%");
             }])->get();
         }
@@ -199,7 +217,7 @@ Route::middleware(['auth:api'])->group(function () {
             $select = App\Supply::where('name', 'LIKE', '%' . request('search') . "%")
                 ->where('disabled', false)
                 ->get()
-                ->filter(function($item) {
+                ->filter(function ($item) {
                     return $item->quantity > 0 && $item->disabled == false;
                 });
         }
@@ -210,13 +228,13 @@ Route::middleware(['auth:api'])->group(function () {
         $select = new App\Product;
 
         if (request()->has('search')) {
-            $select = App\Product::with(['package', 'category', 'medicine' => function($q){
+            $select = App\Product::with(['package', 'category', 'medicine' => function ($q) {
                 $q->where('name', 'LIKE', '%' . request('search') . "%");
             }])->where('disabled', false)
                 ->get()
-                ->filter(function($item) {
-                return $item->quantity >  0 && $item->disabled == false &&  $item->expiry_date > Carbon::parse()->format('Y-m-d');
-            });
+                ->filter(function ($item) {
+                    return $item->quantity > 0 && $item->disabled == false && $item->expiry_date > Carbon::parse()->format('Y-m-d');
+                });
         }
         return response()->json($select, 200);
     });//request medicine
@@ -245,6 +263,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/orders/validate-checkin', 'OrderController@validateCheckin');
     Route::apiResources([
         '/users' => 'UserController',
+        '/medicines' => 'MedicineController',
         '/packs' => 'PacksController',
         '/categories' => 'CategoriesController',
         '/packages' => 'PackagesController',

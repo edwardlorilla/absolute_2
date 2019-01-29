@@ -1,18 +1,18 @@
 webpackJsonp([29],{
 
-/***/ 481:
+/***/ 478:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(957)
+  __webpack_require__(943)
 }
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(959)
+var __vue_script__ = __webpack_require__(945)
 /* template */
-var __vue_template__ = __webpack_require__(960)
+var __vue_template__ = __webpack_require__(946)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Office\\view.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Table\\Product.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bbaa5fac", Component.options)
+    hotAPI.createRecord("data-v-0b343c34", Component.options)
   } else {
-    hotAPI.reload("data-v-bbaa5fac", Component.options)
+    hotAPI.reload("data-v-0b343c34", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,23 +52,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 957:
+/***/ 943:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(958);
+var content = __webpack_require__(944);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(98)("30a4a550", content, false, {});
+var update = __webpack_require__(98)("6f5f77d3", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bbaa5fac\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./view.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-bbaa5fac\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./view.vue");
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0b343c34\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Product.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0b343c34\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Product.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 958:
+/***/ 944:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(false);
@@ -94,7 +94,7 @@ exports.push([module.i, "\n.el-table .warning-row {\n    background: oldlace;\n}
 
 /***/ }),
 
-/***/ 959:
+/***/ 945:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -103,6 +103,36 @@ exports.push([module.i, "\n.el-table .warning-row {\n    background: oldlace;\n}
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -212,7 +242,7 @@ exports.default = {
                     var row = _ref.row,
                         rowIndex = _ref.rowIndex;
 
-                    if (row.reorder_point >= row.quantity) {
+                    if (new Date(row.expiry_date).getTime() <= new Date().getTime()) {
                         return 'warning-row';
                     } else {
                         return 'success-row';
@@ -220,7 +250,12 @@ exports.default = {
                     return '';
                 }
             },
+            checkItemDialog: false,
+            checkItemDialogMessage: { title: '', message: '' },
             filters: [{
+                value: '',
+                'search_prop': 'id' // define search_prop for backend usage.
+            }, {
                 value: '',
                 'search_prop': 'id' // define search_prop for backend usage.
             }],
@@ -228,47 +263,40 @@ exports.default = {
             dialogVisible: false,
             actionCol: {
                 label: 'Action',
+                width: 180,
                 props: {
                     align: 'center'
                 },
                 buttons: [{
                     props: {
                         type: 'primary',
-                        icon: 'el-icon-edit',
-                        size: 'mini'
+                        icon: 'el-icon-edit'
                     },
                     handler: function handler(row) {
                         var vm = _this;
                         vm.$router.push({
-                            name: 'office-supply.edit',
+                            name: vm.$route.meta.title.toLowerCase() + '.edit',
                             params: { id: row.id, row: row }
                         });
                     },
                     label: 'Edit'
                 }, {
-                    props: {
-                        type: 'primary',
-                        size: 'mini'
-                    },
                     handler: function handler(row) {
                         var vm = _this;
-                        vm.$router.push({
-                            name: "office.supplies.check",
-                            params: { id: row.id, row: row }
+                        axios.delete('/api/products/' + row.id).then(function () {
+                            vm.data.splice(vm.data.indexOf(row), 1);
                         });
                     },
-                    label: 'Check'
+                    label: 'Delete'
                 }, {
                     handler: function handler(row) {
                         var vm = _this;
-                        vm.dialogMessage = {
-                            title: 'Delete',
-                            message: 'Are you sure to delete ' + row.id + '?',
-                            row: row
-                        };
-                        vm.dialogVisible = true;
+                        vm.$router.push({
+                            name: vm.$route.meta.title.toLowerCase() + '.edit.check-item',
+                            params: { id: row.id, row: row }
+                        });
                     },
-                    label: 'Delete'
+                    label: 'Check Item'
                 }]
             },
             query: {
@@ -280,6 +308,7 @@ exports.default = {
                 search_operator: 'like',
                 search_input: ''
             },
+
             operators: {
                 equal: '=',
                 not_equal: '<>',
@@ -290,21 +319,25 @@ exports.default = {
                 in: 'IN',
                 like: 'LIKE'
             },
+
             columns: [{}],
             sortKey: '',
             sortOrders: sortOrders,
             data: [],
             meta: {},
+
             links: {
                 first: null,
                 last: null,
                 next: null,
                 prev: null
             },
+
             error: null,
             filterKey: '',
             loading: false,
-            _numberLoad: 0
+            _numberLoad: 0,
+            categories: []
         };
     },
 
@@ -361,7 +394,8 @@ exports.default = {
         }
     },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-        getData(to.meta.url + '?type=0', to.query, function (err, data) {
+        getData(to.meta.url, to.query, function (err, data) {
+
             next(function (vm) {
                 return vm.setData(err, data);
             });
@@ -370,38 +404,27 @@ exports.default = {
 
     // when route changes and this component is already rendered,
     // the logic will be slightly different.
+
     beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
         var _this2 = this;
 
         //this.users = this.links = this.meta = null
-        getData(to.meta.url + '?type=0', to.query, function (err, data) {
+        getData(to.meta.url, to.query, function (err, data) {
             _this2.setData(err, data);
             next();
         });
     },
 
     methods: {
-        receiveItem: function receiveItem() {
+        addNewPO: function addNewPO() {
             var vm = this;
-            vm.$router.push({ name: "requests.office-receive-item.create" });
-        },
-        requestSupply: function requestSupply() {
-            var vm = this;
-            vm.$router.push({ name: "supplies.request" });
-        },
-        createPO: function createPO() {
-            var vm = this;
-            vm.$router.push({ name: "supplies.purchase-order.create" });
-        },
-        printRequest: function printRequest() {
-            var vm = this;
-            vm.$router.push({ name: "supplies.print" });
+            vm.$router.push({ name: "product.purchare-order" });
         },
         _delete: function _delete(row) {
             var vm = this;
             if (row) {
                 vm.loading = true;
-                axios.delete('/api/' + vm.$route.meta.title.toLowerCase() + '/' + row.id).then(function (response) {
+                axios.delete('/api/' + vm.$route.meta.url + '/' + row.id).then(function (response) {
                     vm.data.splice(vm.data.indexOf(row), 1);
                     vm.loading = false;
                     vm.dialogVisible = false;
@@ -420,7 +443,7 @@ exports.default = {
         },
         _create: function _create() {
             var vm = this;
-            vm.$router.push({ name: "supplies.create.office-supply" });
+            vm.$router.push({ name: vm.$route.meta.title.toLowerCase() + '.create' });
         },
 
         sortBy: function sortBy(key) {
@@ -428,28 +451,28 @@ exports.default = {
             this.sortOrders[key] = this.sortOrders[key] * -1;
         },
         loadData: _.debounce(function (event) {
+
             var vm = this;
 
             vm.loading = true;
             var option = _.clone(vm.$route.query);
-
             if (event.type === 'sort') {
                 option.column = event.sort.prop;
                 option.direction = event.sort.order == 'ascending' ? 'asc' : 'desc';
             }
-
-            if (event.type === 'page') {
-                option.page = event.page;
-                option.per_page = event.pageSize;
-            }
             if (event.type != "init") {
-
-                if (event.type === 'filter' && vm.filters[0].value.length != 0) {
-
+                if (event.type === 'page') {
+                    option.page = event.page;
+                    option.per_page = event.pageSize;
+                }
+                if (event.type === 'filter' && !_.isEmpty(vm.filters[0].value)) {
                     option.search_column = vm.query.search_column;
                     option.search_operator = vm.query.search_operator;
                     option.search_input = vm.filters[0].value;
+                } else if (event.type === 'filter' && !_.isEmpty(vm.filters[1].value)) {
+                    option.category_id = vm.filters[1].value.toString();
                 } else {
+                    delete option.category_id;
                     delete option.search_input;
                 }
                 vm.$router.push({
@@ -457,6 +480,14 @@ exports.default = {
                     query: option
                 }, function () {
                     vm.loading = false;
+                    if (option.search_input == '') {
+                        delete option.search_input;
+                        vm.filters[0].value = '';
+                    }
+                    if (option.category_id == '') {
+                        delete option.category_id;
+                        vm.filters[1].value = '';
+                    }
                 }, function () {
                     vm.loading = false;
                 });
@@ -465,7 +496,6 @@ exports.default = {
             }
         }, 500),
         setData: function setData(err, data) {
-            console.log(data);
             var vm = this;
             if (err) {
 
@@ -475,9 +505,17 @@ exports.default = {
 
                 vm.error = err.toString();
             } else {
-                console.log(data);
                 vm.data = data.data.model.data;
-                console.log(vm.data);
+                /*
+                *---------------------relationship------------------------
+                */
+                var categories = _.map(data.data.model.data, function (f) {
+                    return f.category;
+                });
+                vm.categories = _.uniqBy(categories, 'id');
+                /*
+                 *---------------------pagination------------------------
+                 */
                 vm.links.first_page_url = data.data.model.first_page_url;
                 vm.links.last_page_url = data.data.model.last_page_url;
                 vm.links.prev_page_url = data.data.model.prev_page_url;
@@ -494,6 +532,7 @@ exports.default = {
                 if (data.page.search_input) {
                     vm.filters[0].value = data.page.search_input;
                 }
+
                 vm.filters[0].search_prop = vm.search_column; // define search_prop for backend usage.
             }
         }
@@ -502,7 +541,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 960:
+/***/ 946:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -525,7 +564,7 @@ var render = function() {
                     attrs: { size: "mini", type: "primary" },
                     on: { click: _vm._create }
                   },
-                  [_vm._v("Create " + _vm._s(_vm.$route.meta.title))]
+                  [_vm._v("Add New Medicine")]
                 )
               ],
               1
@@ -542,7 +581,7 @@ var render = function() {
                 _c(
                   "el-select",
                   {
-                    attrs: { size: "mini", placeholder: "Select" },
+                    attrs: { placeholder: "Select" },
                     model: {
                       value: _vm.query.search_column,
                       callback: function($$v) {
@@ -574,7 +613,7 @@ var render = function() {
                 _c(
                   "el-select",
                   {
-                    attrs: { size: "mini", placeholder: "Select" },
+                    attrs: { placeholder: "Select" },
                     model: {
                       value: _vm.query.search_operator,
                       callback: function($$v) {
@@ -594,34 +633,75 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "dv-header-search" },
-              [
-                _c("el-input", {
-                  attrs: { size: "mini", placeholder: "Search" },
-                  on: {
-                    keyup: function($event) {
-                      if (
-                        !("button" in $event) &&
-                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                      ) {
-                        return null
+            _c("div", { staticClass: "dv-header-search" }, [
+              _c("div", { staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-lg-6" },
+                  [
+                    _c("el-input", {
+                      attrs: { placeholder: "Search" },
+                      on: {
+                        keyup: function($event) {
+                          if (
+                            !("button" in $event) &&
+                            _vm._k(
+                              $event.keyCode,
+                              "enter",
+                              13,
+                              $event.key,
+                              "Enter"
+                            )
+                          ) {
+                            return null
+                          }
+                          return _vm.loadData($event)
+                        }
+                      },
+                      model: {
+                        value: _vm.filters[0].value,
+                        callback: function($$v) {
+                          _vm.$set(_vm.filters[0], "value", $$v)
+                        },
+                        expression: "filters[0].value"
                       }
-                      return _vm.loadData($event)
-                    }
-                  },
-                  model: {
-                    value: _vm.filters[0].value,
-                    callback: function($$v) {
-                      _vm.$set(_vm.filters[0], "value", $$v)
-                    },
-                    expression: "filters[0].value"
-                  }
-                })
-              ],
-              1
-            )
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "col-lg-6" },
+                  [
+                    _c(
+                      "el-select",
+                      {
+                        attrs: {
+                          clearable: "",
+                          placeholder: "Select Categories",
+                          multiple: "multiple"
+                        },
+                        model: {
+                          value: _vm.filters[1].value,
+                          callback: function($$v) {
+                            _vm.$set(_vm.filters[1], "value", $$v)
+                          },
+                          expression: "filters[1].value"
+                        }
+                      },
+                      _vm._l(_vm.categories, function(category, index, key) {
+                        return _c("el-option", {
+                          key: key,
+                          attrs: { label: category.name, value: category.id }
+                        })
+                      })
+                    )
+                  ],
+                  1
+                )
+              ])
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "dv-header" }, [
@@ -632,19 +712,10 @@ var render = function() {
                 _c(
                   "el-button",
                   {
-                    attrs: { size: "mini", type: "success" },
-                    on: { click: _vm.createPO }
-                  },
-                  [_vm._v("Add New Purchase Order No.")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "el-button",
-                  {
                     attrs: { size: "mini", type: "primary" },
-                    on: { click: _vm.receiveItem }
+                    on: { click: _vm.addNewPO }
                   },
-                  [_vm._v("Receive Item")]
+                  [_vm._v("Add New Purchase Order #")]
                 )
               ],
               1
@@ -709,6 +780,62 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
+          _c(
+            "el-dialog",
+            {
+              attrs: {
+                title: "Tips",
+                visible: _vm.checkItemDialog,
+                width: "30%",
+                "before-close": _vm.handleClose
+              },
+              on: {
+                "update:visible": function($event) {
+                  _vm.checkItemDialog = $event
+                }
+              }
+            },
+            [
+              _c("span", [_vm._v("This is a message")]),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass: "dialog-footer",
+                  attrs: { slot: "footer" },
+                  slot: "footer"
+                },
+                [
+                  _c(
+                    "el-button",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.checkItemDialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("Cancel")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "el-button",
+                    {
+                      attrs: { type: "primary" },
+                      on: {
+                        click: function($event) {
+                          _vm.checkItemDialog = false
+                        }
+                      }
+                    },
+                    [_vm._v("Confirm")]
+                  )
+                ],
+                1
+              )
+            ]
+          ),
+          _vm._v(" "),
           _vm.nextPage ||
           _vm.prevPage ||
           !_vm.nextPage ||
@@ -719,6 +846,7 @@ var render = function() {
                 {
                   attrs: {
                     data: _vm.filteredData,
+                    "table-props": _vm.tableProps,
                     "action-col": _vm.actionCol,
                     total: _vm.meta.total,
                     filters: _vm.filters,
@@ -728,17 +856,26 @@ var render = function() {
                       pageSizes: [_vm.query.per_page, 10, 20, 30]
                     },
                     "page-size": _vm.query.per_page,
-                    "table-props": _vm.tableProps,
                     "current-page": _vm.meta.current_page,
                     loading: _vm.loading
                   },
                   on: { "query-change": _vm.loadData }
                 },
                 [
-                  _c("el-table-column", { attrs: { prop: "id", label: "ID" } }),
+                  _c("el-table-column", {
+                    attrs: { prop: "id", label: "MedID" }
+                  }),
                   _vm._v(" "),
                   _c("el-table-column", {
-                    attrs: { prop: "name", label: "Name" }
+                    attrs: { prop: "medicine.name", label: "Generic" }
+                  }),
+                  _vm._v(" "),
+                  _c("el-table-column", {
+                    attrs: { prop: "medication", label: "Medication" }
+                  }),
+                  _vm._v(" "),
+                  _c("el-table-column", {
+                    attrs: { prop: "dosage", label: "Dosage" }
                   }),
                   _vm._v(" "),
                   _c("el-table-column", {
@@ -757,6 +894,31 @@ var render = function() {
                         }
                       }
                     ])
+                  }),
+                  _vm._v(" "),
+                  _c("el-table-column", {
+                    attrs: { prop: "expiry_date", label: "Expiry Date" },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "default",
+                        fn: function(scope) {
+                          return [
+                            new Date(scope.row.expiry_date).getTime() <=
+                            new Date().getTime()
+                              ? _c("span", { staticStyle: { color: "red" } }, [
+                                  _vm._v(_vm._s(scope.row.expiry_date))
+                                ])
+                              : _c("span", [
+                                  _vm._v(_vm._s(scope.row.expiry_date))
+                                ])
+                          ]
+                        }
+                      }
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("el-table-column", {
+                    attrs: { prop: "category.name", label: "Category" }
                   })
                 ],
                 1
@@ -773,7 +935,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-bbaa5fac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0b343c34", module.exports)
   }
 }
 

@@ -6,13 +6,13 @@ webpackJsonp([1],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(931)
+  __webpack_require__(947)
 }
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(933)
+var __vue_script__ = __webpack_require__(949)
 /* template */
-var __vue_template__ = __webpack_require__(934)
+var __vue_template__ = __webpack_require__(950)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,13 +52,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 931:
+/***/ 947:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(932);
+var content = __webpack_require__(948);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 932:
+/***/ 948:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(false);
@@ -87,14 +87,14 @@ exports = module.exports = __webpack_require__(33)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 933:
+/***/ 949:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -103,6 +103,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
 //
 //
 //
@@ -397,7 +398,8 @@ exports.default = {
                 rack: {
                     weight: 0,
                     rack_id: ''
-                }
+                },
+                reorder_point: 9
             },
             racks: [],
             categories: [],
@@ -504,7 +506,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 934:
+/***/ 950:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -765,6 +767,45 @@ var render = function() {
                           _vm._v(" "),
                           _vm._l(_vm.errors.category_id, function(error) {
                             return _vm.errors.category_id
+                              ? _c(
+                                  "div",
+                                  { staticClass: "el-form-item__error" },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(error) +
+                                        "\n                                "
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          })
+                        ],
+                        2
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "el-form-item",
+                        {
+                          class: _vm.errors.reorder_point
+                            ? "is-error is-required"
+                            : "",
+                          attrs: { label: "Reorder Point" }
+                        },
+                        [
+                          _c("el-input", {
+                            attrs: { type: "number", required: "" },
+                            model: {
+                              value: _vm.form.reorder_point,
+                              callback: function($$v) {
+                                _vm.$set(_vm.form, "reorder_point", $$v)
+                              },
+                              expression: "form.reorder_point"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _vm._l(_vm.errors.reorder_point, function(error) {
+                            return _vm.errors.reorder_point
                               ? _c(
                                   "div",
                                   { staticClass: "el-form-item__error" },

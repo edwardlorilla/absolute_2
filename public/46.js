@@ -1,6 +1,6 @@
 webpackJsonp([46],{
 
-/***/ 476:
+/***/ 475:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -8,7 +8,7 @@ var normalizeComponent = __webpack_require__(13)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(926)
+var __vue_template__ = __webpack_require__(936)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\CategoryPackage\\ProductIndex.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Order\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1dbf74bc", Component.options)
+    hotAPI.createRecord("data-v-c0d768ae", Component.options)
   } else {
-    hotAPI.reload("data-v-1dbf74bc", Component.options)
+    hotAPI.reload("data-v-c0d768ae", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 926:
+/***/ 936:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -63,7 +63,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1dbf74bc", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-c0d768ae", module.exports)
   }
 }
 

@@ -111,7 +111,7 @@ class RequestsController extends Controller
     {
         $requests = Requests::whereId($request->id)->with(['division', 'user', 'transactions' => function ($query) {
             $query->with(['product' => function ($q) {
-                $q->with('category', 'package');
+                $q->with('category', 'package', 'medicine');
             }]);
         }])->first();
         return response()->json($requests, 200);

@@ -1,6 +1,48 @@
 webpackJsonp([22],{
 
-/***/ 1000:
+/***/ 1020:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(1021);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(98)("b6f2c498", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0ec7d6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./print.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4b0ec7d6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./print.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 1021:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(33)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\np {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    font: inherit;\n    vertical-align: baseline\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 1022:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9,9 +51,440 @@ webpackJsonp([22],{
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -297,410 +770,54 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 //
 
 var getData = function getData(url, page, callback) {
-    axios.get('' + url, { params: page }).then(function (response) {
+    axios.get('/api/' + url, { params: page }).then(function (response) {
         callback(null, { data: response.data, page: page });
     }).catch(function (error) {
-        if (error) {
-            callback(error, error.response);
-        }
+        callback(error, error.response.data);
     });
 };
 exports.default = {
     data: function data() {
-        var sortOrders = {};
         return {
-            supplies: [],
-            product: {},
-            supply_id: '',
-            date_delivered: '',
-            po_number: '',
-            pr_number: '',
-            expiry_date: '',
-            quantity_per: '',
-            quantity: 0,
-            unit_cost: 0,
-            units: [],
-            unit: {},
-            dispensing_unit: {},
-            dispensing_units: [],
-            isAddDispensingUnit: false,
-            isAddSource: false,
-            isAddProduct: false,
-            isAddUnit: false,
-            unit_id: '',
-            unit_name: '',
-            dispensing_unit_id: '',
-            source_select: '',
-            sources: [],
-            source_name: '',
-            num1: 1,
-            filters: [{
-                value: '',
-                'search_prop': 'id' // define search_prop for backend usage.
-            }, {
-                value: '',
-                'search_prop': 'id' // define search_prop for backend usage.
-            }, {
-                value: '',
-                'search_prop': 'id' // define search_prop for backend usage.
-            }],
-            dialogMessage: { title: '', message: '' },
-            dialogVisible: false,
-            actionCol: {
-                label: 'Action',
-                props: {
-                    align: 'center'
-                }
-            },
-            isDisabled: false,
-            query: {
-                page: 1,
-                column: 'id',
-                direction: 'desc',
-                per_page: 15,
-                search_column: 'all',
-                search_operator: 'like',
-                search_input: ''
-            },
-            operators: {
-                equal: '=',
-                not_equal: '<>',
-                less_than: '<',
-                greater_than: '>',
-                less_than_or_equal_to: '<=',
-                greater_than_or_equal_to: '>=',
-                in: 'IN',
-                like: 'LIKE'
-            },
-            columns: [{}],
-            sortKey: '',
-            sortOrders: sortOrders,
             data: [],
-            meta: {},
-            links: {
-                first: null,
-                last: null,
-                next: null,
-                prev: null
-            },
-            error: null,
-            filterKey: '',
-            loading: false,
-            _numberLoad: 0,
-            users: [],
-            tableProps: {
-                rowClassName: function rowClassName(_ref) {
-                    var row = _ref.row,
-                        rowIndex = _ref.rowIndex;
-
-                    if (row.type == 'OUT') {
-                        return 'warning-row';
-                    } else {
-                        return 'success-row';
-                    }
-                    return '';
-                }
-            }
+            supply: {},
+            iterateRow: 48,
+            balanceQuantity: 0
         };
     },
 
     computed: {
-        unitCost: function unitCost() {
+        iterateData: function iterateData() {
             var vm = this;
-            return vm.quantity && vm.unit_cost ? parseFloat(vm.quantity) * parseFloat(vm.unit_cost) : 0;
+            var supply = vm.supply.quantity + vm.balanceQuantity;
+            return _.map(vm.data, function (response) {
+                supply -= response.receive_id ? response.receive.quantity : 0;
+                response['balance'] = supply;
+                return response;
+            });
         },
-        nextPage: function nextPage() {
-            if (!this.meta || this.meta.current_page === this.meta.last_page) {
-                return;
-            }
+        differenceResult: function differenceResult() {
             var vm = this;
-            return this.meta.current_page + 1;
-        },
-        prevPage: function prevPage() {
-            if (!this.meta || this.meta.current_page === 1) {
-                return;
-            }
-            var vm = this;
-            return this.meta.current_page - 1;
-        },
-        paginatonCount: function paginatonCount() {
-            if (!this.meta) {
-                return;
-            }
-            var _meta = this.meta,
-                current_page = _meta.current_page,
-                last_page = _meta.last_page;
-
-            return 'Displaying ' + current_page + ' of ' + last_page + ' rows';
+            return vm.iterateRow - vm.data.length > 0 ? vm.iterateRow - vm.data.length : 0;
         }
     },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-        if (to.params.id) {
-            getData('/api/' + to.meta.url + '/' + to.params.id, to.query, function (err, data) {
-                next(function (vm) {
-                    return vm.setData(err, data);
-                });
+        getData('tracks/print/' + to.params.id, to.query, function (err, data) {
+            next(function (vm) {
+                return vm.setData(err, data);
             });
-        } else {
-            next();
-        }
+        });
     },
     beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
-        var vm = this;
-        if (to.params.id) {
-            getData('/api/' + to.meta.url + '/' + to.params.id, to.query, function (err, data) {
-                vm.setData(err, data);
-                next();
-            });
-        } else {
+        var _this = this;
+
+        getData('tracks/print/' + to.params.id, to.query, function (err, data) {
+            _this.setData(err, data);
             next();
-        }
+        });
     },
 
     methods: {
-        unit_m: function unit_m(request) {
-            return axios.post('/api/units', request);
-        },
-        addUnit: function addUnit() {
-            var vm = this;
-            vm.isDisabled = true;
-            vm.errors = [];
-            vm.unit_m({ name: vm.unit_name }).then(function (response) {
-                vm.$message({ message: response.statusText, type: 'success' });
-                vm.units = [];
-                vm.isDisabled = false;
-                vm.isAddUnit = false;
-            }).catch(function (error) {
-                if (error.response.data.errors && error.response.data.message) {
-                    vm.$message({ message: error.response.data.message, type: 'error' });
-                }
-                vm.isDisabled = false;
-            });
-        },
-
-        onSearchSupply: _.debounce(function (query, vm) {
-            axios.get('/api/search/supplies?search=' + query).then(function (q) {
-                vm.loading = false;
-                vm.supplies = q.data.map(function (item) {
-                    return { value: item, label: item.name };
-                });
-            }).catch(function () {
-                vm.loading = false;
-            });
-        }, 350),
-        search_unit: function search_unit(query) {
-            var vm = this;
-
-            if (query !== '') {
-                vm.loading = true;
-                vm.onSearchUnit(query, vm);
-            } else {
-                vm.loading = false;
-                vm.units = [];
-            }
-        },
-        search_supply: function search_supply(query) {
-            var vm = this;
-
-            if (query !== '') {
-                vm.loading = true;
-                vm.onSearchSupply(query, vm);
-            } else {
-                vm.loading = false;
-                vm.supplies = [];
-            }
-        },
-        search_dispensing_unit: function search_dispensing_unit(query) {
-            var vm = this;
-
-            if (query !== '') {
-                vm.loading = true;
-                vm.onSearchDispensingUnit(query, vm);
-            } else {
-                vm.loading = false;
-                vm.dispensing_units = [];
-            }
-        },
-        getUnit: function getUnit(query) {
-            return axios.get('/api/search/units?search=' + query);
-        },
-
-        onSearchDispensingUnit: _.debounce(function (query, vm) {
-            vm.getUnit(query).then(function (q) {
-                vm.loading = false;
-                vm.dispensing_units = q.data.map(function (item) {
-                    return { value: item, label: item.name };
-                });
-            }).catch(function () {
-                vm.loading = false;
-            });
-        }, 350),
-        onSearchUnit: _.debounce(function (query, vm) {
-            vm.getUnit(query).then(function (q) {
-                vm.loading = false;
-                vm.units = q.data.map(function (item) {
-                    return { value: item, label: item.name };
-                });
-            }).catch(function () {
-                vm.loading = false;
-            });
-        }, 350),
-        addSource: function addSource() {
-            var vm = this;
-            vm.isDisabled = true;
-            axios.post('/api/sources', { name: vm.source_name }).then(function (response) {
-                vm.$message({ message: response.statusText, type: 'success' });
-                vm.isAddSource = false;
-                vm.isDisabled = false;
-            }).catch(function (error) {
-                if (error.response.data.errors && error.response.data.message) {
-                    vm.$message({ message: error.response.data.message, type: 'error' });
-                }
-                vm.isAddDivision = false;
-                vm.isDisabled = false;
-            });
-        },
-        search_source: function search_source(query) {
-            var vm = this;
-
-            if (query !== '') {
-                vm.loading = true;
-                vm.onSearchSource(query, vm);
-            } else {
-                vm.loading = false;
-                vm.sources = [];
-            }
-        },
-
-        onSearchSource: _.debounce(function (query, vm) {
-            axios.get('/api/search/sources?search=' + query).then(function (q) {
-                vm.loading = false;
-                vm.sources = q.data.map(function (item) {
-                    return { value: item, label: item.name };
-                });
-            }).catch(function () {
-                vm.loading = false;
-            });
-        }, 350),
-        clearTypeHandleChange: function clearTypeHandleChange() {
-            vm.filters[2].value = '';
-        },
-        onSave: function onSave() {
-            var vm = this,
-                obj = {
-                po_number: vm.po_number,
-                pr_number: vm.pr_number,
-                date_delivered: vm.date_delivered,
-                source_id: vm.source_select,
-                data: vm.data
-            };
-
-            axios.post('/api/supplies/purchase-order', obj).then(function (response) {
-                vm.$message({ message: response.statusText, type: 'success' });
-            }).catch(function (error) {
-                vm.$message({ message: error.statusText, type: 'warning' });
-                vm.loading = false;
-            });
-        },
-        onSubmit: function onSubmit() {
-            var vm = this;
-            var formData = new FormData(vm.$refs.form);
-            var jsonObject = {};
-
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = formData.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var _step$value = _slicedToArray(_step.value, 2),
-                        key = _step$value[0],
-                        value = _step$value[1];
-
-                    jsonObject[key] = value;
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
-
-            if (vm.$route.params.id) {
-                jsonObject['id'] = vm.$route.params.id;
-            }
-
-            jsonObject['quantity_per'] = vm.quantity_per;
-            jsonObject['supply_id'] = vm.supply_id;
-            jsonObject['quantity'] = vm.quantity;
-            jsonObject['unit_cost'] = vm.unit_cost;
-            jsonObject['unit'] = vm.unit_id;
-            jsonObject['dispensing_unit'] = vm.dispensing_unit_id;
-            vm.data.push(jsonObject);
-        },
-
-        sortBy: function sortBy(key) {
-            this.sortKey = key;
-            this.sortOrders[key] = this.sortOrders[key] * -1;
-        },
-        loadData: _.debounce(function (event) {
-
-            var vm = this;
-
-            vm.loading = true;
-            var option = _.clone(vm.$route.query);
-            if (event.type === 'sort') {
-                option.column = event.sort.prop;
-                option.direction = event.sort.order == 'ascending' ? 'asc' : 'desc';
-            }
-
-            if (event.type != "init") {
-                if (event.type === 'page') {
-                    option.page = event.page;
-                    option.per_page = event.pageSize;
-                }
-                if (event.type === 'filter' && !_.isEmpty(vm.filters[0].value)) {
-
-                    option.search_column = vm.query.search_column;
-                    option.search_operator = vm.query.search_operator;
-                    option.search_input = vm.filters[0].value;
-                } else if (event.type === 'filter' && !_.isEmpty(vm.filters[1].value)) {
-                    option.user_id = vm.filters[1].value.toString();
-                } else if (event.type === 'filter' && !_.isEmpty(vm.filters[2].value)) {
-                    option.type = vm.filters[2].value.toString();
-                } else {
-                    delete option.user_id;
-                    delete option.search_input;
-                }
-
-                if (_.isEmpty(vm.filters[2].value)) {
-                    delete option.type;
-                }
-
-                vm.$router.push({
-                    path: '' + vm.$route.path,
-                    query: option
-                }, function () {
-                    vm.loading = false;
-                    if (option.search_input == '') {
-                        delete option.search_input;
-                        vm.filters[1].value = '';
-                    }
-                }, function () {
-                    vm.loading = false;
-                });
-            } else {
-                vm.loading = false;
-            }
-        }, 500),
         setData: function setData(err, data) {
             var vm = this;
             if (err) {
@@ -711,33 +828,12 @@ exports.default = {
 
                 vm.error = err.toString();
             } else {
-                vm.data = _.map(data.data.model.data, function (q) {
-                    q.type = q.type == 0 ? 'OUT' : 'IN';
-                    return q;
-                });
-                var users = _.map(vm.data, function (f) {
-                    return f.user;
-                });
-                vm.product = data.data.product;
-                vm.users = _.compact(_.uniqBy(users, 'id'));
-                vm.links.first_page_url = data.data.model.first_page_url;
-                vm.links.last_page_url = data.data.model.last_page_url;
-                vm.links.prev_page_url = data.data.model.prev_page_url;
-                vm.links.next_page_url = data.data.model.next_page_url;
 
-                vm.meta.current_page = data.data.model.current_page;
-                vm.meta.from = data.data.model.from;
-                vm.meta.last_page = data.data.model.last_page;
-                vm.query.per_page = _.parseInt(data.data.model.per_page);
-                vm.meta.to = data.data.model.to;
-                vm.meta.total = data.data.model.total;
-
-                vm.columns = data.data.columns;
-                if (data.page.search_input) {
-                    vm.filters[0].value = data.page.search_input;
-                }
-
-                vm.filters[0].search_prop = vm.search_column; // define search_prop for backend usage.
+                vm.data = data.data.model.data;
+                vm.balanceQuantity = _.reduce(vm.data, function (sum, n) {
+                    return sum + (n.receive_id ? n.receive.quantity : 0);
+                }, 0);
+                vm.supply = data.data.supply;
             }
         }
     }
@@ -745,759 +841,992 @@ exports.default = {
 
 /***/ }),
 
-/***/ 1001:
+/***/ 1023:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-6" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v(
-              "\n                    Purchase Order Detail\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "po_number" } }, [
-                    _vm._v("PO Number")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.po_number,
-                        expression: "po_number"
-                      }
-                    ],
-                    staticClass: "form-control form-control-sm",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      id: "po_number",
-                      name: "po_number",
-                      placeholder: "po_number"
-                    },
-                    domProps: { value: _vm.po_number },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.po_number = $event.target.value
-                      }
+  return _vm.data
+    ? _c("div", { staticClass: "dv" }, [
+        _c("div", { staticClass: "dv-header" }, [
+          _c(
+            "div",
+            { staticClass: "dv-header-title" },
+            [
+              _c(
+                "el-button",
+                {
+                  directives: [
+                    {
+                      name: "print",
+                      rawName: "v-print",
+                      value: "#y_request",
+                      expression: "'#y_request'"
                     }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "date_delivered" } }, [
-                    _vm._v("Date Delivered")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.date_delivered,
-                        expression: "date_delivered"
-                      }
-                    ],
-                    staticClass: "form-control form-control-sm",
-                    attrs: {
-                      required: "",
-                      type: "date",
-                      id: "date_delivered",
-                      name: "date_delivered",
-                      placeholder: "Date Delivered"
-                    },
-                    domProps: { value: _vm.date_delivered },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.date_delivered = $event.target.value
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "pr_number" } }, [
-                    _vm._v("PR Number")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.pr_number,
-                        expression: "pr_number"
-                      }
-                    ],
-                    staticClass: "form-control form-control-sm",
-                    attrs: {
-                      required: "",
-                      type: "text",
-                      id: "pr_number",
-                      name: "pr_number",
-                      placeholder: "pr_number"
-                    },
-                    domProps: { value: _vm.pr_number },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.pr_number = $event.target.value
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
+                  ],
+                  attrs: { size: "mini", type: "info" }
+                },
+                [_vm._v("Print Supply Legder")]
+              )
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "WordSection1", attrs: { id: "y_request" } }, [
+          _c("div", { attrs: { align: "center" } }, [
+            _c(
+              "table",
+              {
+                staticClass: "MsoTableGrid",
+                staticStyle: {
+                  width: "575.75pt",
+                  "border-collapse": "collapse",
+                  border: "none",
+                  "mso-yfti-tbllook": "1184",
+                  "mso-padding-alt": "0in 5.4pt 0in 5.4pt"
+                },
+                attrs: {
+                  border: "1",
+                  cellspacing: "0",
+                  cellpadding: "0",
+                  width: "768"
+                }
+              },
+              [
                 _c(
-                  "div",
-                  { staticClass: "form-group" },
+                  "tr",
+                  {
+                    staticStyle: {
+                      "mso-yfti-irow": "0",
+                      "mso-yfti-firstrow": "yes"
+                    }
+                  },
                   [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(0),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-sm text-right" }, [
-                        !_vm.isAddSource
-                          ? _c(
-                              "button",
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "117.0pt",
+                          border: "none",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "156", colspan: "3" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: { "margin-bottom": ".0001pt" }
+                          },
+                          [
+                            _c(
+                              "span",
                               {
-                                staticClass: "btn btn-sm btn-link",
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.isAddSource = !_vm.isAddSource
-                                  }
+                                staticStyle: {
+                                  "font-size": "9.0pt",
+                                  "font-family": '"Arial",sans-serif'
                                 }
                               },
                               [
                                 _vm._v(
-                                  "Add Source\n                                        "
-                                )
+                                  "Stock\nNo: " +
+                                    _vm._s(_vm.supply.supply_id) +
+                                    "\n                            "
+                                ),
+                                _c("p")
                               ]
                             )
-                          : _vm._e()
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    !_vm.isAddSource
-                      ? _c(
-                          "el-select",
-                          {
-                            staticStyle: { width: "100%" },
-                            attrs: {
-                              size: "small",
-                              disabled: _vm.isDisabled,
-                              filterable: "",
-                              remote: "",
-                              required: "",
-                              placeholder: "Enter Source of Fund Name",
-                              "remote-method": _vm.search_source,
-                              loading: _vm.loading
-                            },
-                            model: {
-                              value: _vm.source_select,
-                              callback: function($$v) {
-                                _vm.source_select = $$v
-                              },
-                              expression: "source_select"
-                            }
-                          },
-                          _vm._l(_vm.sources, function(item, index) {
-                            return _c("el-option", {
-                              key: index,
-                              attrs: { label: item.label, value: item.value.id }
-                            })
-                          })
+                          ]
                         )
-                      : _c("div", [
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c("tr", { staticStyle: { "mso-yfti-irow": "2" } }, [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        width: "323.75pt",
+                        border: "solid windowtext 1.0pt",
+                        "border-top": "none",
+                        "mso-border-top-alt": "solid windowtext .5pt",
+                        "mso-border-alt": "solid windowtext .5pt",
+                        padding: "0in 5.4pt 0in 5.4pt"
+                      },
+                      attrs: { width: "432", colspan: "6", valign: "top" }
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "MsoNormal",
+                          staticStyle: { "margin-bottom": ".0001pt" }
+                        },
+                        [_vm._v("Item: " + _vm._s(_vm.supply.name))]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        width: "3.5in",
+                        "border-top": "none",
+                        "border-left": "none",
+                        "border-bottom": "solid windowtext 1.0pt",
+                        "border-right": "solid windowtext 1.0pt",
+                        "mso-border-top-alt": "solid windowtext .5pt",
+                        "mso-border-left-alt": "solid windowtext .5pt",
+                        "mso-border-alt": "solid windowtext .5pt",
+                        padding: "0in 5.4pt 0in 5.4pt"
+                      },
+                      attrs: { width: "336", colspan: "7", valign: "top" }
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "MsoNormal",
+                          staticStyle: { "margin-bottom": ".0001pt" }
+                        },
+                        [
+                          _vm._v(
+                            "Code: " +
+                              _vm._s(_vm.supply.code ? _vm.supply.code : "")
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("tr", { staticStyle: { "mso-yfti-irow": "3" } }, [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        width: "323.75pt",
+                        border: "solid windowtext 1.0pt",
+                        "border-top": "none",
+                        "mso-border-top-alt": "solid windowtext .5pt",
+                        "mso-border-alt": "solid windowtext .5pt",
+                        padding: "0in 5.4pt 0in 5.4pt"
+                      },
+                      attrs: { width: "432", colspan: "6", valign: "top" }
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "MsoNormal",
+                          staticStyle: { "margin-bottom": ".0001pt" }
+                        },
+                        [
+                          _vm._v(
+                            "Description: " + _vm._s(_vm.supply.description)
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        width: "3.5in",
+                        "border-top": "none",
+                        "border-left": "none",
+                        "border-bottom": "solid windowtext 1.0pt",
+                        "border-right": "solid windowtext 1.0pt",
+                        "mso-border-top-alt": "solid windowtext .5pt",
+                        "mso-border-left-alt": "solid windowtext .5pt",
+                        "mso-border-alt": "solid windowtext .5pt",
+                        padding: "0in 5.4pt 0in 5.4pt"
+                      },
+                      attrs: { width: "336", colspan: "7", valign: "top" }
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "MsoNormal",
+                          staticStyle: { "margin-bottom": ".0001pt" }
+                        },
+                        [
+                          _vm._v(
+                            "Unit: " +
+                              _vm._s(
+                                _vm.supply.unit_id ? _vm.supply.unit.name : ""
+                              )
+                          )
+                        ]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("tr", { staticStyle: { "mso-yfti-irow": "4" } }, [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        width: "44.6pt",
+                        border: "solid windowtext 1.0pt",
+                        "border-top": "none",
+                        "mso-border-top-alt": "solid windowtext .5pt",
+                        "mso-border-alt": "solid windowtext .5pt",
+                        padding: "0in 5.4pt 0in 5.4pt"
+                      },
+                      attrs: { width: "59", rowspan: "2" }
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "MsoNormal",
+                          staticStyle: {
+                            "font-size": "8.0pt",
+                            "margin-bottom": ".0001pt"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "Date: " +
+                              _vm._s(
+                                _vm
+                                  .$moment(_vm.supply.updated_at)
+                                  .format("MM-DD-YY")
+                              )
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("p", {
+                        staticClass: "MsoNormal",
+                        staticStyle: { "margin-bottom": ".0001pt" }
+                      }),
+                      _c("p", [_vm._v(" ")]),
+                      _c("p")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _vm._m(5)
+                ]),
+                _vm._v(" "),
+                _c("tr", { staticStyle: { "mso-yfti-irow": "5" } }, [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        width: "37.95pt",
+                        "border-top": "none",
+                        "border-bottom": "solid windowtext 1.0pt",
+                        "border-right": "solid windowtext 1.0pt",
+                        "mso-border-top-alt": "solid windowtext .5pt",
+                        "mso-border-left-alt": "solid windowtext .5pt",
+                        "mso-border-alt": "solid windowtext .5pt",
+                        padding: "0in 5.4pt 0in 5.4pt"
+                      },
+                      attrs: { width: "51", valign: "top" }
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "MsoNormal",
+                          staticStyle: {
+                            "margin-bottom": ".0001pt",
+                            "text-align": "center",
+                            "line-height": "normal"
+                          },
+                          attrs: { align: "center" }
+                        },
+                        [
                           _c(
-                            "div",
-                            { staticClass: "input-group input-group-sm" },
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "8.0pt",
+                                "font-family": '"Arial",sans-serif'
+                              }
+                            },
                             [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.source_name,
-                                    expression: "source_name"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: { type: "text" },
-                                domProps: { value: _vm.source_name },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.source_name = $event.target.value
-                                  }
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                { staticClass: "input-group-append" },
-                                [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn btn-success",
-                                      attrs: { type: "button" },
-                                      on: { click: _vm.addSource }
-                                    },
-                                    [_vm._v("Create Source")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass: "btn btn-default",
-                                      attrs: { type: "button" },
-                                      on: {
-                                        click: function($event) {
-                                          _vm.isAddSource = false
-                                        }
-                                      }
-                                    },
-                                    [_vm._v("Cancel")]
-                                  )
-                                ]
+                              _vm._v(
+                                "RIV/PO\n                            " +
+                                  _vm._s(_vm.supply.po)
                               )
                             ]
                           )
-                        ])
-                  ],
-                  1
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-6" }, [
-        _c(
-          "form",
-          {
-            ref: "form",
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.onSubmit($event)
-              }
-            }
-          },
-          [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _vm._v(
-                  "\n                        Supply Information\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col" }, [
-                    _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _c("label", { attrs: { for: "supply" } }, [
-                          _vm._v("Supply")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "el-select",
-                          {
-                            staticStyle: { width: "100%" },
-                            attrs: {
-                              "value-key": "id",
-                              filterable: "",
-                              required: "",
-                              size: "small",
-                              remote: "",
-                              required: "",
-                              placeholder: "Please a Supply",
-                              "remote-method": _vm.search_supply,
-                              loading: _vm.loading
-                            },
-                            model: {
-                              value: _vm.supply_id,
-                              callback: function($$v) {
-                                _vm.supply_id = $$v
-                              },
-                              expression: "supply_id"
-                            }
-                          },
-                          _vm._l(_vm.supplies, function(item, index) {
-                            return _c("el-option", {
-                              key: item.value.id,
-                              attrs: { label: item.label, value: item.value }
-                            })
-                          })
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "quantity" } }, [
-                        _vm._v("Quantity Delivered")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.quantity,
-                            expression: "quantity"
-                          }
-                        ],
-                        staticClass: "form-control form-control-sm",
-                        attrs: {
-                          required: "",
-                          type: "number",
-                          id: "quantity",
-                          name: "quantity",
-                          placeholder: "Quantity"
-                        },
-                        domProps: { value: _vm.quantity },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.quantity = $event.target.value
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "unit_cost" } }, [
-                        _vm._v("Unit Cost")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.unit_cost,
-                            expression: "unit_cost"
-                          }
-                        ],
-                        staticClass: "form-control form-control-sm",
-                        attrs: {
-                          required: "",
-                          type: "number",
-                          id: "unit_cost",
-                          name: "unit_cost",
-                          placeholder: "Unit Cost"
-                        },
-                        domProps: { value: _vm.unit_cost },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.unit_cost = $event.target.value
-                          }
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col" }, [
-                    _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _c("div", { staticClass: "row" }, [
-                          _vm._m(1),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-sm text-right" }, [
-                            !_vm.isAddUnit
-                              ? _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-sm btn-link",
-                                    attrs: { type: "button" },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.isAddUnit = !_vm.isAddUnit
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "Add Unit\n                                            "
-                                    )
-                                  ]
-                                )
-                              : _vm._e()
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        !_vm.isAddUnit
-                          ? _c(
-                              "el-select",
-                              {
-                                staticStyle: { width: "100%" },
-                                attrs: {
-                                  filterable: "",
-                                  remote: "",
-                                  size: "small",
-                                  "value-key": "id",
-                                  required: "",
-                                  placeholder: "Please a Unit Name",
-                                  "remote-method": _vm.search_unit,
-                                  loading: _vm.loading
-                                },
-                                model: {
-                                  value: _vm.unit_id,
-                                  callback: function($$v) {
-                                    _vm.unit_id = $$v
-                                  },
-                                  expression: "unit_id"
-                                }
-                              },
-                              _vm._l(_vm.units, function(item, index) {
-                                return _c("el-option", {
-                                  key: item.value.id,
-                                  attrs: {
-                                    label: item.label,
-                                    value: item.value
-                                  }
-                                })
-                              })
-                            )
-                          : _c("div", [
-                              _c(
-                                "div",
-                                { staticClass: "input-group input-group-sm" },
-                                [
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.unit_name,
-                                        expression: "unit_name"
-                                      }
-                                    ],
-                                    staticClass: "form-control form-control-sm",
-                                    attrs: {
-                                      placeholder: "Unit Name",
-                                      type: "text"
-                                    },
-                                    domProps: { value: _vm.unit_name },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.unit_name = $event.target.value
-                                      }
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "input-group-append" },
-                                    [
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "btn btn-success",
-                                          attrs: { type: "button" },
-                                          on: { click: _vm.addUnit }
-                                        },
-                                        [_vm._v("Create Unit")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "btn btn-default",
-                                          attrs: { type: "button" },
-                                          on: {
-                                            click: function($event) {
-                                              _vm.isAddUnit = false
-                                            }
-                                          }
-                                        },
-                                        [_vm._v("Cancel")]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "form-group" },
-                      [
-                        _c("div", { staticClass: "row" }, [
-                          _vm._m(2),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-sm text-right" }, [
-                            !_vm.isAddDispensingUnit
-                              ? _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-sm btn-link",
-                                    attrs: { type: "button" },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.isAddDispensingUnit = !_vm.isAddDispensingUnit
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _vm._v(
-                                      "Add\n                                            "
-                                    )
-                                  ]
-                                )
-                              : _vm._e()
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        !_vm.isAddDispensingUnit
-                          ? _c(
-                              "el-select",
-                              {
-                                staticStyle: { width: "100%" },
-                                attrs: {
-                                  filterable: "",
-                                  remote: "",
-                                  size: "small",
-                                  required: "",
-                                  "value-key": "id",
-                                  placeholder: "Please a Dispensing Unit Name",
-                                  "remote-method": _vm.search_dispensing_unit,
-                                  loading: _vm.loading
-                                },
-                                model: {
-                                  value: _vm.dispensing_unit_id,
-                                  callback: function($$v) {
-                                    _vm.dispensing_unit_id = $$v
-                                  },
-                                  expression: "dispensing_unit_id"
-                                }
-                              },
-                              _vm._l(_vm.dispensing_units, function(
-                                item,
-                                index
-                              ) {
-                                return _c("el-option", {
-                                  key: item.value.id,
-                                  attrs: {
-                                    label: item.label,
-                                    value: item.value
-                                  }
-                                })
-                              })
-                            )
-                          : _c("div", [
-                              _c(
-                                "div",
-                                { staticClass: "input-group input-group-sm" },
-                                [
-                                  _c("input", {
-                                    directives: [
-                                      {
-                                        name: "model",
-                                        rawName: "v-model",
-                                        value: _vm.unit_name,
-                                        expression: "unit_name"
-                                      }
-                                    ],
-                                    staticClass: "form-control form-control-sm",
-                                    attrs: {
-                                      placeholder: "Unit Name",
-                                      type: "text"
-                                    },
-                                    domProps: { value: _vm.unit_name },
-                                    on: {
-                                      input: function($event) {
-                                        if ($event.target.composing) {
-                                          return
-                                        }
-                                        _vm.unit_name = $event.target.value
-                                      }
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "input-group-append" },
-                                    [
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "btn btn-success",
-                                          attrs: { type: "button" },
-                                          on: { click: _vm.addUnit }
-                                        },
-                                        [_vm._v("Create")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "button",
-                                        {
-                                          staticClass: "btn btn-default",
-                                          attrs: { type: "button" },
-                                          on: {
-                                            click: function($event) {
-                                              _vm.isAddDispensingUnit = false
-                                            }
-                                          }
-                                        },
-                                        [_vm._v("Cancel")]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "unit_cost" } }, [
-                        _vm._v("Total Cost: ")
-                      ]),
-                      _vm._v(
-                        "\n                                    " +
-                          _vm._s(_vm.unitCost) +
-                          "\n                                "
+                        ]
                       )
-                    ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _vm._m(9),
+                  _vm._v(" "),
+                  _vm._m(10),
+                  _vm._v(" "),
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _vm._m(12),
+                  _vm._v(" "),
+                  _vm._m(13),
+                  _vm._v(" "),
+                  _vm._m(14),
+                  _vm._v(" "),
+                  _vm._m(15)
+                ]),
+                _vm._v(" "),
+                _vm._m(16),
+                _vm._v(" "),
+                _c("tr", { staticStyle: { "mso-yfti-irow": "7" } }, [
+                  _c(
+                    "td",
+                    {
+                      staticStyle: {
+                        width: "36.45pt",
+                        "border-top": "none",
+                        "border-bottom": "solid windowtext 1.0pt",
+                        "border-right": "solid windowtext 1.0pt",
+                        "mso-border-top-alt": "solid windowtext .5pt",
+                        "mso-border-left-alt": "solid windowtext .5pt",
+                        "mso-border-alt": "solid windowtext .5pt",
+                        padding: "0in 5.4pt 0in 5.4pt"
+                      },
+                      attrs: { width: "49", valign: "top" }
+                    },
+                    [
+                      _c(
+                        "p",
+                        {
+                          staticClass: "MsoNormal",
+                          staticStyle: {
+                            "margin-bottom": ".0001pt",
+                            "text-align": "center",
+                            "line-height": "normal"
+                          },
+                          attrs: { align: "center" }
+                        },
+                        [
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                "font-size": "9.0pt",
+                                "font-family": '"Arial",sans-serif'
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(
+                                    _vm.supply.quantity + _vm.balanceQuantity
+                                  )
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(17),
+                  _vm._v(" "),
+                  _vm._m(18),
+                  _vm._v(" "),
+                  _vm._m(19),
+                  _vm._v(" "),
+                  _vm._m(20),
+                  _vm._v(" "),
+                  _vm._m(21),
+                  _vm._v(" "),
+                  _vm._m(22),
+                  _vm._v(" "),
+                  _vm._m(23),
+                  _vm._v(" "),
+                  _vm._m(24)
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.iterateData, function(item) {
+                  return _c("tr", [
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "44.6pt",
+                          border: "solid windowtext 1.0pt",
+                          "border-top": "none",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "59", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: {
+                              "margin-bottom": ".0001pt",
+                              "text-align": "center",
+                              "line-height": "normal"
+                            },
+                            attrs: { align: "center" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(
+                                      _vm
+                                        .$moment(item.updated_at)
+                                        .format("MM-DD")
+                                    )
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(25, true),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "92.25pt",
+                          "border-top": "none",
+                          "border-bottom": "solid windowtext 1.0pt",
+                          "border-right": "solid windowtext 1.0pt",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-left-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "123", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: {
+                              "margin-bottom": ".0001pt",
+                              "text-align": "center",
+                              "line-height": "normal"
+                            },
+                            attrs: { align: "center" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(
+                                      item.receive_id &&
+                                      item.receive.location_id
+                                        ? item.receive.location.name
+                                        : ""
+                                    )
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(26, true),
+                    _vm._v(" "),
+                    _vm._m(27, true),
+                    _vm._v(" "),
+                    _vm._m(28, true),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "31.5pt",
+                          "border-top": "none",
+                          "border-left": "none",
+                          "border-bottom": "solid windowtext 1.0pt",
+                          "border-right": "solid windowtext 1.0pt",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-left-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "42", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: {
+                              "margin-bottom": ".0001pt",
+                              "text-align": "center",
+                              "line-height": "normal"
+                            },
+                            attrs: { align: "center" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                           " +
+                                    _vm._s(
+                                      item.receive_id
+                                        ? item.receive.quantity
+                                        : 0
+                                    )
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "49.5pt",
+                          "border-top": "none",
+                          "border-left": "none",
+                          "border-bottom": "solid windowtext 1.0pt",
+                          "border-right": "solid windowtext 1.0pt",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-left-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "66", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: { "margin-bottom": ".0001pt" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(
+                                      _vm.supply.unit_cost
+                                        ? _vm.supply.unit_cost
+                                        : ""
+                                    ) +
+                                    "\n                                "
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "49.5pt",
+                          "border-top": "none",
+                          "border-left": "none",
+                          "border-bottom": "solid windowtext 1.0pt",
+                          "border-right": "solid windowtext 1.0pt",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-left-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "66", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: { "margin-bottom": ".0001pt" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                             " +
+                                    _vm._s(
+                                      _vm.supply.unit_cost
+                                        ? item.check * _vm.supply.unit_cost
+                                        : ""
+                                    ) +
+                                    "\n                            "
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "27.0pt",
+                          "border-top": "none",
+                          "border-left": "none",
+                          "border-bottom": "solid windowtext 1.0pt",
+                          "border-right": "solid windowtext 1.0pt",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-left-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "36", colspan: "2", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: { "margin-bottom": ".0001pt" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(item.balance)
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "45.0pt",
+                          "border-top": "none",
+                          "border-left": "none",
+                          "border-bottom": "solid windowtext 1.0pt",
+                          "border-right": "solid windowtext 1.0pt",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-left-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "60", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: { "margin-bottom": ".0001pt" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(
+                                      _vm.supply.unit_cost
+                                        ? _vm.supply.unit_cost
+                                        : ""
+                                    ) +
+                                    "\n                            "
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      {
+                        staticStyle: {
+                          width: "49.5pt",
+                          "border-top": "none",
+                          "border-left": "none",
+                          "border-bottom": "solid windowtext 1.0pt",
+                          "border-right": "solid windowtext 1.0pt",
+                          "mso-border-top-alt": "solid windowtext .5pt",
+                          "mso-border-left-alt": "solid windowtext .5pt",
+                          "mso-border-alt": "solid windowtext .5pt",
+                          padding: "0in 5.4pt 0in 5.4pt"
+                        },
+                        attrs: { width: "66", valign: "top" }
+                      },
+                      [
+                        _c(
+                          "p",
+                          {
+                            staticClass: "MsoNormal",
+                            staticStyle: { "margin-bottom": ".0001pt" }
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  "font-size": "8.0pt",
+                                  "font-family": '"Arial",sans-serif'
+                                }
+                              },
+                              [
+                                _c("p", [
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(
+                                        _vm.supply.unit_cost
+                                          ? item.balance * _vm.supply.unit_cost
+                                          : ""
+                                      ) +
+                                      "\n                        "
+                                  )
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
                   ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary mb-2",
-                    attrs: {
-                      disabled:
-                        !_vm.expiry_date &&
-                        !_vm.dispensing_unit_id &&
-                        !_vm.unit_id &&
-                        !_vm.supply_id &&
-                        !_vm.quantity &&
-                        !_vm.quantity_per &&
-                        !_vm.unit_cost,
-                      type: "submit"
-                    }
-                  },
-                  [_vm._v("Check in\n                        ")]
-                )
-              ])
-            ])
-          ]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm.data
-      ? _c("div", { staticClass: "dv" }, [
-          _c("table", { staticClass: "table table-hover" }, [
-            _vm._m(3),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.data, function(item) {
-                return _c("tr", [
-                  _c("td", [_vm._v(_vm._s(item.quantity))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.unit.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.dispensing_unit.name))])
-                ])
-              })
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.differenceResult, function(item) {
+                  return _c("tr", [
+                    _vm._m(29, true),
+                    _vm._v(" "),
+                    _vm._m(30, true),
+                    _vm._v(" "),
+                    _vm._m(31, true),
+                    _vm._v(" "),
+                    _vm._m(32, true),
+                    _vm._v(" "),
+                    _vm._m(33, true),
+                    _vm._v(" "),
+                    _vm._m(34, true),
+                    _vm._v(" "),
+                    _vm._m(35, true),
+                    _vm._v(" "),
+                    _vm._m(36, true),
+                    _vm._v(" "),
+                    _vm._m(37, true),
+                    _vm._v(" "),
+                    _vm._m(38, true),
+                    _vm._v(" "),
+                    _vm._m(39, true),
+                    _vm._v(" "),
+                    _vm._m(40, true)
+                  ])
+                }),
+                _vm._v(" "),
+                _vm._m(41),
+                _vm._v(" "),
+                _vm._m(42)
+              ],
+              2
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "MsoNormal" }),
+          _c("p", [_vm._v(" ")]),
+          _c("p"),
+          _vm._v(" "),
+          _c("p", { staticClass: "MsoNormal" }),
+          _c("p", [_vm._v(" ")]),
+          _c("p"),
+          _vm._v(" "),
+          _c("p", { staticClass: "MsoNormal" }),
+          _c("p", [_vm._v(" ")]),
+          _vm._v(" "),
+          _c("p"),
+          _vm._v(" "),
+          _vm._m(43)
         ])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "dv-footer" }, [
-      _c("div", { staticClass: "dv-footer-item" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-success",
-            attrs: { disabled: _vm.data.length <= 0 },
-            on: { click: _vm.onSave }
-          },
-          [_vm._v("\n                Save Information\n            ")]
-        )
       ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticStyle: { "margin-bottom": "10px" } })
-  ])
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm" }, [
-      _c("label", { attrs: { for: "source" } }, [_vm._v("Source")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm" }, [
-      _c("label", { attrs: { for: "unit_id" } }, [_vm._v("Unit")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm" }, [
-      _c(
-        "label",
-        {
-          staticStyle: { "font-size": "small" },
-          attrs: { for: "dispensing_unit_id" }
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "458.75pt",
+          border: "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "mso-border-bottom-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
         },
-        [_vm._v("Dispensing\n                                            Unit")]
+        attrs: { width: "612", colspan: "10", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "12.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", { staticStyle: { "mso-yfti-irow": "1" } }, [
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "575.75pt",
+            border: "solid windowtext 1.0pt",
+            "border-top": "none",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt"
+          },
+          attrs: { width: "768", colspan: "13", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: {
+                "margin-bottom": ".0001pt",
+                "text-align": "center",
+                "line-height": "normal"
+              },
+              attrs: { align: "center" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "12.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [
+                  _vm._v("SUPPLIES LEDGER CARD\n                            "),
+                  _c("p")
+                ]
+              )
+            ]
+          )
+        ]
       )
     ])
   },
@@ -1505,15 +1834,2524 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Quantity")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Unit")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Dispensing Unit")])
-      ])
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "130.2pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "174", colspan: "2", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [_vm._v("Reference")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "148.95pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "199", colspan: "3", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [_vm._v("RECEIPTS")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "130.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "174", colspan: "3", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [_vm._v("ISSUES")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "121.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "162", colspan: "4", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [_vm._v("BALANCES")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "92.25pt",
+          "border-top": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "123", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [
+                _vm._v(
+                  "From Whom received or to whom issued\n                            "
+                ),
+                _c("p")
+              ]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "36.45pt",
+          "border-top": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "49", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Qty\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "58.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "78", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Unit Cost\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: ".75in",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "72", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c("span", { staticStyle: { "font-size": "9.0pt" } }, [
+              _vm._v("Total Cost\n                            "),
+              _c("p")
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "31.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "42", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Qty\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Unit Cost\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Total\nCost\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "27.0pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "36", colspan: "2", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Qty\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "45.0pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "60", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Unit\nCost\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_vm._v("Total\nCost\n                            "), _c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", { staticStyle: { "mso-yfti-irow": "6", height: ".1in" } }, [
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "174.8pt",
+            border: "solid windowtext 1.0pt",
+            "border-top": "none",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "233", colspan: "3", rowspan: "2" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: { "margin-bottom": ".0001pt" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [
+                  _vm._v(
+                    "Balance Brought\nForward\n                            "
+                  ),
+                  _c("p")
+                ]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "36.45pt",
+            "border-top": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "49", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: {
+                "margin-bottom": ".0001pt",
+                "text-align": "center",
+                "line-height": "normal"
+              },
+              attrs: { align: "center" }
+            },
+            [
+              _c("span", {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              })
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "58.5pt",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "78", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: {
+                "margin-bottom": ".0001pt",
+                "text-align": "center",
+                "line-height": "normal"
+              },
+              attrs: { align: "center" }
+            },
+            [
+              _c("span", {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              })
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: ".75in",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "72", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: { "margin-bottom": ".0001pt" }
+            },
+            [
+              _c("span", { staticStyle: { "font-size": "9.0pt" } }, [
+                _c("p", [_vm._v(" ")])
+              ])
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "31.5pt",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "42", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: {
+                "margin-bottom": ".0001pt",
+                "text-align": "center",
+                "line-height": "normal"
+              },
+              attrs: { align: "center" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [_c("p", [_vm._v(" ")])]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "49.5pt",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "66", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: { "margin-bottom": ".0001pt" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [_c("p", [_vm._v(" ")])]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "49.5pt",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "66", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: { "margin-bottom": ".0001pt" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [_c("p", [_vm._v(" ")])]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "27.0pt",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "36", colspan: "2", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: { "margin-bottom": ".0001pt" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [_c("p", [_vm._v(" ")])]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "45.0pt",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "60", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: { "margin-bottom": ".0001pt" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [_c("p", [_vm._v(" ")])]
+              )
+            ]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "td",
+        {
+          staticStyle: {
+            width: "49.5pt",
+            "border-top": "none",
+            "border-left": "none",
+            "border-bottom": "solid windowtext 1.0pt",
+            "border-right": "solid windowtext 1.0pt",
+            "mso-border-top-alt": "solid windowtext .5pt",
+            "mso-border-left-alt": "solid windowtext .5pt",
+            "mso-border-alt": "solid windowtext .5pt",
+            padding: "0in 5.4pt 0in 5.4pt",
+            height: ".1in"
+          },
+          attrs: { width: "66", valign: "top" }
+        },
+        [
+          _c(
+            "p",
+            {
+              staticClass: "MsoNormal",
+              staticStyle: { "margin-bottom": ".0001pt" }
+            },
+            [
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                },
+                [_c("p", [_vm._v(" ")])]
+              )
+            ]
+          )
+        ]
+      )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "58.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "78", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: ".75in",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "72", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c("span", { staticStyle: { "font-size": "9.0pt" } }, [
+              _c("p", [_vm._v(" ")])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "31.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "42", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "27.0pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "36", colspan: "2", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "45.0pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "60", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "37.95pt",
+          "border-top": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "51", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "36.45pt",
+          "border-top": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "49", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "58.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "78", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: ".75in",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "72", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c("span", { staticStyle: { "font-size": "9.0pt" } }, [
+              _c("p", [_vm._v(" ")])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "44.6pt",
+          border: "solid windowtext 1.0pt",
+          "border-top": "none",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "59", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "37.95pt",
+          "border-top": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "51", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "92.25pt",
+          "border-top": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "123", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "36.45pt",
+          "border-top": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "49", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "58.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "78", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "9.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: ".75in",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "72", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c("span", { staticStyle: { "font-size": "9.0pt" } }, [
+              _c("p", [_vm._v(" ")])
+            ])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "31.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "42", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: {
+              "margin-bottom": ".0001pt",
+              "text-align": "center",
+              "line-height": "normal"
+            },
+            attrs: { align: "center" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "27.0pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "36", colspan: "2", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "45.0pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "60", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "td",
+      {
+        staticStyle: {
+          width: "49.5pt",
+          "border-top": "none",
+          "border-left": "none",
+          "border-bottom": "solid windowtext 1.0pt",
+          "border-right": "solid windowtext 1.0pt",
+          "mso-border-top-alt": "solid windowtext .5pt",
+          "mso-border-left-alt": "solid windowtext .5pt",
+          "mso-border-alt": "solid windowtext .5pt",
+          padding: "0in 5.4pt 0in 5.4pt"
+        },
+        attrs: { width: "66", valign: "top" }
+      },
+      [
+        _c(
+          "p",
+          {
+            staticClass: "MsoNormal",
+            staticStyle: { "margin-bottom": ".0001pt" }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticStyle: {
+                  "font-size": "8.0pt",
+                  "font-family": '"Arial",sans-serif'
+                }
+              },
+              [_c("p", [_vm._v(" ")])]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "tr",
+      {
+        staticStyle: {
+          "mso-yfti-irow": "54",
+          "mso-yfti-lastrow": "yes",
+          height: "7.6pt"
+        }
+      },
+      [
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "174.8pt",
+              border: "solid windowtext 1.0pt",
+              "border-top": "none",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "233", colspan: "3" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: { "margin-bottom": ".0001pt" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "8.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "Balance\nCarried Forward\n                            "
+                    ),
+                    _c("p")
+                  ]
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "36.45pt",
+              "border-top": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "49", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: {
+                  "margin-bottom": ".0001pt",
+                  "text-align": "center",
+                  "line-height": "normal"
+                },
+                attrs: { align: "center" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "9.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [_c("p", [_vm._v(" ")])]
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "58.5pt",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "78", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: {
+                  "margin-bottom": ".0001pt",
+                  "text-align": "center",
+                  "line-height": "normal"
+                },
+                attrs: { align: "center" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "9.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [_c("p", [_vm._v(" ")])]
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: ".75in",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "72", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: { "margin-bottom": ".0001pt" }
+              },
+              [
+                _c("span", { staticStyle: { "font-size": "9.0pt" } }, [
+                  _c("p", [_vm._v(" ")])
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "31.5pt",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "42", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: {
+                  "margin-bottom": ".0001pt",
+                  "text-align": "center",
+                  "line-height": "normal"
+                },
+                attrs: { align: "center" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "8.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [_c("p", [_vm._v(" ")])]
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "49.5pt",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "66", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: { "margin-bottom": ".0001pt" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "8.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [_c("p", [_vm._v(" ")])]
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "49.5pt",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "66", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: { "margin-bottom": ".0001pt" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "8.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [_c("p", [_vm._v(" ")])]
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "27.0pt",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { colspan: "2", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: { "margin-bottom": ".0001pt" }
+              },
+              [
+                _c("span", {
+                  staticStyle: {
+                    "font-size": "8.0pt",
+                    "font-family": '"Arial",sans-serif'
+                  }
+                })
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "45.0pt",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "60", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: { "margin-bottom": ".0001pt" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "8.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [_c("p", [_vm._v(" ")])]
+                )
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "td",
+          {
+            staticStyle: {
+              width: "49.5pt",
+              "border-top": "none",
+              "border-left": "none",
+              "border-bottom": "solid windowtext 1.0pt",
+              "border-right": "solid windowtext 1.0pt",
+              "mso-border-top-alt": "solid windowtext .5pt",
+              "mso-border-left-alt": "solid windowtext .5pt",
+              "mso-border-alt": "solid windowtext .5pt",
+              padding: "0in 5.4pt 0in 5.4pt",
+              height: "7.6pt"
+            },
+            attrs: { width: "66", valign: "top" }
+          },
+          [
+            _c(
+              "p",
+              {
+                staticClass: "MsoNormal",
+                staticStyle: { "margin-bottom": ".0001pt" }
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticStyle: {
+                      "font-size": "8.0pt",
+                      "font-family": '"Arial",sans-serif'
+                    }
+                  },
+                  [_c("p", [_vm._v(" ")])]
+                )
+              ]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", { attrs: { height: "0" } }, [
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "59" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "51" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "123" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "49" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "78" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "72" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "42" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "66" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "66" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "6" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "30" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "60" } }),
+      _vm._v(" "),
+      _c("td", { staticStyle: { border: "none" }, attrs: { width: "66" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      { staticClass: "MsoNormal", staticStyle: { "tab-stops": "382.5pt" } },
+      [_c("span", { staticStyle: { "mso-tab-count": "1" } })]
+    )
   }
 ]
 render._withStripped = true
@@ -1521,25 +4359,25 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-26ca5f0a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-4b0ec7d6", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 848:
+/***/ 853:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(998)
+  __webpack_require__(1020)
 }
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(1000)
+var __vue_script__ = __webpack_require__(1022)
 /* template */
-var __vue_template__ = __webpack_require__(1001)
+var __vue_template__ = __webpack_require__(1023)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1556,7 +4394,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Supplies\\create_po.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Supplies\\print.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -1565,9 +4403,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-26ca5f0a", Component.options)
+    hotAPI.createRecord("data-v-4b0ec7d6", Component.options)
   } else {
-    hotAPI.reload("data-v-26ca5f0a", Component.options)
+    hotAPI.reload("data-v-4b0ec7d6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -1575,48 +4413,6 @@ if (false) {(function () {
 })()}
 
 module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 998:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(999);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(98)("bfca5fce", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26ca5f0a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./create_po.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26ca5f0a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./create_po.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 999:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(33)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.el-table .warning-row {\n    background: oldlace;\n}\n.el-table .success-row {\n    background: aliceblue;\n}\n.el-input-group__prepend {\n    background-color: #fff;\n}\n", ""]);
-
-// exports
 
 
 /***/ })

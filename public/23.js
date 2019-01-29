@@ -1,22 +1,22 @@
 webpackJsonp([23],{
 
-/***/ 1014:
+/***/ 1010:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(1015);
+var content = __webpack_require__(1011);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(98)("1d120bd6", content, false, {});
+var update = __webpack_require__(98)("5360b78c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ede6b78\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./create.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ede6b78\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./create.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ff85f0c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./create_supply.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7ff85f0c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./create_supply.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -27,7 +27,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 1015:
+/***/ 1011:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(false);
@@ -35,14 +35,14 @@ exports = module.exports = __webpack_require__(33)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 1016:
+/***/ 1012:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51,9 +51,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
+//
+//
 //
 //
 //
@@ -114,9 +113,7 @@ exports.default = {
     data: function data() {
         return {
             form: {
-                name: '',
-                description: '',
-                reorder_point: '',
+
                 dosage: '',
                 medication: '',
                 medicine_id: '',
@@ -152,82 +149,22 @@ exports.default = {
             errors: [],
             medicines: [],
             loading: false
+
         };
     },
-    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
 
-        if (to.params.id) {
-            axios.get('/api/supplies/edit/' + to.params.id).then(function (response) {
-                next(function (vm) {
-                    return vm.setData(response.data);
-                });
-            });
-        } else {
-            next();
-        }
-    },
-    beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
-        var vm = this;
-        if (to.params.id) {
-            axios.get('/api/supplies/edit/' + to.params.id).then(function (response) {
-                vm.setData(response.data);
-                next();
-            });
-        } else {
-            next();
-        }
-    },
 
     methods: {
-        setData: function setData(data) {
-
-            var vm = this;
-            vm.form.name = data.name;
-            vm.form.description = data.description;
-            vm.form.reorder_point = data.reorder_point;
-        },
         onSubmit: function onSubmit() {
             var vm = this;
             var formData = new FormData(vm.$refs.form);
-            var jsonObject = {};
 
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = formData.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var _step$value = _slicedToArray(_step.value, 2),
-                        key = _step$value[0],
-                        value = _step$value[1];
-
-                    jsonObject[key] = value;
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
-
-            jsonObject['id'] = vm.$route.params.id ? vm.$route.params.id : '';
             vm.isDisabled = true;
             vm.errors = [];
-            axios({
-                method: 'post',
-                url: '/api/' + vm.$route.meta.url + '?type=1',
-                data: jsonObject
-            }).then(function (response) {
+            axios.post('/api/' + vm.$route.meta.url, formData).then(function (response) {
                 vm.$message({ message: response.statusText, type: 'success' });
                 vm.isDisabled = false;
+                vm.$refs.form.resetFields();
             }).catch(function (error) {
                 if (error.response.data.errors && error.response.data.message) {
                     vm.errors = error.response.data.errors;
@@ -241,7 +178,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 1017:
+/***/ 1013:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -265,117 +202,7 @@ var render = function() {
           _c("div", { staticClass: "card" }, [
             _vm._m(0),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-lg-6" }, [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "name" } }, [
-                      _vm._v("Item Name")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.name,
-                          expression: "form.name"
-                        }
-                      ],
-                      staticClass: "form-control form-control-sm",
-                      attrs: {
-                        required: "",
-                        type: "text",
-                        id: "name",
-                        name: "name",
-                        placeholder: "name"
-                      },
-                      domProps: { value: _vm.form.name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "name", $event.target.value)
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "description" } }, [
-                      _vm._v("Description")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.description,
-                          expression: "form.description"
-                        }
-                      ],
-                      staticClass: "form-control form-control-sm",
-                      attrs: {
-                        required: "",
-                        type: "text",
-                        id: "description",
-                        name: "description",
-                        placeholder: "description"
-                      },
-                      domProps: { value: _vm.form.description },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.form, "description", $event.target.value)
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("label", { attrs: { for: "reorder_point" } }, [
-                      _vm._v("Reorder Point")
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.form.reorder_point,
-                          expression: "form.reorder_point"
-                        }
-                      ],
-                      staticClass: "form-control form-control-sm",
-                      attrs: {
-                        required: "",
-                        type: "number",
-                        id: "reorder_point",
-                        name: "reorder_point",
-                        placeholder: "reorder_point"
-                      },
-                      domProps: { value: _vm.form.reorder_point },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(
-                            _vm.form,
-                            "reorder_point",
-                            $event.target.value
-                          )
-                        }
-                      }
-                    })
-                  ])
-                ])
-              ])
-            ]),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "card-footer" }, [
               _c(
@@ -419,6 +246,65 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header" }, [
       _c("h5", { staticClass: "m-0" }, [_vm._v("Add New Supply")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-6" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Item Name")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control form-control-sm",
+              attrs: {
+                required: "",
+                type: "text",
+                id: "name",
+                name: "name",
+                placeholder: "name"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "description" } }, [
+              _vm._v("Description")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control form-control-sm",
+              attrs: {
+                required: "",
+                type: "text",
+                id: "description",
+                name: "description",
+                placeholder: "description"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", { attrs: { for: "reorder_point" } }, [
+              _vm._v("Reorder Point")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control form-control-sm",
+              attrs: {
+                required: "",
+                type: "number",
+                id: "reorder_point",
+                name: "reorder_point",
+                placeholder: "reorder_point"
+              }
+            })
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -426,25 +312,25 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7ede6b78", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7ff85f0c", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 853:
+/***/ 850:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1014)
+  __webpack_require__(1010)
 }
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(1016)
+var __vue_script__ = __webpack_require__(1012)
 /* template */
-var __vue_template__ = __webpack_require__(1017)
+var __vue_template__ = __webpack_require__(1013)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -461,7 +347,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Supplies\\create.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Supplies\\create_supply.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -470,9 +356,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7ede6b78", Component.options)
+    hotAPI.createRecord("data-v-7ff85f0c", Component.options)
   } else {
-    hotAPI.reload("data-v-7ede6b78", Component.options)
+    hotAPI.reload("data-v-7ff85f0c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

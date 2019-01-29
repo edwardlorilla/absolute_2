@@ -131,7 +131,7 @@ class UserController extends Controller
 
     public function notificationMarkAsRead($id)
     {
-        return response()->json(auth()->user()->unreadNotifications()->whereId($id)->update(['read_at' => now()]));
+        return response()->json(auth()->user()->notifications()->whereId($id)->update(['read_at' => now()]));
     }
 
     /**

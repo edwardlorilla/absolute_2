@@ -25,6 +25,7 @@ class Product extends Model
         'medication',
         'dosage',
         'medicine_id',
+'reorder_point',
         'category_id',
         'package_id'
     ];

@@ -1,14 +1,14 @@
 webpackJsonp([35],{
 
-/***/ 470:
+/***/ 468:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(909)
+var __vue_script__ = __webpack_require__(912)
 /* template */
-var __vue_template__ = __webpack_require__(910)
+var __vue_template__ = __webpack_require__(913)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Requests\\Request.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Table\\Grid.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-29771942", Component.options)
+    hotAPI.createRecord("data-v-0ebbc542", Component.options)
   } else {
-    hotAPI.reload("data-v-29771942", Component.options)
+    hotAPI.reload("data-v-0ebbc542", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 909:
+/***/ 912:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57,38 +57,6 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -169,9 +137,6 @@ exports.default = {
             filters: [{
                 value: '',
                 'search_prop': 'id' // define search_prop for backend usage.
-            }, {
-                value: '',
-                'search_prop': 'id' // define search_prop for backend usage.
             }],
             dialogMessage: { title: '', message: '' },
             dialogVisible: false,
@@ -183,8 +148,7 @@ exports.default = {
                 buttons: [{
                     props: {
                         type: 'primary',
-                        icon: 'el-icon-edit',
-                        size: 'mini'
+                        icon: 'el-icon-edit'
                     },
                     handler: function handler(row) {
                         var vm = _this;
@@ -194,20 +158,6 @@ exports.default = {
                         });
                     },
                     label: 'Edit'
-                }, {
-                    props: {
-                        type: 'info',
-                        size: 'mini',
-                        icon: 'el-icon-printer'
-                    },
-                    handler: function handler(row) {
-                        var vm = _this;
-                        vm.$router.push({
-                            name: vm.$route.meta.title.toLowerCase() + '.print',
-                            params: { id: row.id, row: row }
-                        });
-                    },
-                    label: 'Print'
                 }, {
                     handler: function handler(row) {
                         var vm = _this;
@@ -254,8 +204,7 @@ exports.default = {
             error: null,
             filterKey: '',
             loading: false,
-            _numberLoad: 0,
-            users: []
+            _numberLoad: 0
         };
     },
 
@@ -313,7 +262,6 @@ exports.default = {
     },
     beforeRouteEnter: function beforeRouteEnter(to, from, next) {
         getData(to.meta.url, to.query, function (err, data) {
-
             next(function (vm) {
                 return vm.setData(err, data);
             });
@@ -322,7 +270,6 @@ exports.default = {
 
     // when route changes and this component is already rendered,
     // the logic will be slightly different.
-
     beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {
         var _this2 = this;
 
@@ -338,7 +285,7 @@ exports.default = {
             var vm = this;
             if (row) {
                 vm.loading = true;
-                axios.delete('/api/' + vm.$route.meta.url + '/' + row.id).then(function (response) {
+                axios.delete('/api/' + vm.$route.meta.title.toLowerCase() + '/' + row.id).then(function (response) {
                     vm.data.splice(vm.data.indexOf(row), 1);
                     vm.loading = false;
                     vm.dialogVisible = false;
@@ -365,30 +312,28 @@ exports.default = {
             this.sortOrders[key] = this.sortOrders[key] * -1;
         },
         loadData: _.debounce(function (event) {
-
             var vm = this;
 
             vm.loading = true;
             var option = _.clone(vm.$route.query);
+
             if (event.type === 'sort') {
                 option.column = event.sort.prop;
                 option.direction = event.sort.order == 'ascending' ? 'asc' : 'desc';
             }
 
+            if (event.type === 'page') {
+                option.page = event.page;
+                option.per_page = event.pageSize;
+            }
             if (event.type != "init") {
-                if (event.type === 'page') {
-                    option.page = event.page;
-                    option.per_page = event.pageSize;
-                }
-                if (event.type === 'filter' && !_.isEmpty(vm.filters[0].value)) {
+
+                if (event.type === 'filter' && vm.filters[0].value.length != 0) {
 
                     option.search_column = vm.query.search_column;
                     option.search_operator = vm.query.search_operator;
                     option.search_input = vm.filters[0].value;
-                } else if (event.type === 'filter' && !_.isEmpty(vm.filters[1].value)) {
-                    option.user_id = vm.filters[1].value.toString();
                 } else {
-                    delete option.user_id;
                     delete option.search_input;
                 }
                 vm.$router.push({
@@ -396,10 +341,6 @@ exports.default = {
                     query: option
                 }, function () {
                     vm.loading = false;
-                    if (option.search_input == '') {
-                        delete option.search_input;
-                        vm.filters[1].value = '';
-                    }
                 }, function () {
                     vm.loading = false;
                 });
@@ -408,6 +349,7 @@ exports.default = {
             }
         }, 500),
         setData: function setData(err, data) {
+            console.log(data);
             var vm = this;
             if (err) {
 
@@ -417,11 +359,9 @@ exports.default = {
 
                 vm.error = err.toString();
             } else {
+                console.log(data);
                 vm.data = data.data.model.data;
-                var users = _.map(data.data.model.data, function (f) {
-                    return f.user;
-                });
-                vm.users = _.uniqBy(users, 'id');
+                console.log(vm.data);
                 vm.links.first_page_url = data.data.model.first_page_url;
                 vm.links.last_page_url = data.data.model.last_page_url;
                 vm.links.prev_page_url = data.data.model.prev_page_url;
@@ -435,9 +375,6 @@ exports.default = {
                 vm.meta.total = data.data.model.total;
 
                 vm.columns = data.data.columns;
-                if (data.page.search_input) {
-                    vm.filters[0].value = data.page.search_input;
-                }
 
                 vm.filters[0].search_prop = vm.search_column; // define search_prop for backend usage.
             }
@@ -447,7 +384,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 910:
+/***/ 913:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -536,75 +473,34 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "dv-header-search" }, [
-              _c("div", { staticClass: "row" }, [
-                _c(
-                  "div",
-                  { staticClass: "col-lg-6" },
-                  [
-                    _c("el-input", {
-                      attrs: { placeholder: "Search" },
-                      on: {
-                        keyup: function($event) {
-                          if (
-                            !("button" in $event) &&
-                            _vm._k(
-                              $event.keyCode,
-                              "enter",
-                              13,
-                              $event.key,
-                              "Enter"
-                            )
-                          ) {
-                            return null
-                          }
-                          return _vm.loadData($event)
-                        }
-                      },
-                      model: {
-                        value: _vm.filters[0].value,
-                        callback: function($$v) {
-                          _vm.$set(_vm.filters[0], "value", $$v)
-                        },
-                        expression: "filters[0].value"
+            _c(
+              "div",
+              { staticClass: "dv-header-search" },
+              [
+                _c("el-input", {
+                  attrs: { placeholder: "Search" },
+                  on: {
+                    keyup: function($event) {
+                      if (
+                        !("button" in $event) &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
                       }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-lg-6" },
-                  [
-                    _c(
-                      "el-select",
-                      {
-                        attrs: {
-                          clearable: "",
-                          placeholder: "Select Users",
-                          multiple: "multiple"
-                        },
-                        model: {
-                          value: _vm.filters[1].value,
-                          callback: function($$v) {
-                            _vm.$set(_vm.filters[1], "value", $$v)
-                          },
-                          expression: "filters[1].value"
-                        }
-                      },
-                      _vm._l(_vm.users, function(user, index, key) {
-                        return _c("el-option", {
-                          key: key,
-                          attrs: { label: user.name, value: user.id }
-                        })
-                      })
-                    )
-                  ],
-                  1
-                )
-              ])
-            ])
+                      return _vm.loadData($event)
+                    }
+                  },
+                  model: {
+                    value: _vm.filters[0].value,
+                    callback: function($$v) {
+                      _vm.$set(_vm.filters[0], "value", $$v)
+                    },
+                    expression: "filters[0].value"
+                  }
+                })
+              ],
+              1
+            )
           ]),
           _vm._v(" "),
           _c(
@@ -685,67 +581,20 @@ var render = function() {
                     },
                     "page-size": _vm.query.per_page,
                     "current-page": _vm.meta.current_page,
-                    stripe: "",
                     loading: _vm.loading
                   },
                   on: { "query-change": _vm.loadData }
                 },
-                [
-                  _c("el-table-column", {
-                    attrs: { type: "expand" },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "default",
-                        fn: function(props) {
-                          return [
-                            _c(
-                              "el-table",
-                              {
-                                staticStyle: { width: "100%" },
-                                attrs: { data: props.row.transactions }
-                              },
-                              [
-                                _c("el-table-column", {
-                                  attrs: {
-                                    prop: "product.medicine.name",
-                                    label: "Product Name"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("el-table-column", {
-                                  attrs: {
-                                    prop: "out_quantity",
-                                    label: "Quantity"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("el-table-column", {
-                                  attrs: {
-                                    prop: "product.quantity",
-                                    label: "Current Quantity"
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                          ]
-                        }
-                      }
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _vm._l(_vm.columns, function(title) {
-                    return _c("el-table-column", {
-                      key: title.id,
-                      attrs: {
-                        prop: title.id,
-                        label: title.name,
-                        sortable: "custom"
-                      }
-                    })
+                _vm._l(_vm.columns, function(title) {
+                  return _c("el-table-column", {
+                    key: title.id,
+                    attrs: {
+                      prop: title.id,
+                      label: title.name,
+                      sortable: "custom"
+                    }
                   })
-                ],
-                2
+                })
               )
             : _vm._e()
         ],
@@ -759,7 +608,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-29771942", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0ebbc542", module.exports)
   }
 }
 

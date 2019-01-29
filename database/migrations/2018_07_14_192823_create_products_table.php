@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
 //            $table->double('discount')->nullable();
 //            $table->double('mrp_rate')->nullable();
 //            $table->double('sale_rate')->nullable();
-//            $table->integer('reorder_point')->unsigned();
+            $table->integer('reorder_point')->unsigned();
             $table->integer('package_id')->unsigned()->nullable();
             $table->integer('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories');

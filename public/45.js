@@ -1,6 +1,6 @@
 webpackJsonp([45],{
 
-/***/ 835:
+/***/ 844:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -8,7 +8,7 @@ var normalizeComponent = __webpack_require__(13)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(947)
+var __vue_template__ = __webpack_require__(991)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Office\\index.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Pending\\UserRequestView\\index.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-591fdac6", Component.options)
+    hotAPI.createRecord("data-v-486aa83f", Component.options)
   } else {
-    hotAPI.reload("data-v-591fdac6", Component.options)
+    hotAPI.reload("data-v-486aa83f", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,14 +48,88 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 947:
+/***/ 991:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("router-view")
+  return _c("div", { staticClass: "card" }, [
+    _c("div", { staticClass: "card-header" }, [
+      _c("ul", { staticClass: "nav nav-pills justify-content-center" }, [
+        _c(
+          "li",
+          { staticClass: "nav-item" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: { name: "view.medicine.request" } }
+              },
+              [_vm._v("User Requests\n                ")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          { staticClass: "nav-item" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: { name: "pending.medicine.request" } }
+              },
+              [_vm._v("Request Medicine\n                ")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          { staticClass: "nav-item" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: { name: "pending.supply.request" } }
+              },
+              [_vm._v("Request Supply\n                ")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          { staticClass: "nav-item" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-link",
+                attrs: { to: { name: "pending.office-supply.request" } }
+              },
+              [
+                _vm._v(
+                  "Request Office\n                    Supply\n                "
+                )
+              ]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card-body" }, [_c("router-view")], 1)
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63,7 +137,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-591fdac6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-486aa83f", module.exports)
   }
 }
 

@@ -1,14 +1,14 @@
 webpackJsonp([38],{
 
-/***/ 465:
+/***/ 464:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(13)
 /* script */
-var __vue_script__ = __webpack_require__(890)
+var __vue_script__ = __webpack_require__(891)
 /* template */
-var __vue_template__ = __webpack_require__(891)
+var __vue_template__ = __webpack_require__(892)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Layout\\Profile\\ChangePassword.vue"
+Component.options.__file = "resources\\assets\\js\\components\\Layout\\Profile\\Signature.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-bb698b6e", Component.options)
+    hotAPI.createRecord("data-v-c4464e6c", Component.options)
   } else {
-    hotAPI.reload("data-v-bb698b6e", Component.options)
+    hotAPI.reload("data-v-c4464e6c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 890:
+/***/ 891:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57,16 +57,6 @@ module.exports = Component.exports
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -94,170 +84,167 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 //
 
 exports.default = {
-    methods: {
-        changePassword_m: function changePassword_m() {
-            var vm = this;
-            var formData = new FormData(vm.$refs.form);
-            var jsonObject = {};
-
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = formData.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var _step$value = _slicedToArray(_step.value, 2),
-                        key = _step$value[0],
-                        value = _step$value[1];
-
-                    jsonObject[key] = value;
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
+    data: function data() {
+        return {
+            changeSignature: !!this.$root.store.state.user.file,
+            option: {
+                penColor: "rgb(0, 0, 0)",
+                backgroundColor: "rgb(255,255,255)"
             }
+        };
+    },
 
-            axios.put("/api/users/" + window.Laravel.userId, jsonObject).then(function (response) {
-                console.log(response.data);
+    methods: {
+        dataURItoBlob: function dataURItoBlob(dataURI) {
+            var byteString = atob(dataURI.split(',')[1]);
+            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
+            }
+            var blob = new Blob([ab], { type: mimeString });
+            return blob;
+        },
+        clear: function clear() {
+            var _this = this;
+            _this.$refs.signature.clear();
+        },
+        undo: function undo() {
+            var _this = this;
+            _this.$refs.signature.undo();
+        },
+        save: function save() {
+            var vm = this;
+            var png = vm.$refs.signature.save();
+            var data = new FormData();
+            data.append('file', vm.dataURItoBlob(png), 'file.png');
+            data.append('photo', vm.$root.store.state.user.file);
+            axios.post('/api/users/sign', data).then(function (response) {
+                vm.$message({ message: response.statusText, type: 'success' });
+                vm.isDisabled = false;
+                vm.dialogVisible = false;
+                vm.changeSignature = true;
+                vm.$root.store.state.user.file = response.data.file;
+            }).catch(function (error) {
+                console.log(error);
+                if (error) {
+                    if (error.response.data.errors && error.response.data.message) {
+                        vm.$message({ message: error.response.data.message, type: 'error' });
+                    }
+                }
+                vm.isDisabled = false;
             });
         }
     }
+
 };
 
 /***/ }),
 
-/***/ 891:
+/***/ 892:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      ref: "form",
-      staticClass: "form-horizontal",
-      on: {
-        submit: function($event) {
-          $event.preventDefault()
-          return _vm.changePassword_m($event)
-        }
-      }
-    },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _vm._m(3)
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "control-label", attrs: { for: "old_password" } },
-        [_vm._v("Old Password")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-10" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            name: "old_password",
-            type: "password",
-            id: "old_password",
-            placeholder: "Password"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        { staticClass: "control-label", attrs: { for: "new_password" } },
-        [_vm._v("New Password")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-10" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            name: "new_password",
-            type: "password",
-            id: "new_password",
-            placeholder: "Password"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { staticClass: "control-label", attrs: { for: "confirm" } }, [
-        _vm._v("Confirm Password")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-10" }, [
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            name: "confirm_password",
-            type: "password",
-            id: "confirm",
-            placeholder: "Confirm Password"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "col-sm-offset-2 col-sm-10" }, [
+  return _c("form", { ref: "form", staticClass: "form-horizontal" }, [
+    _c("div", { staticClass: "card-body" }, [
+      _c("div", { staticClass: "form-group" }, [
         _c(
-          "button",
-          { staticClass: "btn btn-danger", attrs: { type: "submit" } },
-          [_vm._v("Submit")]
+          "label",
+          { staticClass: "col-sm-2 control-label", attrs: { for: "name" } },
+          [_vm._v("User Signature")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticStyle: {
+              display: "block",
+              "margin-right": "auto",
+              "margin-left": "auto",
+              border: "1px solid #000000"
+            }
+          },
+          [
+            _vm.changeSignature
+              ? _c("img", {
+                  attrs: {
+                    height: "200px",
+                    width: "400px",
+                    src: "/storage/images/" + _vm.$root.store.state.user.file,
+                    alt: "user-signature"
+                  }
+                })
+              : _c("vue-signature", {
+                  ref: "signature",
+                  attrs: { sigOption: _vm.option, w: "400px", h: "200px" }
+                })
+          ],
+          1
         )
       ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card-footer" }, [
+      _vm.changeSignature
+        ? _c(
+            "div",
+            [
+              _c(
+                "el-button",
+                {
+                  attrs: { type: "success" },
+                  on: {
+                    click: function($event) {
+                      _vm.changeSignature = !_vm.changeSignature
+                    }
+                  }
+                },
+                [_vm._v("Edit Signature")]
+              )
+            ],
+            1
+          )
+        : _c(
+            "div",
+            [
+              _c(
+                "el-button",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.changeSignature = !_vm.changeSignature
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              ),
+              _vm._v(" "),
+              _c("el-button", { on: { click: _vm.clear } }, [_vm._v("Clear")]),
+              _vm._v(" "),
+              _c("el-button", { on: { click: _vm.undo } }, [_vm._v("Undo")]),
+              _vm._v(" "),
+              _c(
+                "el-button",
+                { attrs: { type: "primary" }, on: { click: _vm.save } },
+                [_vm._v("Confirm")]
+              )
+            ],
+            1
+          )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-bb698b6e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-c4464e6c", module.exports)
   }
 }
 
